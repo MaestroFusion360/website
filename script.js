@@ -16,7 +16,8 @@ const translations = {
         "skill-workflows": "<strong>Custom Workflows</strong>",
         "skill-ui": "<strong>UI/UX for Fusion 360 Add-Ins</strong>",
         "skill-vba": "<strong>Excel VBA Automation</strong>",
-        "skill-macros": "<strong>Macros Development</strong>"
+        "skill-macros": "<strong>Macros Development</strong>",
+        "video-missing": "🎥 Video not available"
     },
     ru: {
         "title": "Привет, я MaestroFusion360",
@@ -34,7 +35,8 @@ const translations = {
         "skill-workflows": "<strong>Пользовательские рабочие процессы</strong>",
         "skill-ui": "<strong>UI/UX для Fusion 360 Add-Ins</strong>",
         "skill-vba": "<strong>Автоматизация Excel VBA</strong>",
-        "skill-macros": "<strong>Разработка макросов</strong>"
+        "skill-macros": "<strong>Разработка макросов</strong>",
+        "video-missing": "🎥 Видео отсутствует"
     }
 };
 
@@ -74,9 +76,14 @@ if (flagEn && flagRu) {
 }
 
 // Carousel system
+
 function initCarousel() {
-    initSingleCarousel('.projects-carousel', '.carousel-dots');
+    // Re-creating buttons to reset handlers
+    document.querySelectorAll('.carousel-prev, .carousel-next').forEach(btn => {
+        btn.replaceWith(btn.cloneNode(true));
+    });
     
+    initSingleCarousel('.projects-carousel', '.carousel-dots');
     initSingleCarousel('.upcoming-carousel', '.upcoming-dots');
 }
 
@@ -165,30 +172,35 @@ function renderActiveProjects() {
     const carousel = document.querySelector('.projects-carousel');
     if (!carousel || !window.projectsData?.active) return;
 
-    carousel.innerHTML = window.projectsData.active.map(project => `
+    carousel.innerHTML = window.projectsData.active.map(project => {
+        const projectData = project[currentLang] || {};
+
+        const videoContent = project.youtubeId
+            ? `<iframe src="https://www.youtube.com/embed/${project.youtubeId}" 
+                    title="${projectData.title || ''}"
+                    allowfullscreen loading="lazy"></iframe>`
+            : `<div class="video-placeholder">${translations[currentLang]['video-missing']}</div>`;
+
+        return `
         <article class="project-card">
             <div class="video-container">
-                <iframe 
-                    src="https://www.youtube.com/embed/${project.youtubeId}" 
-                    title="${project[currentLang].title}"
-                    allowfullscreen
-                    loading="lazy"
-                ></iframe>
+                ${videoContent}
             </div>
-            
             <h3>
-                <a href="${project.link || '#'}" target="_blank" class="project-link">
-                    ${project[currentLang].title}
+                ${project.link ? `
+                <a href="${project.link}" target="_blank" class="project-link" 
+                   style="position: relative; z-index: 10;">
+                    ${projectData.title || ''}
                 </a>
+                ` : projectData.title || ''}
             </h3>
-            
-            <p>${project[currentLang].description}</p>
-            
+            <p>${projectData.description || ''}</p>
+            ${projectData.features ? `
             <ul class="features-list">
-                ${project[currentLang].features?.map(f => `<li>${f}</li>`).join('') || ''}
-            </ul>
-        </article>
-    `).join('');
+                ${projectData.features.map(f => `<li>${f}</li>`).join('')}
+            </ul>` : ''}
+        </article>`;
+    }).join('');
 
     initCarousel();
 }

@@ -233,6 +233,9 @@ h3 {
     border-radius: 8px;
     box-shadow: var(--shadow);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transform-origin: center center;
+    backface-visibility: hidden;
+    contain: content;
 }
 
 .project-card.active {
@@ -271,6 +274,12 @@ h3 {
     justify-content: center;
     gap: 0.5rem;
     margin-top: 1rem;
+}
+
+.carousel-nav button:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.1);
 }
 
 .upcoming-dots {
@@ -363,6 +372,23 @@ footer {
     }
 }
 
+.badges-list img {
+    transition: transform var(--transition);
+}
+
+.badges-list img:hover {
+    transform: scale(1.1);
+}
+
+#lang-toggle button:hover {
+    transform: scale(1.1);
+}
+
+#lang-toggle img {
+    width: 32px;
+    height: 32px;
+}
+
 /* ==================== */
 /* Responsive Design */
 /* ==================== */
@@ -409,6 +435,30 @@ footer {
         align-items: center;
         gap: 0.5rem;
     }
+}
+
+/* ==================== */
+/* Video Placeholder (if no youtubeId) */
+/* ==================== */
+.video-placeholder {
+    position: relative;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #666;
+    font-size: 1.2rem;
+    z-index: 0;
+}
+
+.video-placeholder::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.3);
+    pointer-events: none;
+    z-index: 1;
 }
 
 /* ==================== */

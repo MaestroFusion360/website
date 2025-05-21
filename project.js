@@ -23,6 +23,28 @@ window.projectsData = {
             }
         },
         {
+            "link": "https://t.me/postprocessors_bot",
+            "youtubeId": "",
+            "en": {
+                "title": "@postprocessors_bot",
+                "description": "<strong>Telegram bot</strong> for managing and distributing CAM postprocessors",
+                "features": [
+                    "Catalog for NX and Fusion 360 (turning/milling)",
+                    "Download from private Telegram channel",
+                    "Category and metadata system (license, version)"
+                ]
+            },
+            "ru": {
+                "title": "@postprocessors_bot",
+                "description": "<strong>Телеграм-бот</strong> для управления и распространения CAM-постпроцессоров",
+                "features": [
+                    "Каталог для NX и Fusion 360 (токарная/фрезерная обработка)",
+                    "Скачивание из закрытого Telegram канала",
+                    "Система категорий и метаданных (лицензия, версия)"
+                ]
+            }
+        },
+        {
             "link": "https://github.com/MaestroFusion360/MoveOp",
             "youtubeId": "6TczgiwyWbA",
             "en": {
@@ -65,26 +87,92 @@ window.projectsData = {
                     "Сложные цепочки граней без ручного выбора"
                 ]
             }
+        },
+        {
+            "link": "https://github.com/MaestroFusion360/CompareBodies",
+            "youtubeId": "",
+            "en": {
+                "title": "CompareBodies",
+                "description": "<strong>Compare Bodies</strong> is a Fusion 360 add-in that allows you to compare two selected bodies directly within the design environment to <strong>detect any differences between them.</strong>After selecting two bodies, the tool calculates and compares:",
+                "features": [
+                    "Volume",
+                    "Surface area",
+                    "Geometry similarity (based on face and edge counts)"
+                ]
+            },
+            "ru": {
+                "title": "CompareBodies",
+                "description": "<strong>Compare Bodies</strong> — это надстройка для Fusion 360, позволяющая сравнивать два выбранных тела прямо в среде проектирования <strong>для выявления различий между ними.</strong>После выбора двух тел инструмент вычисляет и сравнивает:",
+                "features": [
+                    "Объем",
+                    "Площадь поверхности",
+                    "Сходство геометрии (на основе количества граней и ребер)"
+                ]
+            }
         }
     ],
     "upcoming": [
         {
+            "link": "",
+            "youtubeId": "",
             "en": {
                 "title": "Automation",
-                "description": "Streamlines the CAM workflow by automating the import of <strong>CAM data</strong> from templates.",
+                "description": "<strong>Automation</strong> – is a add-in for Fusion 360 that automates the loading and adaptation of CAM data from templates, eliminating the need to manually create machining strategies. Its key feature is <strong>Import CAM Data</strong>, which allows linking ready-made toolpaths to a new model.",
                 "features": [
-                    "<strong>Smart Templates</strong> – automatic geometry handling.",
-                    "<strong>Offline Mode Support</strong> – work without Fusion 360 cloud.",
-                    "<strong>WCS Parameter Setup</strong> – auto-detect stock zero points."
+                    "<strong>Smart templates</strong>, allowing work without the need to define geometry for machining creation",
+                    "<strong>Offline mode</strong> – loading templates and managing data without connecting to the Fusion 360 cloud",
+                    "<strong>WCS setup</strong> – automatic determination of the stock's zero point for correct machining alignment",
+                    "<strong>Automatic setup sheet generation</strong> – creation of files with machining parameters, tools, and saving model images from different angles",
+                    "<strong>Automatic NC program creation</strong> – generation of control programs using configured parameters",
+                    "<strong>Flexible post processor setup</strong> – selection of G-code formats, save folders, and output parameters",
+                    "<strong>Logging of all actions</strong> – recording operations for diagnostics and debugging"
                 ]
             },
             "ru": {
                 "title": "Automation",
-                "description": "Упрощает рабочий процесс разработки УП, автоматизируя импорт <strong>данных для УП</strong> из шаблонов.",
+                "description": "<strong>Automation</strong> – это модуль для Fusion 360, который автоматизирует загрузку и адаптацию CAM-данных из шаблонов, исключая необходимость вручную создавать стратегии обработки. Его ключевая функция – <strong>Import CAM Data</strong>, позволяющая привязывать готовые траектории к новой модели.",
                 "features": [
-                    "<strong>Умные шаблоны</strong> – автоматическая обработка геометрии.",
-                    "<strong>Поддержка офлайн-режима</strong> – работа без интернета.",
-                    "<strong>Настройка РСК</strong> – автоматическое определение нулевых точек."
+                    "<strong>Умные шаблоны</strong>, позволяющие работать без необходимости задавать геометрию для создания обработки",
+                    "<strong>Офлайн-режим работы</strong> – загрузка шаблонов и управление данными без подключения к облаку Fusion 360",
+                    "<strong>Настройка WCS</strong> – автоматическое определение нулевой точки заготовки для корректной привязки обработки",
+                    "<strong>Автоматическая генерация карт наладки</strong> – создание файлов с параметрами обработки, инструментами и сохранение изображений модели с разных ракурсов",
+                    "<strong>Автоматическое создание NC-программ</strong> – генерация управляющих программ с использованием настроенных параметров",
+                    "<strong>Гибкая настройка постпроцессоров</strong> – выбор форматов G-кода, папок сохранения и параметров вывода",
+                    "<strong>Логирование всех действий</strong> – запись операций для диагностики и отладки"
+                ]
+            }
+        },
+        {
+            "link": "",
+            "youtubeId": "",
+            "en": {
+                "title": "Easy G-Code Plot",
+                "description": "Easy G-Code Plot is a G-code editor and visualizer. It supports 3D rendering of toolpaths for <strong>3-axis milling</strong> and <strong>2-axis lathe</strong> machining with various modes. The engine is built on <strong>pyqtgraph</strong>.",
+                "features": [
+                    "<strong>Program animation</strong> with playback speed control and display of current coordinates",
+                    "<strong>Create, open, and save</strong> CNC files with <strong>drag-and-drop</strong> support",
+                    "<strong>Syntax highlighting with line numbering</strong> (similar to Cimco Edit)",
+                    "<strong>Find and replace text</strong>, undo/redo actions",
+                    "<strong>G-code export</strong> – compatible with Fanuc, Siemens, and Heidenhain formats",
+                    "<strong>Machining time calculation</strong>",
+                    "<strong>Absolute and relative movements</strong> – support for both types",
+                    "<strong>Arc interpolation</strong> – by center, radius, or arc start point",
+                    "Removal of <strong>empty lines and spaces</strong> from G-code"
+                ]
+            },
+            "ru": {
+                "title": "Easy G-Code Plot",
+                "description": "Easy G-Code Plot - редактор-визуализатор G-кода. Поддержка 3D прорисовки траекторий <strong>3х осевой фрезерной</strong> и <strong>2х осевой токарной</strong> обработки с различными режимами. Движок работает на <strong>pyqtgraph</strong>",
+                "features": [
+                    "<strong>Анимация</strong> программы с управлением скоростью воспроизведения и отображением текущих координат",
+                    "<strong>Создание, открытие и сохранение</strong> NC файлов с <strong>drag-and-drop</strong>",
+                    "<strong>Подсветка синтаксиса c нумерацией строк</strong> (как в Cimco Edit)",
+                    "<strong>Поиск и замена текста</strong>, отмена/повтор действий.",
+                    "<strong>Экспорт G-кода</strong> – между Fanuc, Siemens и Heidenhain.",
+                    "<strong>Расчет времени обработки</strong>",
+                    "<strong>Абсолютные и относительные перемещения</strong> – поддержка обоих типов.",
+                    "<strong>Интерполяция дуг</strong> – через центр, радиус или начало дуги.",
+                    "Удаление <strong>пустых строк и пробелов</strong> из G-кода"
                 ]
             }
         }
