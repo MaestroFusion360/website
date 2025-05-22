@@ -5,7 +5,7 @@ A cross-platform GUI application for managing project data with multilingual sup
 <details>
   <summary>Click to see the image</summary>
   <h1 align="center">
-    <img src="assets/editor.png" alt="Editor Screenshot"/>
+    <img src="assets/editor_main.png" alt="Editor Screenshot"/>
   </h1>
 </details>
 

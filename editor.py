@@ -203,7 +203,7 @@ class ProjectEditor:
 
         # Russian tab
         self.tab_ru = ttk.Frame(self.lang_notebook)
-        self.lang_notebook.add(self.tab_ru, text="Русский")
+        self.lang_notebook.add(self.tab_ru, text="Russian")
         self.setup_language_widgets(
             self.tab_ru, "Title:", "Description:", "Features (one per line):", "ru"
         )

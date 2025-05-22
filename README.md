@@ -34,7 +34,7 @@ A modern single-page portfolio website with multilingual UI support, animated pr
 - Provides an intuitive GUI for editing a large JSON file.
 - Heavier than the entire site — built with scalability in mind.
 
-See the [EDITOR.md](EDITOR.md) file for details.
+See the [EDITOR_README.md](EDITOR_README.md) file for details.
 
 ## 🔧 Additional Features
 
@@ -65,7 +65,7 @@ See the [EDITOR.md](EDITOR.md) file for details.
 │   ├── icon-192.png
 │   ├── icon-512.png
 │   └── *.svg
-└── EDITOR.md
+└── EDITOR_README.md
 └── README.md
 
 ```
