@@ -1,0 +1,30 @@
+/
+├── editor.py
+├── EDITOR.md
+├── favicon.ico
+├── get_tree_files.py
+├── index.html
+├── manifest.webmanifest
+├── project.js
+├── project.json
+├── README.md
+├── robots.txt
+├── script.js
+├── sitemap.xml
+├── styles.css
+└── assets
+    ├── c_sharp_icon.svg
+    ├── css_icon.svg
+    ├── excel_icon.svg
+    ├── fusion_icon.svg
+    ├── gb_icon.svg
+    ├── gmail_icon.svg
+    ├── html_icon.svg
+    ├── icon-192.png
+    ├── icon-512.png
+    ├── javascript_icon.svg
+    ├── python_icon.svg
+    ├── ru_icon.svg
+    ├── technology_icon.svg
+    ├── telegram_icon.svg
+    └── vscode_icon.svg

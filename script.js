@@ -17,6 +17,8 @@ const translations = {
         "skill-ui": "<strong>UI/UX for Fusion 360 Add-Ins</strong>",
         "skill-vba": "<strong>Excel VBA Automation</strong>",
         "skill-macros": "<strong>Macros Development</strong>",
+        "skill-telegram": "<strong>Aiogram Bots</strong>",
+        "skill-web": "<strong>Static websites (HTML/CSS/JS)</strong>",
         "video-missing": "🎥 Video not available"
     },
     ru: {
@@ -36,6 +38,8 @@ const translations = {
         "skill-ui": "<strong>UI/UX для Fusion 360 Add-Ins</strong>",
         "skill-vba": "<strong>Автоматизация Excel VBA</strong>",
         "skill-macros": "<strong>Разработка макросов</strong>",
+        "skill-telegram": "<strong>Aiogram боты</strong>",
+        "skill-web": "<strong>Статичные сайты (HTML/CSS/JS)</strong>",
         "video-missing": "🎥 Видео отсутствует"
     }
 };
