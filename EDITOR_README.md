@@ -1,7 +1,7 @@
 # Projects Editor
 
 A cross-platform GUI application for managing project data with multilingual support.
-
+<!-- markdownlint-disable MD033 -->
 <details>
   <summary>Click to see the image</summary>
   <h1 align="center">

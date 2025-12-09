@@ -1,6 +1,7 @@
+# get_tree_files.py
 import os
 
-EXCLUDE_DIRS = {'.git', '__pycache__'} # Ignore folders
+EXCLUDE_DIRS = {'.git', '__pycache__', '.vscode/', 'node_modules', 'dist', 'public' }# Ignore folders
 
 def print_tree(root, prefix=""):
     try:
