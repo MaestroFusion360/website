@@ -177,7 +177,7 @@
       "youtubeId": "",
       "en": {
         "title": "CompareBodies",
-        "description": "<strong>Compare Bodies</strong> is a Fusion 360 add-in that allows you to compare two selected bodies directly within the design environment to <strong>detect any differences between them.</strong>After selecting two bodies, the tool calculates and compares:",
+        "description": "<strong>Compare Bodies</strong> is a Fusion 360 add-in that allows you to compare two selected bodies directly within the design environment to <strong>detect any differences between them.</strong> After selecting two bodies, the tool calculates and compares:",
         "features": [
           "<strong>Volume</strong>",
           "<strong>Surface area</strong>",
@@ -203,7 +203,7 @@
         "features": [
           "<strong>Visual Component Tree</strong>: Intuitively add, remove, nest, and reorder form elements.",
           "<strong>Smart Property Editor</strong>: Dynamic controls and inputs that update the live preview instantly.",
-          "<strong>Drag-and-Drop<s/trong> & <strong>Keyboard Controls</strong>: Efficiently manage the layout using both mouse and keyboard shortcuts (Ctrl+Arrow keys).",
+          "<strong>Drag-and-Drop</strong> & <strong>Keyboard Controls</strong>: Efficiently manage the layout using both mouse and keyboard shortcuts (Ctrl+Arrow keys).",
           "<strong>Copy/Paste Elements</strong>: Quickly duplicate components and their properties within the editor.",
           "<strong>Clean Code Generation</strong>: Export forms as ready-to-use HTML and CSS with one click.",
           "<strong>Project Serialization</strong>: Save, load, and share your form's complete structure as JSON."
@@ -285,7 +285,7 @@
         "title": "editor_json",
         "description": "<strong>editor_json</strong> is a Progressive Web App (PWA) for managing CNC post-processor JSON files, built for seamless integration with Telegram bots such as @postprocessors_bot.",
         "features": [
-          "<strong>Edit post processor parameters<s/trong>",
+          "<strong>Edit post processor parameters</strong>",
           "<strong>Save/load JSON files</strong>",
           "<strong>Search by name and description</strong>",
           "<strong>Responsive interface</strong>",
