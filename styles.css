@@ -289,10 +289,10 @@ h3 {
 /* List Styles */
 /* ==================== */
 .badges-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 1.25rem;
-    justify-items: center;
+    flex-wrap: wrap;
     list-style: none;
     padding: 0;
     margin: 1.5rem 0;
@@ -373,6 +373,10 @@ h3 {
     display: none;
 }
 
+.projects-carousel .project-card {
+    padding: 1.2rem;
+}
+
 .project-card h2,
 .project-card h3,
 .project-card .title {
@@ -380,6 +384,10 @@ h3 {
 }
 
 .project-card {
+    font-size: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    max-height: 600px;
     flex: 0 0 var(--card-width);
     max-width: var(--card-width);
     scroll-snap-align: center;
@@ -411,6 +419,7 @@ h3 {
 .project-card p {
     color: var(--muted-color);
     margin: 0.75rem 0 1rem;
+    font-size: 0.8rem
 }
 
 .project-link {
@@ -860,9 +869,10 @@ footer {
 /* Video Container */
 /* ==================== */
 .video-container {
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 4 / 3;
+    max-height: 50%;
     width: 100%;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     border-radius: 8px;
     overflow: hidden;
 }

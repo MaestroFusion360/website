@@ -58,23 +58,24 @@ See the [EDITOR_README.md](EDITOR_README.md) file for details.
 ```plaintext
 
 /
-├── index.html                # Main page
-├── styles.css                # Stylesheet
-├── script.js                 # UI logic and language switching
-├── project.js                # Dynamically generated project data
-├── project.json              # Original project data source
-├── editor.py                 # Tkinter-based project editor
-├── favicon.ico
-├── manifest.webmanifest
-├── sitemap.xml
-├── robots.txt
-├── get_tree_files.py         # Script to generate file tree
 ├── assets/                   # SVG and PWA icons
 │   ├── icon-192.png
 │   ├── icon-512.png
 │   └── *.svg
-└── EDITOR_README.md
-└── README.md
+├── editor.py                 # Tkinter-based project editor
+├── EDITOR_README.md
+├── favicon.ico
+├── get_tree_files.py         # Script to generate file tree
+├── index.html                # Main page
+├── manifest.webmanifest
+├── project.js                # Dynamically generated project data
+├── project.json              # Original project data source
+├── README.md
+├── robots.txt
+├── script.js                 # UI logic and language switching
+├── sitemap.xml
+├── styles.css                # Stylesheet
+└── sw.js                     # Service worker for PWA/offline support
 
 ```
 

@@ -1,20 +1,23 @@
 /
+├── EDITOR_README.md    
+├── LICENSE.md
+├── README.md
 ├── editor.py
-├── EDITOR.md
 ├── favicon.ico
-├── get_tree_files.py
+├── get_tree_files.py   
 ├── index.html
 ├── manifest.webmanifest
 ├── project.js
-├── project.json
-├── README.md
+├── project.json        
 ├── robots.txt
 ├── script.js
 ├── sitemap.xml
 ├── styles.css
+├── tree.txt
 └── assets
     ├── c_sharp_icon.svg
     ├── css_icon.svg
+    ├── editor_main.png
     ├── excel_icon.svg
     ├── fusion_icon.svg
     ├── gb_icon.svg
@@ -23,9 +26,12 @@
     ├── icon-192.png
     ├── icon-512.png
     ├── javascript_icon.svg
+    ├── nx_icon.png
     ├── python_icon.svg
     ├── ru_icon.svg
-    ├── svelte.svg
+    ├── svelte_icon.svg
+    ├── tailwind_icon.svg
     ├── technology_icon.svg
     ├── telegram_icon.svg
+    ├── typescript_icon.svg
     └── vscode_icon.svg

@@ -161,8 +161,14 @@ function initSingleCarousel(carouselSelector, dotsSelector) {
 
   if (!carousel || cards.length === 0) return;
 
-  if (prevBtn) prevBtn.textContent = "‹";
-  if (nextBtn) nextBtn.textContent = "›";
+  if (prevBtn) {
+    prevBtn.textContent = "<";
+    prevBtn.setAttribute("aria-label", "Previous project");
+  }
+  if (nextBtn) {
+    nextBtn.textContent = ">";
+    nextBtn.setAttribute("aria-label", "Next project");
+  }
 
   function initDots() {
     if (!dotsContainer) return;
@@ -318,6 +324,26 @@ function renderUpcomingProjects() {
 function initProjects() {
   renderActiveProjects();
   renderUpcomingProjects();
+}
+
+// Register the service worker for offline support (HTTPS or localhost only)
+if ("serviceWorker" in navigator) {
+  const isSecureContext =
+    window.location.protocol === "https:" ||
+    window.location.hostname === "localhost";
+
+  if (isSecureContext) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker
+        .register("sw.js", { scope: "./" })
+        .then((reg) => {
+          if (reg?.update) reg.update();
+        })
+        .catch((err) =>
+          console.error("Service worker registration failed", err)
+        );
+    });
+  }
 }
 
 // Main initialization
