@@ -8,7 +8,7 @@ import tkinter.font as tkfont
 from tkinter import ttk, filedialog, scrolledtext, messagebox, simpledialog
 from typing import Dict, List, Optional
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 
 class ProjectEditor:
@@ -28,35 +28,35 @@ class ProjectEditor:
 
         # Setting up styles and fonts
         self.style = ttk.Style()
-        
+
         # Select theme depending on OS
         if os.name == "nt":
             self.style.theme_use("vista")  # Windows
         else:
-            self.style.theme_use("clam")   # Linux/Mac
-        
+            self.style.theme_use("clam")  # Linux/Mac
+
         # Set the base font for the entire application
         default_font = tkfont.nametofont("TkDefaultFont")
         text_font = tk.font.nametofont("TkTextFont")
         fixed_font = tk.font.nametofont("TkFixedFont")
-        
+
         # Font size (can be adjusted)
         font_size = 10 if os.name == "nt" else 11
-        
+
         # Setting up fonts (keep system fonts, change only the size)
         default_font.configure(size=font_size)
         text_font.configure(size=font_size)
         fixed_font.configure(size=font_size)
-        
+
         # Special style for buttons with emoji
         try:
             self.style.configure("Emoji.TButton", font=("Segoe UI Emoji", font_size))
         except:
             self.style.configure("Emoji.TButton", font=("", font_size))
-        
+
         # Apply fonts to all widgets
         self.root.option_add("*Font", default_font)
-        
+
         # Initializing data
         self.projects: Dict[str, List[dict]] = {"active": [], "upcoming": []}
         self.current_project_index: Optional[int] = None
@@ -94,7 +94,9 @@ class ProjectEditor:
         self.paned.add(self.right_paned, weight=3)
 
         self.editor_frame = ttk.LabelFrame(self.right_paned, text="Projects Editor")
-        self.preview_frame = ttk.LabelFrame(self.right_paned, text="Preview (project.js)")
+        self.preview_frame = ttk.LabelFrame(
+            self.right_paned, text="Preview (project.js)"
+        )
 
         # Editor frame
         self.editor_frame.grid_rowconfigure(0, weight=1)
@@ -133,7 +135,9 @@ class ProjectEditor:
             command=self.update_project_list,
         ).pack(anchor="w", padx=5, pady=2)
 
-        self.project_listbox = tk.Listbox(self.project_list_frame, height=15, exportselection=False)
+        self.project_listbox = tk.Listbox(
+            self.project_list_frame, height=15, exportselection=False
+        )
         self.project_listbox.pack(fill="both", expand=True, padx=5, pady=5)
         self.project_listbox.bind("<<ListboxSelect>>", self.load_selected_project)
 
@@ -141,12 +145,21 @@ class ProjectEditor:
         btn_frame = ttk.Frame(self.left_frame)
         btn_frame.pack(fill="x", padx=5, pady=5)
 
-        ttk.Button(btn_frame, text="➕ Add New", style="Emoji.TButton", command=self.add_new_project).pack(
-            side="left", expand=True,
+        ttk.Button(
+            btn_frame,
+            text="➕ Add New",
+            style="Emoji.TButton",
+            command=self.add_new_project,
+        ).pack(
+            side="left",
+            expand=True,
         )
-        ttk.Button(btn_frame, text="➖ Remove", style="Emoji.TButton", command=self.remove_project).pack(
-            side="left", expand=True
-        )
+        ttk.Button(
+            btn_frame,
+            text="➖ Remove",
+            style="Emoji.TButton",
+            command=self.remove_project,
+        ).pack(side="left", expand=True)
 
     def setup_editor(self):
         """Set up the project editor section in the right frame."""
@@ -159,33 +172,25 @@ class ProjectEditor:
             row=0, column=0, sticky="e", padx=5, pady=2
         )
         self.entry_link = ttk.Entry(self.editor_frame)
-        self.entry_link.grid(
-            row=0, column=1, 
-            sticky="we", padx=(0, 5), pady=2
-        )
+        self.entry_link.grid(row=0, column=1, sticky="we", padx=(0, 5), pady=2)
 
         # Field "YouTube ID"
         ttk.Label(self.editor_frame, text="YouTube ID:").grid(
             row=1, column=0, sticky="e", padx=5, pady=2
         )
         self.entry_youtube = ttk.Entry(self.editor_frame)
-        self.entry_youtube.grid(
-            row=1, column=1, 
-            sticky="we", padx=(0, 5), pady=2
-        )
+        self.entry_youtube.grid(row=1, column=1, sticky="we", padx=(0, 5), pady=2)
 
         # Language tabs
         self.setup_language_tabs()
 
         # Save Project button
         ttk.Button(
-            self.editor_frame, 
-            text="💾 Save Project", 
-            style="Emoji.TButton", 
-            command=self.save_current_project
-        ).grid(
-            row=3, column=0, columnspan=2, pady=10
-        )
+            self.editor_frame,
+            text="💾 Save Project",
+            style="Emoji.TButton",
+            command=self.save_current_project,
+        ).grid(row=3, column=0, columnspan=2, pady=10)
 
     def setup_language_tabs(self):
         """Set up the project editor section in the right frame."""
@@ -252,7 +257,10 @@ class ProjectEditor:
         self.preview_text.pack(fill="both", expand=True, padx=5, pady=5)
 
         ttk.Button(
-            self.preview_frame, text="💾 Save All to JS", style="Emoji.TButton", command=self.save_all
+            self.preview_frame,
+            text="💾 Save All to JS",
+            style="Emoji.TButton",
+            command=self.save_all,
         ).pack(pady=5)
 
     def setup_menu(self):
@@ -415,7 +423,7 @@ class ProjectEditor:
             self.clear_editor()
             self.current_project_index = None
             return
-        
+
         self.current_project_index = selection[0]
         project = self.projects[self.project_type.get()][self.current_project_index]
 
@@ -461,54 +469,43 @@ class ProjectEditor:
         """Add a new empty project to the current project list."""
 
         project_type = self.project_type.get()
-        
+
         # Prompt user for the project name via input dialog
         project_name = simpledialog.askstring(
-            "New Project", 
-            "Enter project name (English):",
-            initialvalue="New Project"
+            "New Project", "Enter project name (English):", initialvalue="New Project"
         )
-        
+
         if not project_name:  # User cancelled the input
             return
-        
+
         # Create a new project dictionary with default values
         new_project = {
             "link": "https://",
             "youtubeId": "",
-            "en": {
-                "title": project_name,
-                "description": "",
-                "features": []
-            },
-            "ru": {
-                "title": project_name,
-                "description": "",
-                "features": []
-            }
+            "en": {"title": project_name, "description": "", "features": []},
+            "ru": {"title": project_name, "description": "", "features": []},
         }
-        
+
         # Append the new project to the projects data structure
         self.projects[project_type].append(new_project)
         new_index = len(self.projects[project_type]) - 1
-        
+
         # Refresh the project list UI to include the new project
         self.update_project_list()
-        
+
         # Select the newly added project in the listbox and load it
         self.project_listbox.selection_clear(0, tk.END)
         self.project_listbox.selection_set(new_index)
         self.project_listbox.see(new_index)
         self.current_project_index = new_index
         self.load_selected_project()
-        
+
         # Set focus to the English title entry for immediate editing
         self.entry_title_en.focus()
         self.entry_title_en.select_range(0, tk.END)
-        
+
         # Mark that there are unsaved changes
         self.set_unsaved_changes(True)
-
 
     def save_current_project(self):
         """Save the currently edited project back to the data structure."""
@@ -517,19 +514,19 @@ class ProjectEditor:
         if self.current_project_index is None:
             messagebox.showwarning("Warning", "No project selected")
             return
-        
+
         project_type = self.project_type.get()
-        
+
         # Validate mandatory fields before saving
         if not self.entry_title_en.get().strip():
             messagebox.showerror("Error", "English title is required")
             self.entry_title_en.focus()
             return
-        
+
         # Save current UI state: focused widget and scroll position
         had_focus = self.root.focus_get()
         scroll_pos = self.project_listbox.yview()
-        
+
         # Collect project data from UI input fields
         project = {
             "link": self.entry_link.get().strip(),
@@ -543,35 +540,36 @@ class ProjectEditor:
                 "title": self.entry_title_ru.get().strip(),
                 "description": self.text_desc_ru.get("1.0", tk.END).strip(),
                 "features": self.get_features_from_text(self.text_features_ru),
-            }
+            },
         }
-        
+
         # Update the projects data structure with the new data
         self.projects[project_type][self.current_project_index] = project
-        
+
         # Soft update the listbox item name without full refresh to preserve UI state
         current_name = self.project_listbox.get(self.current_project_index)
         if current_name != project["en"]["title"]:
             self.project_listbox.delete(self.current_project_index)
-            self.project_listbox.insert(self.current_project_index, project["en"]["title"])
-        
+            self.project_listbox.insert(
+                self.current_project_index, project["en"]["title"]
+            )
+
         # Restore previous selection and scroll position in the listbox
         self.project_listbox.selection_set(self.current_project_index)
         self.project_listbox.yview_moveto(scroll_pos[0])
-        
+
         # Restore the previous focus if any
         if had_focus:
             had_focus.focus()
-        
+
         # Update any preview or related UI elements reflecting the changes
         self.update_preview()
-        
+
         # Mark changes as saved
         self.set_unsaved_changes(False)
-        
+
         # Inform the user that the project was saved successfully
         messagebox.showinfo("Saved", "Project saved successfully")
-
 
     def remove_project(self):
         """Remove the currently selected project."""

@@ -63,6 +63,7 @@ html[data-theme="dark"] {
 
 html {
     scroll-behavior: smooth;
+    font-size: clamp(15px, 1.25vw + 12px, 17px);
 }
 
 * {
@@ -82,6 +83,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 html[data-theme="dark"] body {
@@ -114,6 +116,11 @@ a:focus-visible {
     outline: var(--focus-outline);
     outline-offset: 3px;
     border-radius: 4px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* ==================== */
@@ -282,10 +289,10 @@ h3 {
 /* List Styles */
 /* ==================== */
 .badges-list {
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 1.25rem;
+    justify-items: center;
     list-style: none;
     padding: 0;
     margin: 1.5rem 0;
@@ -349,7 +356,7 @@ h3 {
 
 .projects-carousel,
 .upcoming-carousel {
-    --card-width: clamp(280px, 90vw, 720px);
+    --card-width: clamp(260px, 88vw, 680px);
     display: flex;
     gap: 1.75rem;
     overflow-x: auto;
@@ -628,7 +635,32 @@ footer {
 /* ==================== */
 /* Responsive Design */
 /* ==================== */
+@media (max-width: 1024px) {
+    html {
+        font-size: clamp(14px, 1vw + 11px, 16px);
+    }
+
+    main {
+        padding: 2rem 0 3rem;
+        gap: 1.8rem;
+    }
+
+    section,
+    .container {
+        width: min(100% - 1.5rem, 1100px);
+    }
+
+    .projects-carousel,
+    .upcoming-carousel {
+        --card-width: clamp(240px, 78vw, 600px);
+    }
+}
+
 @media (max-width: 768px) {
+    html {
+        font-size: clamp(13px, 0.9vw + 11px, 15px);
+    }
+
     header {
         padding: 3.25rem 1rem 2.5rem;
     }
@@ -653,7 +685,108 @@ footer {
     }
 }
 
+@media (max-width: 640px) {
+    html {
+        font-size: clamp(13px, 1vw + 10px, 14px);
+    }
+
+    body {
+        line-height: 1.58;
+    }
+
+    header {
+        padding: 2.75rem 1rem 2.25rem;
+    }
+
+    .navbar {
+        gap: 0.6rem;
+    }
+
+    .navbar a {
+        font-size: 0.95rem;
+        padding: 0.38rem 0.8rem;
+    }
+
+    main {
+        padding: 1.7rem 0 2.6rem;
+        gap: 1.5rem;
+    }
+
+    section,
+    .container {
+        width: calc(100% - 1rem);
+        padding: 1.5rem 1.15rem;
+        border-radius: 12px;
+    }
+
+    .content-block p {
+        font-size: 0.98rem;
+        line-height: 1.5;
+    }
+
+    .projects-carousel-wrapper {
+        padding: 0;
+    }
+
+    .projects-carousel,
+    .upcoming-carousel {
+        --card-width: calc(100vw - 2.75rem);
+        gap: 1.1rem;
+        padding: 0.65rem calc(50% - (var(--card-width) / 2));
+    }
+
+    .project-card {
+        padding: 1.3rem;
+    }
+
+    .video-container {
+        margin-bottom: 0.65rem;
+    }
+
+    .features-list li,
+    .upcoming-features li {
+        padding-left: 1.6rem;
+        margin-bottom: 0.65rem;
+    }
+
+    #theme-toggle {
+        width: 36px;
+        height: 36px;
+        top: 12px;
+        left: 12px;
+    }
+
+    #lang-toggle {
+        right: 12px;
+        bottom: 12px;
+        padding: 0.3rem 0.4rem;
+    }
+
+    #lang-toggle img {
+        width: 28px;
+        height: 28px;
+    }
+
+    footer {
+        padding: 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
 @media (max-width: 480px) {
+    html {
+        font-size: clamp(12px, 1vw + 9px, 13.5px);
+    }
+
+    h1 {
+        font-size: clamp(1.8rem, 8vw, 2.15rem);
+        line-height: 1.15;
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
     .social-links {
         position: static;
         justify-content: center;
@@ -668,7 +801,34 @@ footer {
 
     section,
     .container {
-        padding: 1.6rem 1rem;
+        width: calc(100% - 0.5rem);
+        padding: 1.35rem 0.85rem;
+    }
+
+    main {
+        padding: 1.4rem 0 2.2rem;
+        gap: 1.35rem;
+    }
+
+    .projects-carousel,
+    .upcoming-carousel {
+        --card-width: calc(100vw - 2rem);
+        gap: 0.9rem;
+        padding: 0.55rem calc(50% - (var(--card-width) / 2));
+    }
+
+    .project-card {
+        padding: 1.15rem;
+    }
+
+    #theme-toggle {
+        width: 34px;
+        height: 34px;
+    }
+
+    #lang-toggle img {
+        width: 26px;
+        height: 26px;
     }
 }
 
