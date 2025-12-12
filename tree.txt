@@ -25,6 +25,7 @@
     ├── javascript_icon.svg
     ├── python_icon.svg
     ├── ru_icon.svg
+    ├── svelte.svg
     ├── technology_icon.svg
     ├── telegram_icon.svg
     └── vscode_icon.svg

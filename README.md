@@ -122,6 +122,7 @@ See the [LICENSE.md](LICENSE.md) file for details.
 **Telegram:** [@MaestroFusion360](https://t.me/MaestroFusion360)
 
 ---
+
 <!-- markdownlint-disable MD033 -->
 <p align="center">
   <img src="https://komarev.com/ghpvc/?username=MaestroFusion360-website&label=Project+Views&color=blue" alt="Project Views" />
