@@ -3,6 +3,7 @@
 import json
 import ctypes
 import os
+import re
 import tkinter as tk
 import tkinter.font as tkfont
 from tkinter import ttk, filedialog, scrolledtext, messagebox, simpledialog
@@ -161,6 +162,23 @@ class ProjectEditor:
             command=self.remove_project,
         ).pack(side="left", expand=True)
 
+        reorder_frame = ttk.Frame(self.left_frame)
+        reorder_frame.pack(fill="x", padx=5, pady=(0, 5))
+
+        ttk.Button(
+            reorder_frame,
+            text="⬆ Move Up",
+            style="Emoji.TButton",
+            command=lambda: self.move_selected_project(-1),
+        ).pack(side="left", expand=True)
+
+        ttk.Button(
+            reorder_frame,
+            text="⬇ Move Down",
+            style="Emoji.TButton",
+            command=lambda: self.move_selected_project(1),
+        ).pack(side="left", expand=True)
+
     def setup_editor(self):
         """Set up the project editor section in the right frame."""
 
@@ -281,6 +299,13 @@ class ProjectEditor:
         )
         menubar.add_cascade(label="File", menu=file_menu)
 
+        # Tools menu
+        tools_menu = tk.Menu(menubar, tearoff=0)
+        tools_menu.add_command(
+            label="Validate HTML tags...", command=self.validate_all_projects
+        )
+        menubar.add_cascade(label="Tools", menu=tools_menu)
+
         # Help menu
         help_menu = tk.Menu(menubar, tearoff=0)
         help_menu.add_command(label="About", command=self.show_about)
@@ -378,6 +403,18 @@ class ProjectEditor:
 
     def save_all(self):
         """Save data to both the JSON file and project.js."""
+        errors = self.collect_validation_errors(self.projects)
+        if errors:
+            preview = "\n".join(errors[:30])
+            more = "" if len(errors) <= 30 else f"\n...and {len(errors) - 30} more"
+            if not messagebox.askyesno(
+                "Validation Issues",
+                "Found possible broken HTML tags.\n\n"
+                f"{preview}{more}\n\nSave anyway?",
+                icon="warning",
+            ):
+                return
+
         if not self.save_data():
             return
 
@@ -507,6 +544,31 @@ class ProjectEditor:
         # Mark that there are unsaved changes
         self.set_unsaved_changes(True)
 
+    def move_selected_project(self, direction: int):
+        """Move the selected project up or down in the current list."""
+        selection = self.project_listbox.curselection()
+        if not selection:
+            return
+
+        project_type = self.project_type.get()
+        index = selection[0]
+        new_index = index + direction
+
+        if new_index < 0 or new_index >= len(self.projects[project_type]):
+            return
+
+        projects = self.projects[project_type]
+        projects[index], projects[new_index] = projects[new_index], projects[index]
+
+        self.update_project_list()
+        self.project_listbox.selection_clear(0, tk.END)
+        self.project_listbox.selection_set(new_index)
+        self.project_listbox.see(new_index)
+        self.current_project_index = new_index
+        self.load_selected_project()
+        self.update_preview()
+        self.set_unsaved_changes(True)
+
     def save_current_project(self):
         """Save the currently edited project back to the data structure."""
 
@@ -543,6 +605,18 @@ class ProjectEditor:
             },
         }
 
+        errors = self.collect_validation_errors({"_": [project]})
+        if errors:
+            preview = "\n".join(errors[:15])
+            more = "" if len(errors) <= 15 else f"\n...and {len(errors) - 15} more"
+            if not messagebox.askyesno(
+                "Validation Issues",
+                "Found possible broken HTML tags in this project.\n\n"
+                f"{preview}{more}\n\nSave anyway?",
+                icon="warning",
+            ):
+                return
+
         # Update the projects data structure with the new data
         self.projects[project_type][self.current_project_index] = project
 
@@ -570,6 +644,105 @@ class ProjectEditor:
 
         # Inform the user that the project was saved successfully
         messagebox.showinfo("Saved", "Project saved successfully")
+
+    def validate_all_projects(self):
+        """Validate all projects for likely broken HTML tags."""
+        errors = self.collect_validation_errors(self.projects)
+        if not errors:
+            messagebox.showinfo("Validation", "No issues found.")
+            return
+
+        preview = "\n".join(errors[:60])
+        more = "" if len(errors) <= 60 else f"\n...and {len(errors) - 60} more"
+        messagebox.showwarning("Validation Issues", f"{preview}{more}")
+
+    def collect_validation_errors(self, projects: Dict[str, List[dict]]) -> List[str]:
+        """Return a list of human-readable validation errors for HTML-like content."""
+        errors: List[str] = []
+
+        for project_type, items in projects.items():
+            if not isinstance(items, list):
+                continue
+
+            for index, project in enumerate(items):
+                for lang in ("en", "ru"):
+                    lang_data = project.get(lang, {})
+                    title = (
+                        lang_data.get("title")
+                        or project.get("en", {}).get("title")
+                        or f"#{index + 1}"
+                    )
+
+                    description = lang_data.get("description") or ""
+                    errors.extend(
+                        self.validate_html_fragment(
+                            description,
+                            f"{project_type}[{index}] {title} {lang}.description",
+                        )
+                    )
+
+                    features = lang_data.get("features") or []
+                    for feature_index, feature in enumerate(features):
+                        errors.extend(
+                            self.validate_html_fragment(
+                                feature,
+                                f"{project_type}[{index}] {title} {lang}.features[{feature_index}]",
+                            )
+                        )
+
+        return errors
+
+    def validate_html_fragment(self, text: str, context: str) -> List[str]:
+        """Best-effort check for broken/mismatched HTML-like tags in a string."""
+        issues: List[str] = []
+        if not text:
+            return issues
+
+        common_typos = [
+            ("s/trong", "Looks like a broken </strong> tag"),
+            ("</strong>After", "Missing space after </strong> (add a space)"),
+            ("</strong>После", "Missing space after </strong> (add a space)"),
+        ]
+        for needle, msg in common_typos:
+            if needle in text:
+                issues.append(f"{context}: {msg} ('{needle}')")
+
+        tag_re = re.compile(r"<\\s*(/)?\\s*([a-zA-Z0-9]+)([^>]*)>")
+        self_closing = {"br", "img", "hr", "input", "meta", "link"}
+        stack: List[str] = []
+
+        for match in tag_re.finditer(text):
+            is_close = bool(match.group(1))
+            tag = match.group(2).lower()
+            raw_tail = (match.group(3) or "").strip()
+            is_self_close = tag in self_closing or raw_tail.endswith("/")
+
+            if is_self_close:
+                continue
+
+            if not is_close:
+                stack.append(tag)
+                continue
+
+            if not stack:
+                issues.append(f"{context}: closing </{tag}> without opening tag")
+                continue
+
+            expected = stack.pop()
+            if expected != tag:
+                issues.append(
+                    f"{context}: mismatched closing </{tag}> (expected </{expected}>)"
+                )
+
+        tail = text[text.rfind(">") + 1 :] if ">" in text else text
+        if "<" in tail:
+            issues.append(f"{context}: dangling '<' without closing '>'")
+
+        if stack:
+            leftover = ", ".join(f"<{t}>" for t in stack[-3:])
+            issues.append(f"{context}: unclosed tag(s): {leftover}")
+
+        return issues
 
     def remove_project(self):
         """Remove the currently selected project."""

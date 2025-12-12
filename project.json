@@ -107,6 +107,34 @@
       }
     },
     {
+      "link": "https://maestrofusion360.github.io/FormBuilder/",
+      "youtubeId": "",
+      "en": {
+        "title": "FormBuilder",
+        "description": "FormBuilder is a visual HTML form editor built with Svelte and Vite, offering developers a lightweight, dependency-free tool for complete control over form design. Its core features provide full visual editing and clean code export.",
+        "features": [
+          "<strong>Visual Component Tree</strong>: Intuitively add, remove, nest, and reorder form elements.",
+          "<strong>Smart Property Editor</strong>: Dynamic controls and inputs that update the live preview instantly.",
+          "<strong>Drag-and-Drop</strong> & <strong>Keyboard Controls</strong>: Efficiently manage the layout using both mouse and keyboard shortcuts (Ctrl+Arrow keys).",
+          "<strong>Copy/Paste Elements</strong>: Quickly duplicate components and their properties within the editor.",
+          "<strong>Clean Code Generation</strong>: Export forms as ready-to-use HTML and CSS with one click.",
+          "<strong>Project Serialization</strong>: Save, load, and share your form's complete structure as JSON."
+        ]
+      },
+      "ru": {
+        "title": "FormBuilder",
+        "description": "FormBuilder — это визуальный редактор HTML-форм на Svelte и Vite, предоставляющий разработчикам лёгкий инструмент без зависимостей для полного контроля над дизайном форм. Ключевые возможности включают полное визуальное редактирование и экспорт чистого кода.",
+        "features": [
+          "<strong>Визуальное дерево компонентов</strong>: Интуитивное добавление, удаление, вложение и изменение порядка элементов формы.",
+          "<strong>Умный редактор свойств</strong>: Динамические контролы и поля ввода с мгновенным обновлением предпросмотра.",
+          "<strong>Drag-and-Drop и управление с клавиатуры</strong>: Эффективное управление структурой с помощью мыши и горячих клавиш (Ctrl+Стрелки).",
+          "<strong>Копирование/вставка элементов</strong>: Быстрое дублирование компонентов и их свойств внутри редактора.",
+          "<strong>Генерация чистого кода</strong>: Экспорт форм в готовый HTML и CSS в один клик.",
+          "<strong>Сериализация проекта</strong>: Сохранение, загрузка и обмен полной структурой формы в формате JSON."
+        ]
+      }
+    },
+    {
       "link": "https://t.me/postprocessors_bot",
       "youtubeId": "",
       "en": {
@@ -125,6 +153,62 @@
           "<strong>Каталог для NX и Fusion 360</strong> (токарная/фрезерная обработка)",
           "<strong>Скачивание из закрытого Telegram канала</strong>",
           "<strong>Система категорий и метаданных </strong>(лицензия, версия)"
+        ]
+      }
+    },
+    {
+      "link": "https://maestrofusion360.github.io/css-validator-pages/",
+      "youtubeId": "",
+      "en": {
+        "title": "CSS validator",
+        "description": "<strong>CSS Validator</strong> is a lightweight, interactive tool built with Svelte 5 runes for experimenting with and validating CSS. It features a live editor with instant preview, inline validation, and zero external CSS dependencies.",
+        "features": [
+          "<strong>Live Editor & Preview</strong>: Auto-resizing textarea and real-time rendering of a selected component.",
+          "<strong>Inline CSS Validation</strong>: Real-time warnings and errors for property names and values.",
+          "<strong>Svelte 5 Runes</strong>: Built with the latest $state, $derived, $effect, and $props primitives.",
+          "<strong>Syntax Highlighting & Copy</strong>: The CodeView component highlights CSS/HTML and enables one-click copying.",
+          "<strong>Zero External CSS</strong>: All styling is managed via inline styles or the css() helper for minimal overhead.",
+          "<strong>Multilingual & Theming</strong>: Supports English and Russian, with a built-in light/dark theme toggle."
+        ]
+      },
+      "ru": {
+        "title": "CSS validator",
+        "description": "<strong>CSS Validator</strong> — это лёгкий интерактивный инструмент на Svelte 5 Runes для экспериментов с CSS и его проверки. Он предлагает живой редактор с мгновенным предпросмотром, встроенную валидацию и полное отсутствие внешних CSS-файлов.",
+        "features": [
+          "<strong>Живой редактор и предпросмотр</strong>: Автомасштабируемое поле ввода и мгновенный рендеринг выбранного компонента.",
+          "<strong>Встроенная валидация CSS</strong>: Проверка имён и значений свойств с выводом предупреждений и ошибок.",
+          "<strong>Svelte 5 Runes</strong>: Построен на новейших примитивах $state, $derived, $effect и $props.",
+          "<strong>Подсветка синтаксиса и копирование</strong>: Компонент CodeView подсвечивает CSS/HTML код и позволяет копировать его.",
+          "<strong>Без внешнего CSS</strong>: Вся стилизация реализована через инлайн-стили или хелпер css() для минимальной нагрузки.",
+          "<strong>Мультиязычность и темы</strong>: Поддержка английского и русского языков, встроенный переключатель светлой/тёмной темы."
+        ]
+      }
+    },
+    {
+      "link": "https://github.com/MaestroFusion360/DrillCalc",
+      "youtubeId": "",
+      "en": {
+        "title": "DrillCalc",
+        "description": "<strong>Drilling Calculator</strong> is a fast G-code coordinate generator for circular and grid hole patterns, designed for CNC machinists and Fusion 360 users. It features precise control, export-ready cycles, and a responsive, accessible interface",
+        "features": [
+          "<strong>Circular & Grid Array Calculation</strong>: Generate coordinates for PCD and grid layouts with start angle and direction control.",
+          "<strong>Export-Ready G-Code Cycles</strong>: Directly export to standard canned cycles (G81, G82, G83) or XY coordinate lists.",
+          "<strong>Advanced Grid Logic</strong>: Includes intelligent serpentine (bidirectional) toolpath optimization.",
+          "<strong>Configurable Precision</strong>: Set coordinate decimal places (1–3) for machine-specific accuracy.",
+          "<strong>Accessible, Responsive UI</strong>: A clean interface with dark/light mode that works on any device.",
+          "<strong>Focus on Usability</strong>: Built with keyboard navigation and focus-trapped dialogs for efficient workflow."
+        ]
+      },
+      "ru": {
+        "title": "DrillCalc",
+        "description": "<strong>Drilling Calculator</strong> — это быстрый генератор координат G-кода для круговых и сеточных массивов отверстий, созданный для операторов ЧПУ и пользователей Fusion 360. Он предлагает точный контроль, готовые к использованию циклы и адаптивный интерфейс.",
+        "features": [
+          "<strong>Расчёт круговых и сеточных массивов</strong>: Генерация координат для окружностей и сеток с настройкой начального угла и направления.",
+          "<strong>Экспорт циклов G-кода</strong>: Прямой экспорт в стандартные циклы (G81, G82, G83) или списки координат XY.",
+          "<strong>Продвинутая логика сетки</strong>: Интеллектуальная оптимизация траектории («змейкой»).",
+          "<strong>Настраиваемая точность</strong>: Установка знаков после запятой (1–3) для соответствия станку.",
+          "<strong>Адаптивный и доступный интерфейс</strong>: Чистый дизайн с тёмной/светлой темой для всех устройств.",
+          "<strong>Удобство использования</strong>: Управление с клавиатуры и корректная работа модальных окон для эффективной работы."
         ]
       }
     },
@@ -186,95 +270,11 @@
       },
       "ru": {
         "title": "CompareBodies",
-        "description": "<strong>Compare Bodies</strong> — это надстройка для Fusion 360, позволяющая сравнивать два выбранных тела прямо в среде проектирования <strong>для выявления различий между ними.</strong>После выбора двух тел инструмент вычисляет и сравнивает:",
+        "description": "<strong>Compare Bodies</strong> — это надстройка для Fusion 360, позволяющая сравнивать два выбранных тела прямо в среде проектирования <strong>для выявления различий между ними.</strong> После выбора двух тел инструмент вычисляет и сравнивает:",
         "features": [
           "<strong>Объем</strong>",
           "<strong>Площадь поверхности</strong>",
           "<strong>Сходство геометрии</strong> (на основе количества граней и ребер)"
-        ]
-      }
-    },
-    {
-      "link": "https://maestrofusion360.github.io/FormBuilder/",
-      "youtubeId": "",
-      "en": {
-        "title": "FormBuilder",
-        "description": "FormBuilder is a visual HTML form editor built with Svelte and Vite, offering developers a lightweight, dependency-free tool for complete control over form design. Its core features provide full visual editing and clean code export.",
-        "features": [
-          "<strong>Visual Component Tree</strong>: Intuitively add, remove, nest, and reorder form elements.",
-          "<strong>Smart Property Editor</strong>: Dynamic controls and inputs that update the live preview instantly.",
-          "<strong>Drag-and-Drop</strong> & <strong>Keyboard Controls</strong>: Efficiently manage the layout using both mouse and keyboard shortcuts (Ctrl+Arrow keys).",
-          "<strong>Copy/Paste Elements</strong>: Quickly duplicate components and their properties within the editor.",
-          "<strong>Clean Code Generation</strong>: Export forms as ready-to-use HTML and CSS with one click.",
-          "<strong>Project Serialization</strong>: Save, load, and share your form's complete structure as JSON."
-        ]
-      },
-      "ru": {
-        "title": "FormBuilder",
-        "description": "FormBuilder — это визуальный редактор HTML-форм на Svelte и Vite, предоставляющий разработчикам лёгкий инструмент без зависимостей для полного контроля над дизайном форм. Ключевые возможности включают полное визуальное редактирование и экспорт чистого кода.",
-        "features": [
-          "<strong>Визуальное дерево компонентов</strong>: Интуитивное добавление, удаление, вложение и изменение порядка элементов формы.",
-          "<strong>Умный редактор свойств</strong>: Динамические контролы и поля ввода с мгновенным обновлением предпросмотра.",
-          "<strong>Drag-and-Drop и управление с клавиатуры</strong>: Эффективное управление структурой с помощью мыши и горячих клавиш (Ctrl+Стрелки).",
-          "<strong>Копирование/вставка элементов</strong>: Быстрое дублирование компонентов и их свойств внутри редактора.",
-          "<strong>Генерация чистого кода</strong>: Экспорт форм в готовый HTML и CSS в один клик.",
-          "<strong>Сериализация проекта</strong>: Сохранение, загрузка и обмен полной структурой формы в формате JSON."
-        ]
-      }
-    },
-    {
-      "link": "https://github.com/MaestroFusion360/DrillCalc",
-      "youtubeId": "",
-      "en": {
-        "title": "DrillCalc",
-        "description": "<strong>Drilling Calculator</strong> is a fast G-code coordinate generator for circular and grid hole patterns, designed for CNC machinists and Fusion 360 users. It features precise control, export-ready cycles, and a responsive, accessible interface",
-        "features": [
-          "<strong>Circular & Grid Array Calculation</strong>: Generate coordinates for PCD and grid layouts with start angle and direction control.",
-          "<strong>Export-Ready G-Code Cycles</strong>: Directly export to standard canned cycles (G81, G82, G83) or XY coordinate lists.",
-          "<strong>Advanced Grid Logic</strong>: Includes intelligent serpentine (bidirectional) toolpath optimization.",
-          "<strong>Configurable Precision</strong>: Set coordinate decimal places (1–3) for machine-specific accuracy.",
-          "<strong>Accessible, Responsive UI</strong>: A clean interface with dark/light mode that works on any device.",
-          "<strong>Focus on Usability</strong>: Built with keyboard navigation and focus-trapped dialogs for efficient workflow."
-        ]
-      },
-      "ru": {
-        "title": "DrillCalc",
-        "description": "<strong>Drilling Calculator</strong> — это быстрый генератор координат G-кода для круговых и сеточных массивов отверстий, созданный для операторов ЧПУ и пользователей Fusion 360. Он предлагает точный контроль, готовые к использованию циклы и адаптивный интерфейс.",
-        "features": [
-          "<strong>Расчёт круговых и сеточных массивов</strong>: Генерация координат для окружностей и сеток с настройкой начального угла и направления.",
-          "<strong>Экспорт циклов G-кода</strong>: Прямой экспорт в стандартные циклы (G81, G82, G83) или списки координат XY.",
-          "<strong>Продвинутая логика сетки</strong>: Интеллектуальная оптимизация траектории («змейкой»).",
-          "<strong>Настраиваемая точность</strong>: Установка знаков после запятой (1–3) для соответствия станку.",
-          "<strong>Адаптивный и доступный интерфейс</strong>: Чистый дизайн с тёмной/светлой темой для всех устройств.",
-          "<strong>Удобство использования</strong>: Управление с клавиатуры и корректная работа модальных окон для эффективной работы."
-        ]
-      }
-    },
-    {
-      "link": "https://maestrofusion360.github.io/css-validator-pages/",
-      "youtubeId": "",
-      "en": {
-        "title": "CSS validator",
-        "description": "<strong>CSS Validator</strong> is a lightweight, interactive tool built with Svelte 5 runes for experimenting with and validating CSS. It features a live editor with instant preview, inline validation, and zero external CSS dependencies.",
-        "features": [
-          "<strong>Live Editor & Preview</strong>: Auto-resizing textarea and real-time rendering of a selected component.",
-          "<strong>Inline CSS Validation</strong>: Real-time warnings and errors for property names and values.",
-          "<strong>Svelte 5 Runes</strong>: Built with the latest $state, $derived, $effect, and $props primitives.",
-          "<strong>Syntax Highlighting & Copy</strong>: The CodeView component highlights CSS/HTML and enables one-click copying.",
-          "<strong>Zero External CSS</strong>: All styling is managed via inline styles or the css() helper for minimal overhead.",
-          "<strong>Multilingual & Theming</strong>: Supports English and Russian, with a built-in light/dark theme toggle."
-        ]
-      },
-      "ru": {
-        "title": "CSS validator",
-        "description": "<strong>CSS Validator</strong> — это лёгкий интерактивный инструмент на Svelte 5 Runes для экспериментов с CSS и его проверки. Он предлагает живой редактор с мгновенным предпросмотром, встроенную валидацию и полное отсутствие внешних CSS-файлов.",
-        "features": [
-          "<strong>Живой редактор и предпросмотр</strong>: Автомасштабируемое поле ввода и мгновенный рендеринг выбранного компонента.",
-          "<strong>Встроенная валидация CSS</strong>: Проверка имён и значений свойств с выводом предупреждений и ошибок.",
-          "<strong>Svelte 5 Runes</strong>: Построен на новейших примитивах $state, $derived, $effect и $props.",
-          "<strong>Подсветка синтаксиса и копирование</strong>: Компонент CodeView подсвечивает CSS/HTML код и позволяет копировать его.",
-          "<strong>Без внешнего CSS</strong>: Вся стилизация реализована через инлайн-стили или хелпер css() для минимальной нагрузки.",
-          "<strong>Мультиязычность и темы</strong>: Поддержка английского и русского языков, встроенный переключатель светлой/тёмной темы."
         ]
       }
     },
