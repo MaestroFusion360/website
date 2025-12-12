@@ -27,9 +27,7 @@ I focus on clarity, predictable behavior and tools that actually help engineers 
   ru: {
     title: "Привет, я MaestroFusion360",
     "about-title": "Обо мне",
-    "about-desc": `I work at the intersection of CNC, CAM automation and modern web tooling. 
-Alongside postprocessors and Fusion 360 integrations, I build fast PWA apps and maintain a modular UI library on Svelte 5 + Tailwind that I use across my engineering platforms. 
-I enjoy designing clean, predictable interfaces and systems that cut routine work and make machining processes more consistent.`,
+    "about-desc": `Я — инженер по ЧПУ/САМ и разработчик программного обеспечения, работающий с Fusion 360, постпроцессорами и реальными процессами механической обработки. Я создаю инструменты автоматизации, утилиты для G-кода и веб-приложения, а также разрабатываю собственные UI-библиотеки на Svelte 5 с чистой, минималистичной архитектурой. Моя работа охватывает всё — от кастомизации постпроцессоров и настройки CAM-процессов до создания полноценных платформ с PWA-фронтендами, ботами и аналитикой для инженерных задач. Я сосредоточен на ясности, предсказуемости поведения и инструментах, которые действительно помогают инженерам выполнять работу быстрее и с меньшим количеством ошибок.`,
     "tech-title": "Технологии",
     "tech-stack": "Основной стек:",
     "tech-other": "Другие инструменты и навыки:",
