@@ -1,6 +1,7 @@
-const CACHE_VERSION =
-  self.crypto?.randomUUID?.() || `v${Date.now().toString(16)}`;
-const CACHE_NAME = `mf360-cache-${CACHE_VERSION}`;
+// Bump this when you want clients to pick up updated precached assets.
+const CACHE_VERSION = "v1";
+const CACHE_PREFIX = "mf360-cache-";
+const CACHE_NAME = `${CACHE_PREFIX}${CACHE_VERSION}`;
 const OFFLINE_FALLBACK = "./index.html";
 const PRECACHE_URLS = [
   "./",
@@ -30,6 +31,7 @@ const PRECACHE_URLS = [
   "./assets/ru_icon.svg",
   "./assets/technology_icon.svg",
   "./assets/editor_main.png",
+  "./assets/youtube_icon.svg"
 ];
 
 self.addEventListener("install", (event) => {
@@ -39,11 +41,19 @@ self.addEventListener("install", (event) => {
   self.skipWaiting();
 });
 
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "SKIP_WAITING") self.skipWaiting();
+});
+
 self.addEventListener("activate", (event) => {
   event.waitUntil(
     caches.keys().then((keys) =>
       Promise.all(
-        keys.map((key) => (key !== CACHE_NAME ? caches.delete(key) : null))
+        keys.map((key) =>
+          key.startsWith(CACHE_PREFIX) && key !== CACHE_NAME
+            ? caches.delete(key)
+            : null
+        )
       )
     )
   );
@@ -62,7 +72,9 @@ self.addEventListener("fetch", (event) => {
         .then((response) => {
           if (response && response.status === 200) {
             const clone = response.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(OFFLINE_FALLBACK, clone));
+            caches
+              .open(CACHE_NAME)
+              .then((cache) => cache.put(OFFLINE_FALLBACK, clone));
           }
           return response;
         })

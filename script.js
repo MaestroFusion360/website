@@ -253,7 +253,7 @@ function renderActiveProjects() {
       const videoContent = project.youtubeId
         ? `<iframe src="https://www.youtube.com/embed/${project.youtubeId}" 
                     title="${projectData.title || ""}"
-                    allowfullscreen loading="lazy"></iframe>`
+                    allowfullscreen loading="lazy" tabindex="-1"></iframe>`
         : `<div class="video-placeholder">${translations[currentLang]["video-missing"]}</div>`;
 
       return `
@@ -266,7 +266,7 @@ function renderActiveProjects() {
                   project.link
                     ? `
                 <a href="${project.link}" target="_blank" class="project-link" 
-                   style="position: relative; z-index: 10;">
+                   style="position: relative; z-index: 10;" tabindex="-1">
                     ${projectData.title || ""}
                 </a>
                 `
@@ -335,9 +335,23 @@ if ("serviceWorker" in navigator) {
   if (isSecureContext) {
     window.addEventListener("load", () => {
       navigator.serviceWorker
-        .register("sw.js", { scope: "./" })
+        .register("sw.js", { scope: "./", updateViaCache: "none" })
         .then((reg) => {
           if (reg?.update) reg.update();
+
+          if (reg?.waiting) {
+            reg.waiting.postMessage({ type: "SKIP_WAITING" });
+          }
+
+          reg?.addEventListener?.("updatefound", () => {
+            const installing = reg.installing;
+            if (!installing) return;
+            installing.addEventListener("statechange", () => {
+              if (installing.state === "installed" && reg.waiting) {
+                reg.waiting.postMessage({ type: "SKIP_WAITING" });
+              }
+            });
+          });
         })
         .catch((err) =>
           console.error("Service worker registration failed", err)
