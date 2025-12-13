@@ -161,6 +161,8 @@ function initSingleCarousel(carouselSelector, dotsSelector) {
 
   if (!carousel || cards.length === 0) return;
 
+  let rafId = null;
+
   if (prevBtn) {
     prevBtn.textContent = "<";
     prevBtn.setAttribute("aria-label", "Previous project");
@@ -168,6 +170,33 @@ function initSingleCarousel(carouselSelector, dotsSelector) {
   if (nextBtn) {
     nextBtn.textContent = ">";
     nextBtn.setAttribute("aria-label", "Next project");
+  }
+
+  function getActiveIndex() {
+    const containerCenter = carousel.scrollLeft + carousel.clientWidth / 2;
+    let closestIndex = 0;
+    let minDistance = Number.MAX_VALUE;
+
+    cards.forEach((card, index) => {
+      const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+      const distance = Math.abs(cardCenter - containerCenter);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    return closestIndex;
+  }
+
+  function setActiveIndex(activeIndex) {
+    cards.forEach((card, index) => {
+      const isActive = index === activeIndex;
+      card.classList.toggle("active", isActive);
+      if (dotsContainer && dotsContainer.children[index]) {
+        dotsContainer.children[index].classList.toggle("active", isActive);
+      }
+    });
   }
 
   function initDots() {
@@ -180,65 +209,44 @@ function initSingleCarousel(carouselSelector, dotsSelector) {
       dot.addEventListener("click", () => scrollToCard(index));
       dotsContainer.appendChild(dot);
     });
-    updateActiveStates();
+    setActiveIndex(0);
   }
 
   function scrollToCard(index) {
     const card = cards[index];
-    const container = carousel.parentElement;
-    const containerWidth = container.offsetWidth;
-    const cardWidth = card.offsetWidth;
-    const targetScroll = card.offsetLeft - containerWidth / 2 + cardWidth / 2;
+    const targetScroll =
+      card.offsetLeft - (carousel.clientWidth - card.offsetWidth) / 2;
 
     carousel.scrollTo({
       left: targetScroll,
       behavior: "smooth",
     });
+    setActiveIndex(index);
   }
 
-  function updateActiveStates() {
-    const containerCenter = carousel.scrollLeft + carousel.offsetWidth / 2;
-
-    cards.forEach((card, index) => {
-      const cardStart = card.offsetLeft;
-      const cardEnd = cardStart + card.offsetWidth;
-      const isActive =
-        containerCenter >= cardStart && containerCenter <= cardEnd;
-
-      card.classList.toggle("active", isActive);
-      if (dotsContainer && dotsContainer.children[index]) {
-        dotsContainer.children[index].classList.toggle("active", isActive);
-      }
+  function handleScroll() {
+    if (rafId) return;
+    rafId = requestAnimationFrame(() => {
+      setActiveIndex(getActiveIndex());
+      rafId = null;
     });
   }
 
   if (prevBtn && nextBtn) {
     prevBtn.addEventListener("click", () => {
-      const currentIndex = Array.from(cards).findIndex((card) =>
-        card.classList.contains("active")
-      );
+      const currentIndex = getActiveIndex();
       if (currentIndex > 0) scrollToCard(currentIndex - 1);
     });
 
     nextBtn.addEventListener("click", () => {
-      const currentIndex = Array.from(cards).findIndex((card) =>
-        card.classList.contains("active")
-      );
+      const currentIndex = getActiveIndex();
       if (currentIndex < cards.length - 1) scrollToCard(currentIndex + 1);
     });
   }
 
   initDots();
-
-  let isScrolling;
-  carousel.addEventListener("scroll", () => {
-    clearTimeout(isScrolling);
-    isScrolling = setTimeout(() => {
-      updateActiveStates();
-    }, 100);
-  });
-
-  updateActiveStates();
+  carousel.addEventListener("scroll", handleScroll);
+  setActiveIndex(getActiveIndex());
 }
 
 // Project rendering for active projects
