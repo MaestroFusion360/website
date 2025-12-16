@@ -310,13 +310,13 @@ export function initPage(): void {
 		renderUpcomingProjects();
 	}
 
-	if ('serviceWorker' in navigator) {
+	if (import.meta.env.PROD && 'serviceWorker' in navigator) {
 		const isSecureContext = window.location.protocol === 'https:' || window.location.hostname === 'localhost';
 
 		if (isSecureContext) {
 			window.addEventListener('load', () => {
 				navigator.serviceWorker
-					.register('/sw.js', { scope: '/', updateViaCache: 'none' })
+					.register('sw.js', { scope: './', updateViaCache: 'none' })
 					.then((reg) => {
 						reg.update?.();
 

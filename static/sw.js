@@ -1,14 +1,11 @@
 // Bump this when you want clients to pick up updated precached assets.
-const CACHE_VERSION = "v1";
+const CACHE_VERSION = "v2";
 const CACHE_PREFIX = "mf360-cache-";
 const CACHE_NAME = `${CACHE_PREFIX}${CACHE_VERSION}`;
 const OFFLINE_FALLBACK = "./index.html";
 const PRECACHE_URLS = [
   "./",
   "./index.html",
-  "./styles.css",
-  "./script.js",
-  "./project.js",
   "./manifest.webmanifest",
   "./favicon.ico",
   "./assets/icon-192.png",
