@@ -1,4 +1,4 @@
-window.projectsData = {
+﻿export const projectsData = {
   active: [
     {
       link: "https://github.com/MaestroFusion360/svelte-comp",
