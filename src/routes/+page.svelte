@@ -2,34 +2,22 @@
   import { setContext } from 'svelte';
   import { TEXTS } from '../lang';
   import { projectsData } from './projects/project';
+  import ProjectsCarousel from './ProjectsCarousel.svelte';
+  import UpcomingCarousel from './UpcomingCarousel.svelte';
+  import type { ProjectCard as ProjectCardType } from './ProjectsCarousel.svelte';
   import Header from './Header.svelte';
   import Footer from './Footer.svelte';
   import Technologies from './Technologies.svelte';
-  import { Card, Carousel, ThemeToggle, LangSwitch } from '$lib';
+  import { ThemeToggle, LangSwitch } from '$lib';
 
   type Locale = keyof typeof TEXTS;
   const lang = $state<{ value: Locale }>({ value: 'en' });
   setContext('lang', lang);
 
-  type ProjectLocale = {
-    title?: string;
-    description?: string;
-    features?: readonly string[];
-  };
-
-  type ProjectCard = {
-    link?: string;
-    youtubeId?: string;
-    en?: ProjectLocale;
-    ru?: ProjectLocale;
-    [key: string]: unknown;
-  };
-
   const t = $derived(TEXTS[lang.value]);
 
-  function getProjectLocale(project: ProjectCard): ProjectLocale {
-    return (project[lang.value] as ProjectLocale | undefined) ?? project.en ?? {};
-  }
+  const activeProjects = projectsData.active as unknown as ProjectCardType[];
+  const upcomingProjects = projectsData.upcoming as unknown as ProjectCardType[];
 
   const personSchema = {
     '@context': 'https://schema.org',
@@ -172,92 +160,33 @@
 
 <main>
   <section id="about">
-    <h2 data-lang="about-title">About Me</h2>
+    <h2 data-lang="about-title">{t['about-title']}</h2>
     <div class="content-block">
-      <p data-lang="about-desc">
-        CNC Software Engineer and
-        <strong>Fusion 360 Developer</strong> passionate about automating G-code generation and optimizing
-        CNC programming.
-      </p>
+      <p data-lang="about-desc">{t['about-desc']}</p>
     </div>
   </section>
 
   <Technologies />
 
   <section id="projects">
-    <h2 data-lang="projects-title">Projects</h2>
-    <Carousel items={projectsData.active as unknown as ProjectCard[]} ariaLabel="Active projects carousel">
-      {#snippet children(project: ProjectCard, _index: number, active: boolean)}
-        {@const locale = getProjectLocale(project)}
-        <Card variant="project" {active}>
-          <div class="video-container">
-            {#if project.youtubeId}
-              <iframe
-                src={`https://www.youtube.com/embed/${project.youtubeId}`}
-                title={locale.title ?? ''}
-                allowfullscreen
-                loading="lazy"
-                tabindex="-1"
-              ></iframe>
-            {:else}
-              <div class="video-placeholder">{t['video-missing']}</div>
-            {/if}
-          </div>
-          <h3>
-            {#if project.link}
-              <a
-                href={project.link}
-                target="_blank"
-                class="project-link"
-                style="position: relative; z-index: 10;"
-                tabindex="-1"
-              >
-                {locale.title ?? ''}
-              </a>
-            {:else}
-              {locale.title ?? ''}
-            {/if}
-          </h3>
-          <p>{@html locale.description ?? ''}</p>
-          {#if locale.features?.length}
-            <ul class="features-list">
-              {#each locale.features as feature (feature)}
-                <li>{@html feature}</li>
-              {/each}
-            </ul>
-          {/if}
-        </Card>
-      {/snippet}
-    </Carousel>
+    <h2 data-lang="projects-title">{t['projects-title']}</h2>
+    <ProjectsCarousel
+      items={activeProjects}
+      locale={lang.value}
+      videoMissing={t['video-missing']}
+    />
   </section>
 
   <section id="upcoming">
-    <h2 data-lang="upcoming-title">Future Projects</h2>
-    <Carousel
-      items={projectsData.upcoming as unknown as ProjectCard[]}
-      class="upcoming-carousel"
-      dotsClass="upcoming-dots"
-      ariaLabel="Future projects carousel"
-    >
-      {#snippet children(project: ProjectCard, _index: number, active: boolean)}
-        {@const locale = getProjectLocale(project)}
-        <Card variant="project" {active}>
-          <h3>{locale.title ?? ''}</h3>
-          <p>{@html locale.description ?? ''}</p>
-          {#if locale.features?.length}
-            <ul class="features-list">
-              {#each locale.features as feature (feature)}
-                <li>{@html feature}</li>
-              {/each}
-            </ul>
-          {/if}
-        </Card>
-      {/snippet}
-    </Carousel>
+    <h2 data-lang="upcoming-title">{t['upcoming-title']}</h2>
+    <UpcomingCarousel
+      items={upcomingProjects}
+      locale={lang.value}
+    />
   </section>
 
   <section id="contact">
-    <h2 data-lang="contact-title">Contact Me</h2>
+    <h2 data-lang="contact-title">{t['contact-title']}</h2>
     <div class="content-block contact-info contact-grid">
       <p>
         <img src="assets/gmail_icon.svg" width="20" alt="Gmail" />

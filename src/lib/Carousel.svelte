@@ -1,3 +1,4 @@
+<!-- src/lib/Carousel.svelte -->
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import Button from './Button.svelte';
@@ -158,3 +159,133 @@
     {/each}
   </div>
 {/if}
+
+<style>
+  .projects-carousel-wrapper {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    padding: 0 1rem;
+    overflow: hidden;
+  }
+
+  .projects-carousel {
+    --card-width: clamp(260px, 88vw, 680px);
+    display: flex;
+    gap: 1.75rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 1rem calc(50% - (var(--card-width) / 2));
+    scroll-padding-inline: calc(50% - (var(--card-width) / 2));
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .projects-carousel::-webkit-scrollbar {
+    display: none;
+  }
+
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% - 2rem);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+
+  .carousel-nav :global(button) {
+    pointer-events: all;
+    background: var(--surface-strong);
+    border: 1px solid var(--surface-border);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    box-shadow: var(--shadow-sm);
+    transition:
+      transform var(--transition),
+      background-color var(--transition),
+      color var(--transition);
+  }
+
+  .carousel-nav :global(button:hover) {
+    background: var(--primary-color);
+    color: white;
+    transform: scale(1.08);
+  }
+
+  .carousel-nav :global(button:focus-visible) {
+    outline: var(--focus-outline);
+    outline-offset: 3px;
+  }
+
+  .carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .upcoming-dots {
+    margin-bottom: 1.5rem;
+  }
+
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--dot-bg);
+    cursor: pointer;
+    transition:
+      background-color var(--transition),
+      transform var(--transition);
+  }
+
+  .dot.active {
+    background: var(--primary-color);
+    transform: scale(1.2);
+  }
+
+  @media (max-width: 1024px) {
+    .projects-carousel {
+      --card-width: clamp(240px, 78vw, 600px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .carousel-nav {
+      display: none;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .projects-carousel-wrapper {
+      padding: 0;
+    }
+
+    .projects-carousel {
+      --card-width: calc(100vw - 2.75rem);
+      gap: 1.1rem;
+      padding: 0.65rem calc(50% - (var(--card-width) / 2));
+    }
+  }
+
+  @media (max-width: 480px) {
+    .projects-carousel {
+      --card-width: calc(100vw - 2rem);
+      gap: 0.9rem;
+      padding: 0.55rem calc(50% - (var(--card-width) / 2));
+    }
+  }
+</style>
