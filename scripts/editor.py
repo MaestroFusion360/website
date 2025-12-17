@@ -8,8 +8,9 @@ import tkinter as tk
 import tkinter.font as tkfont
 from tkinter import ttk, filedialog, scrolledtext, messagebox, simpledialog
 from typing import Dict, List, Optional
+from pathlib import Path
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 
 
 class ProjectEditor:
@@ -61,7 +62,8 @@ class ProjectEditor:
         # Initializing data
         self.projects: Dict[str, List[dict]] = {"active": [], "upcoming": []}
         self.current_project_index: Optional[int] = None
-        self.current_file_path = "project.json"
+        BASE_DIR = Path(__file__).resolve().parent
+        self.current_file_path = BASE_DIR / "src" / "routes" / "projects" / "project.json"
         self.unsaved_changes = False
 
         self.setup_ui()
