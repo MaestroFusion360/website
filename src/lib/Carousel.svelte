@@ -7,18 +7,9 @@
     class?: string;
   };
 
-  const {
-    children,
-    class: externalClass = '',
-    ...rest
-  }: Props = $props();
+  const { children, class: externalClass = '', ...rest }: Props = $props();
 </script>
 
-<div
-  {...rest}
-  class={externalClass}
-  role="region"
-  aria-live="polite"
->
+<div {...rest} class={externalClass} role="region" aria-live="polite">
   {@render children()}
 </div>
