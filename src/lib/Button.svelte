@@ -7,9 +7,9 @@
     children: Snippet;
   };
 
-  let { children, class: externalClass = '', ...rest }: Props = $props();
+  let { children, class: externalClass = '', onclick, ...rest }: Props = $props();
 </script>
 
-<button {...rest} class={externalClass}>
+<button {...rest} class={externalClass} onclick={onclick}>
   {@render children()}
 </button>

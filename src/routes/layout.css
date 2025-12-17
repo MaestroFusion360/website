@@ -1,6 +1,8 @@
 /* src/routes/layout.css */
 @import 'tailwindcss';
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ==================== */
 /* Global Variables & Base Styles */
 /* ==================== */
@@ -28,7 +30,7 @@
   --focus-outline: 2px solid var(--focus-color);
 }
 
-html[data-theme='dark'] {
+.dark {
   color-scheme: dark;
   --text-color: #e2e8f0;
   --muted-color: #94a3b8;
@@ -43,25 +45,6 @@ html[data-theme='dark'] {
   --placeholder-overlay: rgba(255, 255, 255, 0.06);
   --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.55);
   --shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
-}
-
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme]) {
-    color-scheme: dark;
-    --text-color: #e2e8f0;
-    --muted-color: #94a3b8;
-    --light-gray: #0b1220;
-    --surface: rgba(15, 23, 42, 0.78);
-    --surface-strong: rgba(15, 23, 42, 0.95);
-    --surface-border: rgba(148, 163, 184, 0.22);
-    --surface-border-strong: rgba(148, 163, 184, 0.38);
-    --dot-bg: rgba(226, 232, 240, 0.35);
-    --placeholder-bg: rgba(15, 23, 42, 0.9);
-    --placeholder-text: #94a3b8;
-    --placeholder-overlay: rgba(255, 255, 255, 0.06);
-    --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.55);
-    --shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
-  }
 }
 
 html {
@@ -95,20 +78,11 @@ body {
   overflow-x: hidden;
 }
 
-html[data-theme='dark'] body {
+.dark body {
   background:
     radial-gradient(1000px circle at top center, rgba(56, 189, 248, 0.08), transparent 60%),
     radial-gradient(900px circle at bottom right, rgba(168, 85, 247, 0.08), transparent 55%),
     var(--light-gray);
-}
-
-@media (prefers-color-scheme: dark) {
-  html:not([data-theme]) body {
-    background:
-      radial-gradient(1000px circle at top center, rgba(56, 189, 248, 0.08), transparent 60%),
-      radial-gradient(900px circle at bottom right, rgba(168, 85, 247, 0.08), transparent 55%),
-      var(--light-gray);
-  }
 }
 
 a {
@@ -525,11 +499,11 @@ h3 {
   display: none;
 }
 
-html[data-theme='dark'] #theme-toggle .theme-icon-sun {
+.dark #theme-toggle .theme-icon-sun {
   display: block;
 }
 
-html[data-theme='dark'] #theme-toggle .theme-icon-moon {
+.dark #theme-toggle .theme-icon-moon {
   display: none;
 }
 

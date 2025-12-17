@@ -1,10 +1,15 @@
 ﻿<script lang="ts">
-  import { onMount } from 'svelte';
+  import { setContext } from 'svelte';
   import { initPage } from '../script';
+  import { TEXTS } from '../lang';
   import Header from './Header.svelte';
   import Footer from './Footer.svelte';
   import Technologies from './Technologies.svelte';
-  import { Button } from '$lib';
+  import { Button, ThemeToggle, LangSwitch } from '$lib';
+
+  type Locale = keyof typeof TEXTS;
+  const lang = $state<{ value: Locale }>({ value: 'en' });
+  setContext('lang', lang);
 
   const personSchema = {
     '@context': 'https://schema.org',
@@ -74,8 +79,20 @@
   const personSchemaTag = jsonLdScriptOpen + personSchemaJson + jsonLdScriptClose;
   const projectsSchemaTag = jsonLdScriptOpen + projectsSchemaJson + jsonLdScriptClose;
 
-  onMount(() => {
-    initPage();
+  $effect(() => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
+
+    const dict = TEXTS[lang.value];
+    document.documentElement.lang = lang.value;
+
+    document.querySelectorAll<HTMLElement>('[data-lang]').forEach((element) => {
+      const key = element.getAttribute('data-lang') as keyof typeof dict | null;
+      if (!key) return;
+      const value = dict[key];
+      if (value) element.innerHTML = value;
+    });
+
+    initPage(lang.value);
   });
 </script>
 
@@ -130,42 +147,7 @@
   {@html projectsSchemaTag}
 </svelte:head>
 
-<Button id="theme-toggle" aria-label="Toggle dark theme" title="Toggle dark theme">
-  <svg
-    class="theme-icon theme-icon-sun"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    aria-hidden="true"
-  >
-    <circle cx="12" cy="12" r="4" fill="currentColor" />
-    <line x1="12" y1="1" x2="12" y2="4" />
-    <line x1="12" y1="20" x2="12" y2="23" />
-    <line x1="4.22" y1="4.22" x2="6.34" y2="6.34" />
-    <line x1="17.66" y1="17.66" x2="19.78" y2="19.78" />
-    <line x1="1" y1="12" x2="4" y2="12" />
-    <line x1="20" y1="12" x2="23" y2="12" />
-    <line x1="4.22" y1="19.78" x2="6.34" y2="17.66" />
-    <line x1="17.66" y1="6.34" x2="19.78" y2="4.22" />
-  </svg>
-  <svg
-    class="theme-icon theme-icon-moon"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    aria-hidden="true"
-  >
-    <path
-      d="M12 2
-                   A9 9 0 1 0 21 12
-                   A7.5 7.5 0 1 1 12 2
-                   Z"
-      fill="currentColor"
-    />
-  </svg>
-</Button>
+<ThemeToggle />
 
 <Header />
 
@@ -291,14 +273,7 @@
     </div>
   </section>
 
-  <div id="lang-toggle">
-    <Button id="flag-en" aria-label="English">
-      <img src="assets/gb_icon.svg" alt="English" width="24" />
-    </Button>
-    <Button id="flag-ru" aria-label="Руссий">
-      <img src="assets/ru_icon.svg" alt="Русский" width="24" />
-    </Button>
-  </div>
+  <LangSwitch bind:value={lang.value} />
 </main>
 
 <Footer />
