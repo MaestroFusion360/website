@@ -1,6 +1,5 @@
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vitest/config';
-import { playwright } from '@vitest/browser-playwright';
 import { sveltekit } from '@sveltejs/kit/vite';
 import { VitePWA } from 'vite-plugin-pwa';
 
@@ -15,8 +14,22 @@ const lang = 'en';
 
 export default defineConfig(({ command }) => {
   const basePath = command === 'build' ? `/${repoName}/` : '/';
+  const enableBrowserTests = process.env.VITEST_BROWSER === '1';
+  const isVitest = Boolean(process.env.VITEST);
 
   return {
+    resolve: isVitest
+      ? {
+          conditions: ['browser']
+        }
+      : undefined,
+    ssr: isVitest
+      ? {
+          resolve: {
+            conditions: ['browser']
+          }
+        }
+      : undefined,
     plugins: [
       tailwindcss(),
       sveltekit(),
@@ -70,32 +83,35 @@ export default defineConfig(({ command }) => {
       projects: [
         {
           extends: './vite.config.ts',
-
           test: {
-            name: 'client',
-
-            browser: {
-              enabled: true,
-              provider: playwright(),
-              instances: [{ browser: 'chromium', headless: true }]
-            },
-
-            include: ['src/**/*.svelte.{test,spec}.{js,ts}'],
-            exclude: ['src/lib/server/**']
+            name: 'dom',
+            environment: 'jsdom',
+            include: ['src/lib/__tests__/**/*.{test,spec}.{js,ts}']
           }
         },
-
+        ...(enableBrowserTests
+          ? [
+              {
+                extends: './vite.config.ts',
+                test: {
+                  name: 'browser',
+                  browser: { enabled: true },
+                  include: ['src/**/*.svelte.{test,spec}.{js,ts}'],
+                  exclude: ['src/lib/server/**']
+                }
+              }
+            ]
+          : []),
         {
           extends: './vite.config.ts',
-
           test: {
-            name: 'server',
+            name: 'node',
             environment: 'node',
             include: ['src/**/*.{test,spec}.{js,ts}'],
-            exclude: ['src/**/*.svelte.{test,spec}.{js,ts}']
+            exclude: ['src/lib/__tests__/**', 'src/**/*.svelte.{test,spec}.{js,ts}']
           }
         }
-      ]
+      ],
     }
   };
 });

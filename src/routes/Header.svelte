@@ -1,3 +1,4 @@
+<!-- src/routes/Header.svelte -->
 <header>
   <h1 data-lang="title">Hi there, I'm MaestroFusion360</h1>
   <nav class="navbar">

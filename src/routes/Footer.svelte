@@ -1,5 +1,10 @@
+<!-- src/routes/Footer.svelte -->
+<script>
+  const year = new Date().getFullYear();
+</script>
+
 <footer>
-  <p>&copy; 2025 MaestroFusion360. All rights reserved.</p>
+  <p>&copy; {year} MaestroFusion360. All rights reserved.</p>
 </footer>
 
 <style>

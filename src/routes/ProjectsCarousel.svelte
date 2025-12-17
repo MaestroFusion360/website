@@ -1,3 +1,4 @@
+<!-- src/routes/ProjectsCarousel.svelte -->
 <script lang="ts">
   import { Card, Carousel } from '$lib';
 

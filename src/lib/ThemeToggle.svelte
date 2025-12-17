@@ -1,3 +1,4 @@
+<!-- src/lib/ThemeToggle.svelte -->
 <script lang="ts">
   type Theme = 'light' | 'dark';
   const STORAGE_KEY = 'theme';

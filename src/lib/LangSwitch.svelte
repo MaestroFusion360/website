@@ -1,3 +1,4 @@
+<!-- src/lib/LangSwitch.svelte -->
 <script lang="ts">
   type Locale = 'en' | 'ru';
 

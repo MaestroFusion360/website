@@ -1,3 +1,4 @@
+<!-- src/routes/Technologies.svelte -->
 <section id="technologies">
   <h2 data-lang="tech-title">Technologies</h2>
   <div class="content-block">
