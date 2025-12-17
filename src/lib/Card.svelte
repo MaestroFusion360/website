@@ -8,16 +8,25 @@
   type Props = HTMLAttributes<HTMLDivElement> & {
     children: Snippet;
     variant?: Variant;
+    active?: boolean;
   };
 
-  const { children, variant = 'default', class: externalClass = '', ...rest }: Props = $props();
+  const {
+    children,
+    variant = 'default',
+    active = false,
+    class: externalClass = '',
+    ...rest
+  }: Props = $props();
 
-  const variantClass = $derived(() =>
+  const variantClass = $derived(
     variant === 'default' ? 'card' : variant === 'project' ? 'project-card' : 'container'
   );
+
+  const activeClass = $derived(variant === 'project' && active ? 'active' : '');
 </script>
 
-<div {...rest} class={[variantClass, externalClass].filter(Boolean).join(' ')}>
+<div {...rest} class={[variantClass, activeClass, externalClass].filter(Boolean).join(' ')}>
   {@render children()}
 </div>
 

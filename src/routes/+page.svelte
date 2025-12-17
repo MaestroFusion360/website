@@ -1,15 +1,35 @@
 ﻿<script lang="ts">
   import { setContext } from 'svelte';
-  import { initPage } from '../script';
   import { TEXTS } from '../lang';
+  import { projectsData } from './projects/project';
   import Header from './Header.svelte';
   import Footer from './Footer.svelte';
   import Technologies from './Technologies.svelte';
-  import { Button, ThemeToggle, LangSwitch } from '$lib';
+  import { Card, Carousel, ThemeToggle, LangSwitch } from '$lib';
 
   type Locale = keyof typeof TEXTS;
   const lang = $state<{ value: Locale }>({ value: 'en' });
   setContext('lang', lang);
+
+  type ProjectLocale = {
+    title?: string;
+    description?: string;
+    features?: readonly string[];
+  };
+
+  type ProjectCard = {
+    link?: string;
+    youtubeId?: string;
+    en?: ProjectLocale;
+    ru?: ProjectLocale;
+    [key: string]: unknown;
+  };
+
+  const t = $derived(TEXTS[lang.value]);
+
+  function getProjectLocale(project: ProjectCard): ProjectLocale {
+    return (project[lang.value] as ProjectLocale | undefined) ?? project.en ?? {};
+  }
 
   const personSchema = {
     '@context': 'https://schema.org',
@@ -92,7 +112,6 @@
       if (value) element.innerHTML = value;
     });
 
-    initPage(lang.value);
   });
 </script>
 
@@ -167,84 +186,74 @@
 
   <section id="projects">
     <h2 data-lang="projects-title">Projects</h2>
-    <div class="projects-carousel-wrapper">
-      <div
-        class="projects-carousel"
-        role="region"
-        aria-label="Active projects carousel"
-        aria-live="polite"
-      ></div>
-      <div class="carousel-nav">
-        <Button class="carousel-prev" aria-label="Previous project">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            aria-hidden="true"
-          >
-            <path d="M10 12L6 8L10 4" />
-          </svg>
-        </Button>
-        <Button class="carousel-next" aria-label="Next project">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            aria-hidden="true"
-          >
-            <path d="M6 4L10 8L6 12" />
-          </svg>
-        </Button>
-      </div>
-    </div>
-    <div class="carousel-dots"></div>
+    <Carousel items={projectsData.active as unknown as ProjectCard[]} ariaLabel="Active projects carousel">
+      {#snippet children(project: ProjectCard, _index: number, active: boolean)}
+        {@const locale = getProjectLocale(project)}
+        <Card variant="project" {active}>
+          <div class="video-container">
+            {#if project.youtubeId}
+              <iframe
+                src={`https://www.youtube.com/embed/${project.youtubeId}`}
+                title={locale.title ?? ''}
+                allowfullscreen
+                loading="lazy"
+                tabindex="-1"
+              ></iframe>
+            {:else}
+              <div class="video-placeholder">{t['video-missing']}</div>
+            {/if}
+          </div>
+          <h3>
+            {#if project.link}
+              <a
+                href={project.link}
+                target="_blank"
+                class="project-link"
+                style="position: relative; z-index: 10;"
+                tabindex="-1"
+              >
+                {locale.title ?? ''}
+              </a>
+            {:else}
+              {locale.title ?? ''}
+            {/if}
+          </h3>
+          <p>{@html locale.description ?? ''}</p>
+          {#if locale.features?.length}
+            <ul class="features-list">
+              {#each locale.features as feature (feature)}
+                <li>{@html feature}</li>
+              {/each}
+            </ul>
+          {/if}
+        </Card>
+      {/snippet}
+    </Carousel>
   </section>
 
   <section id="upcoming">
     <h2 data-lang="upcoming-title">Future Projects</h2>
-    <div class="projects-carousel-wrapper">
-      <div
-        class="projects-carousel upcoming-carousel"
-        role="region"
-        aria-label="Future projects carousel"
-        aria-live="polite"
-      ></div>
-      <div class="carousel-nav">
-        <Button class="carousel-prev" aria-label="Previous project">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            aria-hidden="true"
-          >
-            <path d="M10 12L6 8L10 4" />
-          </svg>
-        </Button>
-        <Button class="carousel-next" aria-label="Next project">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            aria-hidden="true"
-          >
-            <path d="M6 4L10 8L6 12" />
-          </svg>
-        </Button>
-      </div>
-    </div>
-    <div class="carousel-dots upcoming-dots"></div>
+    <Carousel
+      items={projectsData.upcoming as unknown as ProjectCard[]}
+      class="upcoming-carousel"
+      dotsClass="upcoming-dots"
+      ariaLabel="Future projects carousel"
+    >
+      {#snippet children(project: ProjectCard, _index: number, active: boolean)}
+        {@const locale = getProjectLocale(project)}
+        <Card variant="project" {active}>
+          <h3>{locale.title ?? ''}</h3>
+          <p>{@html locale.description ?? ''}</p>
+          {#if locale.features?.length}
+            <ul class="features-list">
+              {#each locale.features as feature (feature)}
+                <li>{@html feature}</li>
+              {/each}
+            </ul>
+          {/if}
+        </Card>
+      {/snippet}
+    </Carousel>
   </section>
 
   <section id="contact">

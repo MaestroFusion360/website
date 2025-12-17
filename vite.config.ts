@@ -23,6 +23,9 @@ export default defineConfig(({ command }) => {
       VitePWA({
         manifestFilename: 'manifest.webmanifest',
         injectRegister: null,
+        devOptions: {
+          enabled: true
+        },
         includeAssets: [
           'favicon.ico',
           'robots.txt',
