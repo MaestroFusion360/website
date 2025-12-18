@@ -138,12 +138,13 @@ header.svelte-1yz1i5m > :where(.svelte-1yz1i5m) {
   font-size: 0.8rem;
   display: flex;
   flex-direction: column;
-  max-height: 600px;
+  height: 700px;
+  max-height: 700px;
   flex: 0 0 var(--card-width);
   max-width: var(--card-width);
   scroll-snap-align: center;
   background: var(--surface-strong);
-  padding: 1.75rem;
+  padding: 1.4rem;
   border-radius: var(--border-radius);
   border: 1px solid var(--surface-border);
   backdrop-filter: blur(8px);
@@ -161,6 +162,12 @@ header.svelte-1yz1i5m > :where(.svelte-1yz1i5m) {
 .project-card.svelte-2gevwt h3,
 .project-card.svelte-2gevwt .title {
   text-align: center;
+}
+.project-card.svelte-2gevwt h3 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0.35rem 0 0.5rem;
 }
 .project-card.active.svelte-2gevwt {
   transform: translateY(-2px);
@@ -189,7 +196,7 @@ header.svelte-1yz1i5m > :where(.svelte-1yz1i5m) {
 .project-card.svelte-2gevwt .features-list,
 .project-card.svelte-2gevwt .upcoming-features {
   padding-left: 0;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.1rem;
   list-style-type: none;
 }
 .project-card.svelte-2gevwt .features-list li,
@@ -207,12 +214,13 @@ header.svelte-1yz1i5m > :where(.svelte-1yz1i5m) {
   font-weight: 700;
 }
 .project-card.svelte-2gevwt .video-container {
-  aspect-ratio: 4 / 3;
-  max-height: 50%;
+  aspect-ratio: 16 / 9;
+  flex: 0 0 auto;
   width: 100%;
   margin-bottom: 0.8rem;
   border-radius: 8px;
   overflow: hidden;
+  background: var(--placeholder-bg);
 }
 .project-card.svelte-2gevwt .video-container iframe {
   width: 100%;
@@ -240,7 +248,9 @@ header.svelte-1yz1i5m > :where(.svelte-1yz1i5m) {
 }
 @media (max-width: 640px) {
   .project-card.svelte-2gevwt {
-    padding: 1.3rem;
+    height: auto;
+    max-height: none;
+    padding: 1.1rem;
   }
   .project-card.svelte-2gevwt .video-container {
     margin-bottom: 0.65rem;
@@ -253,7 +263,7 @@ header.svelte-1yz1i5m > :where(.svelte-1yz1i5m) {
 }
 @media (max-width: 480px) {
   .project-card.svelte-2gevwt {
-    padding: 1.15rem;
+    padding: 1rem;
   }
 }
 .projects-carousel-wrapper.svelte-er9umx {

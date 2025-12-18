@@ -348,9 +348,6 @@
   .pointer-events-auto {
     pointer-events: auto;
   }
-  .relative {
-    position: relative;
-  }
   .static {
     position: static;
   }

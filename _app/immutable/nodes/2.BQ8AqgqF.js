@@ -1,110 +1,108 @@
-import "../chunks/DsnmJJEf.js";
 import {
-  R as kt,
-  f as ut,
-  b as Vt,
-  C as Z,
-  h as D,
-  v as Q,
-  A as wt,
-  o as A,
-  X as ae,
-  L as le,
-  M as ce,
-  N as Ft,
-  O as X,
-  i as K,
-  a8 as At,
-  aw as ue,
-  af as Et,
-  d as ge,
-  aD as R,
-  g as it,
-  s as de,
-  a6 as xt,
-  az as fe,
-  au as Mt,
-  aE as Ut,
-  aF as ve,
-  aG as pe,
-  aH as me,
-  r as Wt,
-  p as Yt,
-  aI as bt,
-  aq as gt,
-  at as he,
-  e as dt,
-  aJ as Jt,
-  aK as be,
-  G,
-  x as _e,
-  aL as ye,
-  ax as we,
-  ar as Se,
-  aM as Ce,
-  aN as Kt,
-  P as It,
-  aO as ke,
-  aP as Ae,
-  aQ as Me,
-  aR as Ie,
-  aS as Te,
-  aT as Fe,
-  aU as Ee,
-  aV as xe,
-  aW as Le,
-  aX as Pe,
-  F as V,
-  H as U,
-  I as y,
-  J as b,
-  aC as J,
-  u as pt,
-  D as et,
-  Z as q,
-  aA as ft,
-  K as M,
-  aY as $,
-  ag as Ne,
-  Y as je,
-  aZ as De,
-  a_ as Oe,
-} from "../chunks/V-JyIKZ2.js";
-import {
-  i as Ge,
-  c as ze,
-  d as mt,
-  n as Be,
-  a as He,
-  s as H,
-  r as Re,
-} from "../chunks/Db_-2-fJ.js";
-import {
-  b as Lt,
-  d as Ve,
+  b as Et,
+  d as le,
   f as P,
   a as E,
-  c as Ue,
-  e as Xt,
-  t as We,
-} from "../chunks/CQZ-O1pg.js";
-import "../chunks/69_IOA4Y.js";
-import { i as Ye } from "../chunks/DbWR8Tlu.js";
-import { p as x, r as lt, b as Je, i as tt } from "../chunks/DR32lwqH.js";
-import { s as Tt } from "../chunks/COARPlw_.js";
-function Ke(t, e) {
+  c as ce,
+  e as Ut,
+  t as ue,
+} from "../chunks/DAWyZJYV.js";
+import {
+  N as At,
+  g as gt,
+  d as Wt,
+  J as $,
+  i as D,
+  a1 as Z,
+  F as Ct,
+  q as A,
+  R as ge,
+  G as de,
+  H as fe,
+  I as xt,
+  K as q,
+  j as X,
+  aa as Mt,
+  ay as ve,
+  ah as Lt,
+  e as he,
+  aF as V,
+  h as at,
+  s as me,
+  a8 as Pt,
+  aB as pe,
+  aw as It,
+  aG as Yt,
+  aH as be,
+  aI as _e,
+  aJ as ye,
+  r as Jt,
+  p as Kt,
+  aK as _t,
+  as as dt,
+  av as we,
+  f as ft,
+  aL as Xt,
+  aM as Ce,
+  z as G,
+  V as Se,
+  aN as ke,
+  az as Ae,
+  at as Me,
+  aO as Ie,
+  aP as qt,
+  L as Tt,
+  aQ as Te,
+  aR as Fe,
+  aS as Ee,
+  aT as xe,
+  aU as Le,
+  aV as Pe,
+  aW as Ne,
+  aX as je,
+  aY as De,
+  aZ as Oe,
+  y as R,
+  A as U,
+  B as y,
+  C as b,
+  aE as J,
+  u as mt,
+  x as rt,
+  U as Q,
+  aC as vt,
+  D as M,
+  a_ as tt,
+  ai as Ge,
+  T as ze,
+  a$ as He,
+  b0 as Be,
+} from "../chunks/Ca4mpr-g.js";
+import {
+  i as Ve,
+  c as Re,
+  d as pt,
+  n as Ue,
+  a as We,
+  s as B,
+  r as Ye,
+} from "../chunks/CC4FMtKT.js";
+import { i as Je } from "../chunks/BpVTjGL-.js";
+import { p as x, r as ct, b as Ke, i as et } from "../chunks/D6jdnGIL.js";
+import { s as Ft } from "../chunks/4SK4HWC3.js";
+function Xe(t, e) {
   if (e) {
     const r = document.body;
     ((t.autofocus = !0),
-      kt(() => {
+      At(() => {
         document.activeElement === r && t.focus();
       }));
   }
 }
-let Pt = !1;
-function Xe() {
-  Pt ||
-    ((Pt = !0),
+let Nt = !1;
+function qe() {
+  Nt ||
+    ((Nt = !0),
     document.addEventListener(
       "reset",
       (t) => {
@@ -116,20 +114,20 @@ function Xe() {
       { capture: !0 },
     ));
 }
-function Nt(t, e) {
+function jt(t, e) {
   return e;
 }
-function qe(t, e, r) {
-  for (var o = [], n = e.length, a, l = e.length, f = 0; f < n; f++) {
-    let h = e[f];
-    Yt(
-      h,
+function Qe(t, e, r) {
+  for (var o = [], s = e.length, n, l = e.length, f = 0; f < s; f++) {
+    let p = e[f];
+    Kt(
+      p,
       () => {
-        if (a) {
-          if ((a.pending.delete(h), a.done.add(h), a.pending.size === 0)) {
+        if (n) {
+          if ((n.pending.delete(p), n.done.add(p), n.pending.size === 0)) {
             var v = t.outrogroups;
-            (St(Mt(a.done)),
-              v.delete(a),
+            (St(It(n.done)),
+              v.delete(n),
               v.size === 0 && (t.outrogroups = null));
           }
         } else l -= 1;
@@ -138,200 +136,200 @@ function qe(t, e, r) {
     );
   }
   if (l === 0) {
-    var s = o.length === 0 && r !== null;
-    if (s) {
+    var i = o.length === 0 && r !== null;
+    if (i) {
       var c = r,
-        i = c.parentNode;
-      (he(i), i.append(c), t.items.clear());
+        a = c.parentNode;
+      (we(a), a.append(c), t.items.clear());
     }
-    St(e, !s);
+    St(e, !i);
   } else
-    ((a = { pending: new Set(e), done: new Set() }),
-      (t.outrogroups ??= new Set()).add(a));
+    ((n = { pending: new Set(e), done: new Set() }),
+      (t.outrogroups ??= new Set()).add(n));
 }
 function St(t, e = !0) {
-  for (var r = 0; r < t.length; r++) dt(t[r], e);
+  for (var r = 0; r < t.length; r++) ft(t[r], e);
 }
-var jt;
-function vt(t, e, r, o, n, a = null) {
+var Dt;
+function ht(t, e, r, o, s, n = null) {
   var l = t,
     f = new Map(),
-    s = (e & Jt) !== 0;
-  if (s) {
+    i = (e & Xt) !== 0;
+  if (i) {
     var c = t;
-    l = D ? Z(Q(c)) : c.appendChild(ut());
+    l = D ? $(Z(c)) : c.appendChild(gt());
   }
-  D && wt();
-  var i = null,
-    h = ae(() => {
+  D && Ct();
+  var a = null,
+    p = ge(() => {
       var m = r();
-      return Ut(m) ? m : m == null ? [] : Mt(m);
+      return Yt(m) ? m : m == null ? [] : It(m);
     }),
     v,
     w = !0;
-  function S() {
-    ((u.fallback = i),
-      Qe(u, v, l, e, o),
-      i !== null &&
+  function C() {
+    ((u.fallback = a),
+      Ze(u, v, l, e, o),
+      a !== null &&
         (v.length === 0
-          ? (i.f & R) === 0
-            ? Wt(i)
-            : ((i.f ^= R), nt(i, null, l))
-          : Yt(i, () => {
-              i = null;
+          ? (a.f & V) === 0
+            ? Jt(a)
+            : ((a.f ^= V), nt(a, null, l))
+          : Kt(a, () => {
+              a = null;
             })));
   }
-  var T = Vt(() => {
-      v = A(h);
+  var T = Wt(() => {
+      v = A(p);
       var m = v.length;
       let L = !1;
       if (D) {
-        var j = le(l) === ce;
-        j !== (m === 0) && ((l = Ft()), Z(l), X(!1), (L = !0));
+        var j = de(l) === fe;
+        j !== (m === 0) && ((l = xt()), $(l), q(!1), (L = !0));
       }
-      for (var C = new Set(), N = ge, d = de(), p = 0; p < m; p += 1) {
-        D && K.nodeType === At && K.data === ue && ((l = K), (L = !0), X(!1));
-        var _ = v[p],
-          I = o(_, p),
+      for (var S = new Set(), N = he, d = me(), h = 0; h < m; h += 1) {
+        D && X.nodeType === Mt && X.data === ve && ((l = X), (L = !0), q(!1));
+        var _ = v[h],
+          I = o(_, h),
           g = w ? null : f.get(I);
         (g
-          ? (g.v && Et(g.v, _),
-            g.i && Et(g.i, p),
+          ? (g.v && Lt(g.v, _),
+            g.i && Lt(g.i, h),
             d && N.skipped_effects.delete(g.e))
-          : ((g = Ze(f, w ? l : (jt ??= ut()), _, I, p, n, e, r)),
-            w || (g.e.f |= R),
+          : ((g = $e(f, w ? l : (Dt ??= gt()), _, I, h, s, e, r)),
+            w || (g.e.f |= V),
             f.set(I, g)),
-          C.add(I));
+          S.add(I));
       }
       if (
         (m === 0 &&
-          a &&
-          !i &&
+          n &&
+          !a &&
           (w
-            ? (i = it(() => a(l)))
-            : ((i = it(() => a((jt ??= ut())))), (i.f |= R))),
-        D && m > 0 && Z(Ft()),
+            ? (a = at(() => n(l)))
+            : ((a = at(() => n((Dt ??= gt())))), (a.f |= V))),
+        D && m > 0 && $(xt()),
         !w)
       )
         if (d) {
-          for (const [k, F] of f) C.has(k) || N.skipped_effects.add(F.e);
-          (N.oncommit(S), N.ondiscard(() => {}));
-        } else S();
-      (L && X(!0), A(h));
+          for (const [k, F] of f) S.has(k) || N.skipped_effects.add(F.e);
+          (N.oncommit(C), N.ondiscard(() => {}));
+        } else C();
+      (L && q(!0), A(p));
     }),
-    u = { effect: T, items: f, outrogroups: null, fallback: i };
-  ((w = !1), D && (l = K));
+    u = { effect: T, items: f, outrogroups: null, fallback: a };
+  ((w = !1), D && (l = X));
 }
-function Qe(t, e, r, o, n) {
-  var a = (o & be) !== 0,
+function Ze(t, e, r, o, s) {
+  var n = (o & Ce) !== 0,
     l = e.length,
     f = t.items,
-    s = t.effect.first,
+    i = t.effect.first,
     c,
-    i = null,
-    h,
+    a = null,
+    p,
     v = [],
     w = [],
-    S,
+    C,
     T,
     u,
     m;
-  if (a)
+  if (n)
     for (m = 0; m < l; m += 1)
-      ((S = e[m]),
-        (T = n(S, m)),
+      ((C = e[m]),
+        (T = s(C, m)),
         (u = f.get(T).e),
-        (u.f & R) === 0 && (u.nodes?.a?.measure(), (h ??= new Set()).add(u)));
+        (u.f & V) === 0 && (u.nodes?.a?.measure(), (p ??= new Set()).add(u)));
   for (m = 0; m < l; m += 1) {
-    if (((S = e[m]), (T = n(S, m)), (u = f.get(T).e), t.outrogroups !== null))
+    if (((C = e[m]), (T = s(C, m)), (u = f.get(T).e), t.outrogroups !== null))
       for (const g of t.outrogroups) (g.pending.delete(u), g.done.delete(u));
-    if ((u.f & R) !== 0)
-      if (((u.f ^= R), u === s)) nt(u, null, r);
+    if ((u.f & V) !== 0)
+      if (((u.f ^= V), u === i)) nt(u, null, r);
       else {
-        var L = i ? i.next : s;
+        var L = a ? a.next : i;
         (u === t.effect.last && (t.effect.last = u.prev),
           u.prev && (u.prev.next = u.next),
           u.next && (u.next.prev = u.prev),
-          Y(t, i, u),
+          Y(t, a, u),
           Y(t, u, L),
           nt(u, L, r),
-          (i = u),
+          (a = u),
           (v = []),
           (w = []),
-          (s = i.next));
+          (i = a.next));
         continue;
       }
     if (
-      ((u.f & bt) !== 0 &&
-        (Wt(u), a && (u.nodes?.a?.unfix(), (h ??= new Set()).delete(u))),
-      u !== s)
+      ((u.f & _t) !== 0 &&
+        (Jt(u), n && (u.nodes?.a?.unfix(), (p ??= new Set()).delete(u))),
+      u !== i)
     ) {
       if (c !== void 0 && c.has(u)) {
         if (v.length < w.length) {
           var j = w[0],
-            C;
-          i = j.prev;
+            S;
+          a = j.prev;
           var N = v[0],
             d = v[v.length - 1];
-          for (C = 0; C < v.length; C += 1) nt(v[C], j, r);
-          for (C = 0; C < w.length; C += 1) c.delete(w[C]);
+          for (S = 0; S < v.length; S += 1) nt(v[S], j, r);
+          for (S = 0; S < w.length; S += 1) c.delete(w[S]);
           (Y(t, N.prev, d.next),
-            Y(t, i, N),
+            Y(t, a, N),
             Y(t, d, j),
-            (s = j),
-            (i = d),
+            (i = j),
+            (a = d),
             (m -= 1),
             (v = []),
             (w = []));
         } else
           (c.delete(u),
-            nt(u, s, r),
+            nt(u, i, r),
             Y(t, u.prev, u.next),
-            Y(t, u, i === null ? t.effect.first : i.next),
-            Y(t, i, u),
-            (i = u));
+            Y(t, u, a === null ? t.effect.first : a.next),
+            Y(t, a, u),
+            (a = u));
         continue;
       }
-      for (v = [], w = []; s !== null && s !== u; )
-        ((c ??= new Set()).add(s), w.push(s), (s = s.next));
-      if (s === null) continue;
+      for (v = [], w = []; i !== null && i !== u; )
+        ((c ??= new Set()).add(i), w.push(i), (i = i.next));
+      if (i === null) continue;
     }
-    ((u.f & R) === 0 && v.push(u), (i = u), (s = u.next));
+    ((u.f & V) === 0 && v.push(u), (a = u), (i = u.next));
   }
   if (t.outrogroups !== null) {
     for (const g of t.outrogroups)
-      g.pending.size === 0 && (St(Mt(g.done)), t.outrogroups?.delete(g));
+      g.pending.size === 0 && (St(It(g.done)), t.outrogroups?.delete(g));
     t.outrogroups.size === 0 && (t.outrogroups = null);
   }
-  if (s !== null || c !== void 0) {
-    var p = [];
-    if (c !== void 0) for (u of c) (u.f & bt) === 0 && p.push(u);
-    for (; s !== null; )
-      ((s.f & bt) === 0 && s !== t.fallback && p.push(s), (s = s.next));
-    var _ = p.length;
+  if (i !== null || c !== void 0) {
+    var h = [];
+    if (c !== void 0) for (u of c) (u.f & _t) === 0 && h.push(u);
+    for (; i !== null; )
+      ((i.f & _t) === 0 && i !== t.fallback && h.push(i), (i = i.next));
+    var _ = h.length;
     if (_ > 0) {
-      var I = (o & Jt) !== 0 && l === 0 ? r : null;
-      if (a) {
-        for (m = 0; m < _; m += 1) p[m].nodes?.a?.measure();
-        for (m = 0; m < _; m += 1) p[m].nodes?.a?.fix();
+      var I = (o & Xt) !== 0 && l === 0 ? r : null;
+      if (n) {
+        for (m = 0; m < _; m += 1) h[m].nodes?.a?.measure();
+        for (m = 0; m < _; m += 1) h[m].nodes?.a?.fix();
       }
-      qe(t, p, I);
+      Qe(t, h, I);
     }
   }
-  a &&
-    kt(() => {
-      if (h !== void 0) for (u of h) u.nodes?.a?.apply();
+  n &&
+    At(() => {
+      if (p !== void 0) for (u of p) u.nodes?.a?.apply();
     });
 }
-function Ze(t, e, r, o, n, a, l, f) {
-  var s = (l & ve) !== 0 ? ((l & pe) === 0 ? fe(r, !1, !1) : xt(r)) : null,
-    c = (l & me) !== 0 ? xt(n) : null;
+function $e(t, e, r, o, s, n, l, f) {
+  var i = (l & be) !== 0 ? ((l & _e) === 0 ? pe(r, !1, !1) : Pt(r)) : null,
+    c = (l & ye) !== 0 ? Pt(s) : null;
   return {
-    v: s,
+    v: i,
     i: c,
-    e: it(
+    e: at(
       () => (
-        a(e, s ?? r, c ?? n, f),
+        n(e, i ?? r, c ?? s, f),
         () => {
           t.delete(o);
         }
@@ -343,12 +341,12 @@ function nt(t, e, r) {
   if (t.nodes)
     for (
       var o = t.nodes.start,
-        n = t.nodes.end,
-        a = e && (e.f & R) === 0 ? e.nodes.start : r;
+        s = t.nodes.end,
+        n = e && (e.f & V) === 0 ? e.nodes.start : r;
       o !== null;
     ) {
-      var l = gt(o);
-      if ((a.before(o), o === n)) return;
+      var l = dt(o);
+      if ((n.before(o), o === s)) return;
       o = l;
     }
 }
@@ -356,190 +354,190 @@ function Y(t, e, r) {
   (e === null ? (t.effect.first = r) : (e.next = r),
     r === null ? (t.effect.last = e) : (r.prev = e));
 }
-function rt(t, e, r = !1, o = !1, n = !1) {
-  var a = t,
+function ot(t, e, r = !1, o = !1, s = !1) {
+  var n = t,
     l = "";
   G(() => {
-    var f = _e;
+    var f = Se;
     if (l === (l = e() ?? "")) {
-      D && wt();
+      D && Ct();
       return;
     }
     if (
-      (f.nodes !== null && (ye(f.nodes.start, f.nodes.end), (f.nodes = null)),
+      (f.nodes !== null && (ke(f.nodes.start, f.nodes.end), (f.nodes = null)),
       l !== "")
     ) {
       if (D) {
-        K.data;
+        X.data;
         for (
-          var s = wt(), c = s;
-          s !== null && (s.nodeType !== At || s.data !== "");
+          var i = Ct(), c = i;
+          i !== null && (i.nodeType !== Mt || i.data !== "");
         )
-          ((c = s), (s = gt(s)));
-        if (s === null) throw (we(), Se);
-        (Lt(K, c), (a = Z(s)));
+          ((c = i), (i = dt(i)));
+        if (i === null) throw (Ae(), Me);
+        (Et(X, c), (n = $(i)));
         return;
       }
-      var i = l + "";
-      r ? (i = `<svg>${i}</svg>`) : o && (i = `<math>${i}</math>`);
-      var h = Ve(i);
-      if (((r || o) && (h = Q(h)), Lt(Q(h), h.lastChild), r || o))
-        for (; Q(h); ) a.before(Q(h));
-      else a.before(h);
+      var a = l + "";
+      r ? (a = `<svg>${a}</svg>`) : o && (a = `<math>${a}</math>`);
+      var p = le(a);
+      if (((r || o) && (p = Z(p)), Et(Z(p), p.lastChild), r || o))
+        for (; Z(p); ) n.before(Z(p));
+      else n.before(p);
     }
   });
 }
-function $e(t, e) {
+function tr(t, e) {
   let r = null,
     o = D;
-  var n;
+  var s;
   if (D) {
-    r = K;
+    r = X;
     for (
-      var a = Q(document.head);
-      a !== null && (a.nodeType !== At || a.data !== t);
+      var n = Z(document.head);
+      n !== null && (n.nodeType !== Mt || n.data !== t);
     )
-      a = gt(a);
-    if (a === null) X(!1);
+      n = dt(n);
+    if (n === null) q(!1);
     else {
-      var l = gt(a);
-      (a.remove(), Z(l));
+      var l = dt(n);
+      (n.remove(), $(l));
     }
   }
-  D || (n = document.head.appendChild(ut()));
+  D || (s = document.head.appendChild(gt()));
   try {
-    Vt(() => e(n), Ce);
+    Wt(() => e(s), Ie);
   } finally {
-    o && (X(!0), Z(r));
+    o && (q(!0), $(r));
   }
 }
-function tr(t, e) {
+function er(t, e) {
   var r = void 0,
     o;
-  Kt(() => {
+  qt(() => {
     r !== (r = e()) &&
-      (o && (dt(o), (o = null)),
+      (o && (ft(o), (o = null)),
       r &&
-        (o = it(() => {
-          It(() => r(t));
+        (o = at(() => {
+          Tt(() => r(t));
         })));
   });
 }
-function qt(t) {
+function Qt(t) {
   var e,
     r,
     o = "";
   if (typeof t == "string" || typeof t == "number") o += t;
   else if (typeof t == "object")
     if (Array.isArray(t)) {
-      var n = t.length;
-      for (e = 0; e < n; e++)
-        t[e] && (r = qt(t[e])) && (o && (o += " "), (o += r));
+      var s = t.length;
+      for (e = 0; e < s; e++)
+        t[e] && (r = Qt(t[e])) && (o && (o += " "), (o += r));
     } else for (r in t) t[r] && (o && (o += " "), (o += r));
   return o;
 }
-function er() {
-  for (var t, e, r = 0, o = "", n = arguments.length; r < n; r++)
-    (t = arguments[r]) && (e = qt(t)) && (o && (o += " "), (o += e));
+function rr() {
+  for (var t, e, r = 0, o = "", s = arguments.length; r < s; r++)
+    (t = arguments[r]) && (e = Qt(t)) && (o && (o += " "), (o += e));
   return o;
 }
-function ht(t) {
-  return typeof t == "object" ? er(t) : (t ?? "");
+function bt(t) {
+  return typeof t == "object" ? rr(t) : (t ?? "");
 }
-const Dt = [
+const Ot = [
   ...` 	
 \r\f \v\uFEFF`,
 ];
-function rr(t, e, r) {
+function or(t, e, r) {
   var o = t == null ? "" : "" + t;
   if ((e && (o = o ? o + " " + e : e), r)) {
-    for (var n in r)
-      if (r[n]) o = o ? o + " " + n : n;
+    for (var s in r)
+      if (r[s]) o = o ? o + " " + s : s;
       else if (o.length)
-        for (var a = n.length, l = 0; (l = o.indexOf(n, l)) >= 0; ) {
-          var f = l + a;
-          (l === 0 || Dt.includes(o[l - 1])) &&
-          (f === o.length || Dt.includes(o[f]))
+        for (var n = s.length, l = 0; (l = o.indexOf(s, l)) >= 0; ) {
+          var f = l + n;
+          (l === 0 || Ot.includes(o[l - 1])) &&
+          (f === o.length || Ot.includes(o[f]))
             ? (o = (l === 0 ? "" : o.substring(0, l)) + o.substring(f + 1))
             : (l = f);
         }
   }
   return o === "" ? null : o;
 }
-function Ot(t, e = !1) {
+function Gt(t, e = !1) {
   var r = e ? " !important;" : ";",
     o = "";
-  for (var n in t) {
-    var a = t[n];
-    a != null && a !== "" && (o += " " + n + ": " + a + r);
+  for (var s in t) {
+    var n = t[s];
+    n != null && n !== "" && (o += " " + s + ": " + n + r);
   }
   return o;
 }
-function _t(t) {
+function yt(t) {
   return t[0] !== "-" || t[1] !== "-" ? t.toLowerCase() : t;
 }
-function or(t, e) {
+function sr(t, e) {
   if (e) {
     var r = "",
       o,
-      n;
-    if ((Array.isArray(e) ? ((o = e[0]), (n = e[1])) : (o = e), t)) {
+      s;
+    if ((Array.isArray(e) ? ((o = e[0]), (s = e[1])) : (o = e), t)) {
       t = String(t)
         .replaceAll(/\s*\/\*.*?\*\/\s*/g, "")
         .trim();
-      var a = !1,
+      var n = !1,
         l = 0,
         f = !1,
-        s = [];
-      (o && s.push(...Object.keys(o).map(_t)),
-        n && s.push(...Object.keys(n).map(_t)));
+        i = [];
+      (o && i.push(...Object.keys(o).map(yt)),
+        s && i.push(...Object.keys(s).map(yt)));
       var c = 0,
-        i = -1;
+        a = -1;
       const T = t.length;
-      for (var h = 0; h < T; h++) {
-        var v = t[h];
+      for (var p = 0; p < T; p++) {
+        var v = t[p];
         if (
           (f
-            ? v === "/" && t[h - 1] === "*" && (f = !1)
-            : a
-              ? a === v && (a = !1)
-              : v === "/" && t[h + 1] === "*"
+            ? v === "/" && t[p - 1] === "*" && (f = !1)
+            : n
+              ? n === v && (n = !1)
+              : v === "/" && t[p + 1] === "*"
                 ? (f = !0)
                 : v === '"' || v === "'"
-                  ? (a = v)
+                  ? (n = v)
                   : v === "("
                     ? l++
                     : v === ")" && l--,
-          !f && a === !1 && l === 0)
+          !f && n === !1 && l === 0)
         ) {
-          if (v === ":" && i === -1) i = h;
-          else if (v === ";" || h === T - 1) {
-            if (i !== -1) {
-              var w = _t(t.substring(c, i).trim());
-              if (!s.includes(w)) {
-                v !== ";" && h++;
-                var S = t.substring(c, h).trim();
-                r += " " + S + ";";
+          if (v === ":" && a === -1) a = p;
+          else if (v === ";" || p === T - 1) {
+            if (a !== -1) {
+              var w = yt(t.substring(c, a).trim());
+              if (!i.includes(w)) {
+                v !== ";" && p++;
+                var C = t.substring(c, p).trim();
+                r += " " + C + ";";
               }
             }
-            ((c = h + 1), (i = -1));
+            ((c = p + 1), (a = -1));
           }
         }
       }
     }
     return (
-      o && (r += Ot(o)),
-      n && (r += Ot(n, !0)),
+      o && (r += Gt(o)),
+      s && (r += Gt(s, !0)),
       (r = r.trim()),
       r === "" ? null : r
     );
   }
   return t == null ? null : String(t);
 }
-function at(t, e, r, o, n, a) {
+function lt(t, e, r, o, s, n) {
   var l = t.__className;
   if (D || l !== r || l === void 0) {
-    var f = rr(r, o, a);
+    var f = or(r, o, n);
     ((!D || f !== t.getAttribute("class")) &&
       (f == null
         ? t.removeAttribute("class")
@@ -547,53 +545,53 @@ function at(t, e, r, o, n, a) {
           ? (t.className = f)
           : t.setAttribute("class", f)),
       (t.__className = r));
-  } else if (a && n !== a)
-    for (var s in a) {
-      var c = !!a[s];
-      (n == null || c !== !!n[s]) && t.classList.toggle(s, c);
+  } else if (n && s !== n)
+    for (var i in n) {
+      var c = !!n[i];
+      (s == null || c !== !!s[i]) && t.classList.toggle(i, c);
     }
-  return a;
+  return n;
 }
-function yt(t, e = {}, r, o) {
-  for (var n in r) {
-    var a = r[n];
-    e[n] !== a &&
-      (r[n] == null ? t.style.removeProperty(n) : t.style.setProperty(n, a, o));
+function wt(t, e = {}, r, o) {
+  for (var s in r) {
+    var n = r[s];
+    e[s] !== n &&
+      (r[s] == null ? t.style.removeProperty(s) : t.style.setProperty(s, n, o));
   }
 }
-function Qt(t, e, r, o) {
-  var n = t.__style;
-  if (D || n !== e) {
-    var a = or(e, o);
-    ((!D || a !== t.getAttribute("style")) &&
-      (a == null ? t.removeAttribute("style") : (t.style.cssText = a)),
+function Zt(t, e, r, o) {
+  var s = t.__style;
+  if (D || s !== e) {
+    var n = sr(e, o);
+    ((!D || n !== t.getAttribute("style")) &&
+      (n == null ? t.removeAttribute("style") : (t.style.cssText = n)),
       (t.__style = e));
   } else
     o &&
       (Array.isArray(o)
-        ? (yt(t, r?.[0], o[0]), yt(t, r?.[1], o[1], "important"))
-        : yt(t, r, o));
+        ? (wt(t, r?.[0], o[0]), wt(t, r?.[1], o[1], "important"))
+        : wt(t, r, o));
   return o;
 }
-function Ct(t, e, r = !1) {
+function kt(t, e, r = !1) {
   if (t.multiple) {
     if (e == null) return;
-    if (!Ut(e)) return ke();
-    for (var o of t.options) o.selected = e.includes(Gt(o));
+    if (!Yt(e)) return Te();
+    for (var o of t.options) o.selected = e.includes(zt(o));
     return;
   }
   for (o of t.options) {
-    var n = Gt(o);
-    if (Ae(n, e)) {
+    var s = zt(o);
+    if (Fe(s, e)) {
       o.selected = !0;
       return;
     }
   }
   (!r || e !== void 0) && (t.selectedIndex = -1);
 }
-function sr(t) {
+function ir(t) {
   var e = new MutationObserver(() => {
-    Ct(t, t.__value);
+    kt(t, t.__value);
   });
   (e.observe(t, {
     childList: !0,
@@ -601,17 +599,17 @@ function sr(t) {
     attributes: !0,
     attributeFilter: ["value"],
   }),
-    Me(() => {
+    Ee(() => {
       e.disconnect();
     }));
 }
-function Gt(t) {
+function zt(t) {
   return "__value" in t ? t.__value : t.value;
 }
-const ot = Symbol("class"),
-  st = Symbol("style"),
-  Zt = Symbol("is custom element"),
-  $t = Symbol("is html");
+const st = Symbol("class"),
+  it = Symbol("style"),
+  $t = Symbol("is custom element"),
+  te = Symbol("is html");
 function nr(t) {
   if (D) {
     var e = !1,
@@ -622,170 +620,170 @@ function nr(t) {
             (O(t, "value", null), (t.value = o));
           }
           if (t.hasAttribute("checked")) {
-            var n = t.checked;
-            (O(t, "checked", null), (t.checked = n));
+            var s = t.checked;
+            (O(t, "checked", null), (t.checked = s));
           }
         }
       };
-    ((t.__on_r = r), kt(r), Xe());
+    ((t.__on_r = r), At(r), qe());
   }
 }
-function ir(t, e) {
+function ar(t, e) {
   e
     ? t.hasAttribute("selected") || t.setAttribute("selected", "")
     : t.removeAttribute("selected");
 }
 function O(t, e, r, o) {
-  var n = te(t);
+  var s = ee(t);
   (D &&
-    ((n[e] = t.getAttribute(e)),
+    ((s[e] = t.getAttribute(e)),
     e === "src" ||
       e === "srcset" ||
       (e === "href" && t.nodeName === "LINK"))) ||
-    (n[e] !== (n[e] = r) &&
-      (e === "loading" && (t[Te] = r),
+    (s[e] !== (s[e] = r) &&
+      (e === "loading" && (t[Le] = r),
       r == null
         ? t.removeAttribute(e)
-        : typeof r != "string" && ee(t).includes(e)
+        : typeof r != "string" && re(t).includes(e)
           ? (t[e] = r)
           : t.setAttribute(e, r)));
 }
-function ar(t, e, r, o, n = !1, a = !1) {
-  if (D && n && t.tagName === "INPUT") {
+function lr(t, e, r, o, s = !1, n = !1) {
+  if (D && s && t.tagName === "INPUT") {
     var l = t,
       f = l.type === "checkbox" ? "defaultChecked" : "defaultValue";
     f in r || nr(l);
   }
-  var s = te(t),
-    c = s[Zt],
-    i = !s[$t];
-  let h = D && c;
-  h && X(!1);
+  var i = ee(t),
+    c = i[$t],
+    a = !i[te];
+  let p = D && c;
+  p && q(!1);
   var v = e || {},
     w = t.tagName === "OPTION";
-  for (var S in e) S in r || (r[S] = null);
-  (r.class ? (r.class = ht(r.class)) : (o || r[ot]) && (r.class = null),
-    r[st] && (r.style ??= null));
-  var T = ee(t);
+  for (var C in e) C in r || (r[C] = null);
+  (r.class ? (r.class = bt(r.class)) : (o || r[st]) && (r.class = null),
+    r[it] && (r.style ??= null));
+  var T = re(t);
   for (const d in r) {
-    let p = r[d];
-    if (w && d === "value" && p == null) {
-      ((t.value = t.__value = ""), (v[d] = p));
+    let h = r[d];
+    if (w && d === "value" && h == null) {
+      ((t.value = t.__value = ""), (v[d] = h));
       continue;
     }
     if (d === "class") {
       var u = t.namespaceURI === "http://www.w3.org/1999/xhtml";
-      (at(t, u, p, o, e?.[ot], r[ot]), (v[d] = p), (v[ot] = r[ot]));
+      (lt(t, u, h, o, e?.[st], r[st]), (v[d] = h), (v[st] = r[st]));
       continue;
     }
     if (d === "style") {
-      (Qt(t, p, e?.[st], r[st]), (v[d] = p), (v[st] = r[st]));
+      (Zt(t, h, e?.[it], r[it]), (v[d] = h), (v[it] = r[it]));
       continue;
     }
     var m = v[d];
-    if (!(p === m && !(p === void 0 && t.hasAttribute(d)))) {
-      v[d] = p;
+    if (!(h === m && !(h === void 0 && t.hasAttribute(d)))) {
+      v[d] = h;
       var L = d[0] + d[1];
       if (L !== "$$")
         if (L === "on") {
           const _ = {},
             I = "$$" + d;
           let g = d.slice(2);
-          var j = He(g);
-          if ((Ge(g) && ((g = g.slice(0, -7)), (_.capture = !0)), !j && m)) {
-            if (p != null) continue;
+          var j = We(g);
+          if ((Ve(g) && ((g = g.slice(0, -7)), (_.capture = !0)), !j && m)) {
+            if (h != null) continue;
             (t.removeEventListener(g, v[I], _), (v[I] = null));
           }
-          if (p != null)
-            if (j) ((t[`__${g}`] = p), mt([g]));
+          if (h != null)
+            if (j) ((t[`__${g}`] = h), pt([g]));
             else {
               let k = function (F) {
                 v[d].call(this, F);
               };
-              v[I] = ze(g, t, k, _);
+              v[I] = Re(g, t, k, _);
             }
           else j && (t[`__${g}`] = void 0);
-        } else if (d === "style") O(t, d, p);
-        else if (d === "autofocus") Ke(t, !!p);
-        else if (!c && (d === "__value" || (d === "value" && p != null)))
-          t.value = t.__value = p;
-        else if (d === "selected" && w) ir(t, p);
+        } else if (d === "style") O(t, d, h);
+        else if (d === "autofocus") Xe(t, !!h);
+        else if (!c && (d === "__value" || (d === "value" && h != null)))
+          t.value = t.__value = h;
+        else if (d === "selected" && w) ar(t, h);
         else {
-          var C = d;
-          i || (C = Be(C));
-          var N = C === "defaultValue" || C === "defaultChecked";
-          if (p == null && !c && !N)
-            if (((s[d] = null), C === "value" || C === "checked")) {
+          var S = d;
+          a || (S = Ue(S));
+          var N = S === "defaultValue" || S === "defaultChecked";
+          if (h == null && !c && !N)
+            if (((i[d] = null), S === "value" || S === "checked")) {
               let _ = t;
               const I = e === void 0;
-              if (C === "value") {
+              if (S === "value") {
                 let g = _.defaultValue;
-                (_.removeAttribute(C),
+                (_.removeAttribute(S),
                   (_.defaultValue = g),
                   (_.value = _.__value = I ? g : null));
               } else {
                 let g = _.defaultChecked;
-                (_.removeAttribute(C),
+                (_.removeAttribute(S),
                   (_.defaultChecked = g),
                   (_.checked = I ? g : !1));
               }
             } else t.removeAttribute(d);
           else
-            N || (T.includes(C) && (c || typeof p != "string"))
-              ? ((t[C] = p), C in s && (s[C] = Pe))
-              : typeof p != "function" && O(t, C, p);
+            N || (T.includes(S) && (c || typeof h != "string"))
+              ? ((t[S] = h), S in i && (i[S] = Oe))
+              : typeof h != "function" && O(t, S, h);
         }
     }
   }
-  return (h && X(!0), v);
+  return (p && q(!0), v);
 }
-function ct(t, e, r = [], o = [], n = [], a, l = !1, f = !1) {
-  Ie(n, r, o, (s) => {
+function ut(t, e, r = [], o = [], s = [], n, l = !1, f = !1) {
+  xe(s, r, o, (i) => {
     var c = void 0,
-      i = {},
-      h = t.nodeName === "SELECT",
+      a = {},
+      p = t.nodeName === "SELECT",
       v = !1;
     if (
-      (Kt(() => {
-        var S = e(...s.map(A)),
-          T = ar(t, c, S, a, l, f);
-        v && h && "value" in S && Ct(t, S.value);
-        for (let m of Object.getOwnPropertySymbols(i)) S[m] || dt(i[m]);
-        for (let m of Object.getOwnPropertySymbols(S)) {
-          var u = S[m];
-          (m.description === xe &&
+      (qt(() => {
+        var C = e(...i.map(A)),
+          T = lr(t, c, C, n, l, f);
+        v && p && "value" in C && kt(t, C.value);
+        for (let m of Object.getOwnPropertySymbols(a)) C[m] || ft(a[m]);
+        for (let m of Object.getOwnPropertySymbols(C)) {
+          var u = C[m];
+          (m.description === je &&
             (!c || u !== c[m]) &&
-            (i[m] && dt(i[m]), (i[m] = it(() => tr(t, () => u)))),
+            (a[m] && ft(a[m]), (a[m] = at(() => er(t, () => u)))),
             (T[m] = u));
         }
         c = T;
       }),
-      h)
+      p)
     ) {
       var w = t;
-      It(() => {
-        (Ct(w, c.value, !0), sr(w));
+      Tt(() => {
+        (kt(w, c.value, !0), ir(w));
       });
     }
     v = !0;
   });
 }
-function te(t) {
+function ee(t) {
   return (t.__attributes ??= {
-    [Zt]: t.nodeName.includes("-"),
-    [$t]: t.namespaceURI === Fe,
+    [$t]: t.nodeName.includes("-"),
+    [te]: t.namespaceURI === Pe,
   });
 }
-var zt = new Map();
-function ee(t) {
+var Ht = new Map();
+function re(t) {
   var e = t.getAttribute("is") || t.nodeName,
-    r = zt.get(e);
+    r = Ht.get(e);
   if (r) return r;
-  zt.set(e, (r = []));
-  for (var o, n = t, a = Element.prototype; a !== n; ) {
-    o = Le(n);
+  Ht.set(e, (r = []));
+  for (var o, s = t, n = Element.prototype; n !== s; ) {
+    o = De(s);
     for (var l in o) o[l].set && r.push(l);
-    n = Ee(n);
+    s = Ne(s);
   }
   return r;
 }
@@ -838,7 +836,7 @@ I focus on clarity, predictable behavior and tools that actually help engineers 
       "video-missing": "Видео недоступно",
     },
   },
-  Ht = {
+  Vt = {
     active: [
       {
         link: "https://github.com/MaestroFusion360/svelte-comp",
@@ -846,27 +844,21 @@ I focus on clarity, predictable behavior and tools that actually help engineers 
         en: {
           title: "svelte-comp",
           description:
-            "A compact, modular UI toolkit built on <strong>Svelte 5</strong> with styling powered by <strong>TailwindCSS</strong> and a clean layer of CSS variables. Components are predictable, lightweight, and self-contained - no global side effects. Design tokens live in <code>app.css</code>, so theming and <strong>dark mode</strong> are as simple as adding a <code>.dark</code> class.",
+            "A compact, modular UI toolkit built on <strong>Svelte 5</strong> with styling powered by <strong>TailwindCSS</strong> and a clean layer of CSS variables. Components are predictable, lightweight, and self-contained - no global side effects",
           features: [
             "<strong>Svelte 5 Runes API</strong> ($state, $derived, $effect, $props)",
             "<strong>TailwindCSS v4</strong> + design tokens via CSS variables",
-            "<strong>Dark mode</strong> support via <code>.dark</code> class",
-            "<strong>Self-contained</strong> components (no global dependencies)",
-            "<strong>Composable API</strong> - props and functional children instead of slots",
-            "Built-in i18n: English, Russian, Spanish",
+            "<strong>Built-in i18n</strong>: English, Russian, Spanish",
           ],
         },
         ru: {
           title: "svelte-comp",
           description:
-            "Компактная модульная библиотека UI-компонентов на <strong>Svelte 5</strong> со стилями на <strong>TailwindCSS</strong> и слоем CSS-переменных. Компоненты предсказуемые, легкие и самодостаточные - без глобальных сайд-эффектов. Дизайн-токены лежат в <code>app.css</code>, поэтому тема и <strong>dark mode</strong> включаются добавлением класса <code>.dark</code> на любой контейнер.",
+            "Компактная модульная библиотека UI-компонентов на <strong>Svelte 5</strong> со стилями на <strong>TailwindCSS</strong> и слоем CSS-переменных. Компоненты предсказуемые, легкие и самодостаточные - без глобальных сайд-эффектов",
           features: [
             "<strong>Svelte 5 Runes API</strong> ($state, $derived, $effect, $props)",
             "<strong>TailwindCSS v4</strong> + дизайн-токены через CSS-переменные",
-            "<strong>Темная тема</strong> через класс <code>.dark</code>",
-            "<strong>Самодостаточные</strong> компоненты (без глобальных зависимостей)",
-            "<strong>Композиция</strong> через props и functional children вместо слотов",
-            "Встроенная i18n: английский, русский, испанский",
+            "<strong>Встроенная i18n</strong>: английский, русский, испанский",
           ],
         },
       },
@@ -876,27 +868,21 @@ I focus on clarity, predictable behavior and tools that actually help engineers 
         en: {
           title: "Planner",
           description:
-            "Planner is a desktop application for <strong>manufacturing task management</strong> and <strong>production scheduling</strong>. It includes an interactive <strong>Gantt chart</strong>, a <strong>nomenclature database</strong>, and automated time calculations for efficient production planning.",
+            "Planner is a desktop application for <strong>manufacturing task management</strong> and <strong>production scheduling</strong>",
           features: [
             "<strong>Production planning</strong> and scheduling",
-            "<strong>Machine workload</strong> management",
             "<strong>Interactive Gantt chart</strong> (Day / Week / Month view)",
-            "<strong>Nomenclature database</strong> for parts and operations",
-            "Import from <strong>CSV</strong> and <strong>Excel</strong>",
-            "Export to <strong>Excel</strong> with embedded Gantt chart",
+            "Import/Export from <strong>CSV</strong> and <strong>Excel</strong>",
           ],
         },
         ru: {
           title: "Planner",
           description:
-            "Planner — настольное приложение для <strong>управления производственными задачами</strong> и <strong>планирования производства</strong>. Есть интерактивная <strong>диаграмма Ганта</strong>, <strong>база номенклатуры</strong> и автоматический расчет времени для эффективного планирования.",
+            "Planner — настольное приложение для <strong>управления производственными задачами</strong> и <strong>планирования производства</strong>",
           features: [
             "<strong>Планирование</strong> и расписание производственных задач",
-            "<strong>Управление загрузкой</strong> по станкам",
             "<strong>Интерактивная диаграмма Ганта</strong> (день / неделя / месяц)",
-            "<strong>База номенклатуры</strong> деталей и операций",
-            "Импорт из <strong>CSV</strong> и <strong>Excel</strong>",
-            "Экспорт в <strong>Excel</strong> с встроенной диаграммой Ганта",
+            "Импорт/Экспорт из <strong>CSV</strong> и <strong>Excel</strong>",
           ],
         },
       },
@@ -906,27 +892,21 @@ I focus on clarity, predictable behavior and tools that actually help engineers 
         en: {
           title: "Easy G-Code Plot",
           description:
-            "Easy G-Code Plot is a G-code editor and visualizer. It supports 3D rendering of toolpaths for <strong>3-axis milling</strong> and <strong>2-axis lathe</strong> machining with various modes. The engine is built on <strong>pyqtgraph</strong>.",
+            "Easy G-Code Plot is a G-code editor and visualizer. It supports 3D rendering of toolpaths for <strong>3-axis milling</strong> and <strong>2-axis lathe</strong> machining with various modes",
           features: [
             "<strong>Program animation</strong> with playback speed control and display of current coordinates",
             "<strong>Syntax highlighting with line numbering</strong> (similar to Cimco Edit)",
-            "<strong>G-code export</strong> – compatible with Fanuc, Siemens, and Heidenhain formats",
-            "<strong>Machining time calculation</strong>",
-            "<strong>Absolute and relative movements</strong> – support for both types",
-            "<strong>Arc interpolation</strong> – by center, radius, or arc start point",
+            "<strong>G-code export</strong> and <strong>machining time calculation</strong>",
           ],
         },
         ru: {
           title: "Easy G-Code Plot",
           description:
-            "Easy G-Code Plot - редактор-визуализатор G-кода. Поддержка 3D прорисовки траекторий <strong>3х осевой фрезерной</strong> и <strong>2х осевой токарной</strong> обработки с различными режимами. Движок работает на <strong>pyqtgraph</strong>",
+            "Easy G-Code Plot - редактор-визуализатор G-кода. Поддержка 3D прорисовки траекторий <strong>3х осевой фрезерной</strong> и <strong>2х осевой токарной</strong> обработки с различными режимами",
           features: [
             "<strong>Анимация</strong> программы с управлением скоростью воспроизведения и отображением текущих координат",
             "<strong>Подсветка синтаксиса c нумерацией строк</strong> (как в Cimco Edit)",
-            "<strong>Экспорт G-кода</strong> – между Fanuc, Siemens и Heidenhain.",
-            "<strong>Расчет времени обработки</strong>",
-            "<strong>Абсолютные и относительные перемещения</strong> – поддержка обоих типов.",
-            "<strong>Интерполяция дуг</strong> – через центр, радиус или начало дуги.",
+            "<strong>Экспорт G-кода</strong> и <strong>расчет времени обработки</strong>",
           ],
         },
       },
@@ -936,7 +916,7 @@ I focus on clarity, predictable behavior and tools that actually help engineers 
         en: {
           title: "SmartPost",
           description:
-            "A powerful tool that accelerates <strong>G-code generation</strong> and removes the <strong>tool change restriction</strong> in Fusion 360 Personal.",
+            "A powerful tool that accelerates <strong>G-code generation</strong> and removes the <strong>tool change restriction</strong> in Fusion 360 Personal",
           features: [
             "<strong>Faster post-processing</strong> – reduce CAM processing time.",
             "<strong>No tool change limitations</strong> – unrestricted multi-tool operations.",
@@ -946,7 +926,7 @@ I focus on clarity, predictable behavior and tools that actually help engineers 
         ru: {
           title: "SmartPost",
           description:
-            "Мощный инструмент, который ускоряет <strong>генерацию УП</strong> и устраняет <strong>ограничение на смену инструмента</strong> в Fusion 360 Personal.",
+            "Мощный инструмент, который ускоряет <strong>генерацию УП</strong> и устраняет <strong>ограничение на смену инструмента</strong> в Fusion 360 Personal",
           features: [
             "<strong>Быстрый постпроцессинг</strong> – сокращение времени на настройку вывода УП.",
             "<strong>Нет ограничений на смену инструмента</strong> – неограниченные операции с несколькими инструментами.",
@@ -960,26 +940,20 @@ I focus on clarity, predictable behavior and tools that actually help engineers 
         en: {
           title: "FormBuilder",
           description:
-            "FormBuilder is a visual HTML form editor built with Svelte and Vite, offering developers a lightweight, dependency-free tool for complete control over form design. Its core features provide full visual editing and clean code export.",
+            "FormBuilder is a visual HTML form editor built with Svelte and Vite, offering developers a lightweight, dependency-free tool for complete control over form design",
           features: [
             "<strong>Visual Component Tree</strong>: Intuitively add, remove, nest, and reorder form elements.",
-            "<strong>Smart Property Editor</strong>: Dynamic controls and inputs that update the live preview instantly.",
-            "<strong>Drag-and-Drop</strong> & <strong>Keyboard Controls</strong>: Efficiently manage the layout using both mouse and keyboard shortcuts (Ctrl+Arrow keys).",
-            "<strong>Copy/Paste Elements</strong>: Quickly duplicate components and their properties within the editor.",
-            "<strong>Clean Code Generation</strong>: Export forms as ready-to-use HTML and CSS with one click.",
+            "<strong>Drag-and-Drop</strong>",
             "<strong>Project Serialization</strong>: Save, load, and share your form's complete structure as JSON.",
           ],
         },
         ru: {
           title: "FormBuilder",
           description:
-            "FormBuilder — это визуальный редактор HTML-форм на Svelte и Vite, предоставляющий разработчикам лёгкий инструмент без зависимостей для полного контроля над дизайном форм. Ключевые возможности включают полное визуальное редактирование и экспорт чистого кода.",
+            "FormBuilder — это визуальный редактор HTML-форм на Svelte и Vite, предоставляющий разработчикам лёгкий инструмент без зависимостей для полного контроля над дизайном форм",
           features: [
             "<strong>Визуальное дерево компонентов</strong>: Интуитивное добавление, удаление, вложение и изменение порядка элементов формы.",
-            "<strong>Умный редактор свойств</strong>: Динамические контролы и поля ввода с мгновенным обновлением предпросмотра.",
-            "<strong>Drag-and-Drop и управление с клавиатуры</strong>: Эффективное управление структурой с помощью мыши и горячих клавиш (Ctrl+Стрелки).",
-            "<strong>Копирование/вставка элементов</strong>: Быстрое дублирование компонентов и их свойств внутри редактора.",
-            "<strong>Генерация чистого кода</strong>: Экспорт форм в готовый HTML и CSS в один клик.",
+            "<strong>Drag-and-Drop и управление с клавиатуры</strong>",
             "<strong>Сериализация проекта</strong>: Сохранение, загрузка и обмен полной структурой формы в формате JSON.",
           ],
         },
@@ -1014,27 +988,21 @@ I focus on clarity, predictable behavior and tools that actually help engineers 
         en: {
           title: "CSS validator",
           description:
-            "<strong>CSS Validator</strong> is a lightweight, interactive tool built with Svelte 5 runes for experimenting with and validating CSS. It features a live editor with instant preview, inline validation, and zero external CSS dependencies.",
+            "<strong>CSS Validator</strong> is a lightweight, interactive tool built with Svelte 5. It features a live editor with instant preview, inline validation",
           features: [
             "<strong>Live Editor & Preview</strong>: Auto-resizing textarea and real-time rendering of a selected component.",
             "<strong>Inline CSS Validation</strong>: Real-time warnings and errors for property names and values.",
-            "<strong>Svelte 5 Runes</strong>: Built with the latest $state, $derived, $effect, and $props primitives.",
             "<strong>Syntax Highlighting & Copy</strong>: The CodeView component highlights CSS/HTML and enables one-click copying.",
-            "<strong>Zero External CSS</strong>: All styling is managed via inline styles or the css() helper for minimal overhead.",
-            "<strong>Multilingual & Theming</strong>: Supports English and Russian, with a built-in light/dark theme toggle.",
           ],
         },
         ru: {
           title: "CSS validator",
           description:
-            "<strong>CSS Validator</strong> — это лёгкий интерактивный инструмент на Svelte 5 Runes для экспериментов с CSS и его проверки. Он предлагает живой редактор с мгновенным предпросмотром, встроенную валидацию и полное отсутствие внешних CSS-файлов.",
+            "<strong>CSS Validator</strong> — это лёгкий интерактивный инструмент на Svelte 5. Он предлагает живой редактор с предпросмотром, встроенную валидацию",
           features: [
             "<strong>Живой редактор и предпросмотр</strong>: Автомасштабируемое поле ввода и мгновенный рендеринг выбранного компонента.",
             "<strong>Встроенная валидация CSS</strong>: Проверка имён и значений свойств с выводом предупреждений и ошибок.",
-            "<strong>Svelte 5 Runes</strong>: Построен на новейших примитивах $state, $derived, $effect и $props.",
             "<strong>Подсветка синтаксиса и копирование</strong>: Компонент CodeView подсвечивает CSS/HTML код и позволяет копировать его.",
-            "<strong>Без внешнего CSS</strong>: Вся стилизация реализована через инлайн-стили или хелпер css() для минимальной нагрузки.",
-            "<strong>Мультиязычность и темы</strong>: Поддержка английского и русского языков, встроенный переключатель светлой/тёмной темы.",
           ],
         },
       },
@@ -1044,27 +1012,21 @@ I focus on clarity, predictable behavior and tools that actually help engineers 
         en: {
           title: "DrillCalc",
           description:
-            "<strong>Drilling Calculator</strong> is a fast G-code coordinate generator for circular and grid hole patterns, designed for CNC machinists and Fusion 360 users. It features precise control, export-ready cycles, and a responsive, accessible interface",
+            "<strong>Drilling Calculator</strong> is a fast G-code coordinate generator for circular and grid hole patterns, designed for CNC machinists and Fusion 360 users",
           features: [
             "<strong>Circular & Grid Array Calculation</strong>: Generate coordinates for PCD and grid layouts with start angle and direction control.",
             "<strong>Export-Ready G-Code Cycles</strong>: Directly export to standard canned cycles (G81, G82, G83) or XY coordinate lists.",
-            "<strong>Advanced Grid Logic</strong>: Includes intelligent serpentine (bidirectional) toolpath optimization.",
-            "<strong>Configurable Precision</strong>: Set coordinate decimal places (1–3) for machine-specific accuracy.",
             "<strong>Accessible, Responsive UI</strong>: A clean interface with dark/light mode that works on any device.",
-            "<strong>Focus on Usability</strong>: Built with keyboard navigation and focus-trapped dialogs for efficient workflow.",
           ],
         },
         ru: {
           title: "DrillCalc",
           description:
-            "<strong>Drilling Calculator</strong> — это быстрый генератор координат G-кода для круговых и сеточных массивов отверстий, созданный для операторов ЧПУ и пользователей Fusion 360. Он предлагает точный контроль, готовые к использованию циклы и адаптивный интерфейс.",
+            "<strong>Drilling Calculator</strong> — это быстрый генератор координат G-кода для круговых и сеточных массивов отверстий, созданный для операторов ЧПУ и пользователей Fusion 360",
           features: [
             "<strong>Расчёт круговых и сеточных массивов</strong>: Генерация координат для окружностей и сеток с настройкой начального угла и направления.",
             "<strong>Экспорт циклов G-кода</strong>: Прямой экспорт в стандартные циклы (G81, G82, G83) или списки координат XY.",
-            "<strong>Продвинутая логика сетки</strong>: Интеллектуальная оптимизация траектории («змейкой»).",
-            "<strong>Настраиваемая точность</strong>: Установка знаков после запятой (1–3) для соответствия станку.",
             "<strong>Адаптивный и доступный интерфейс</strong>: Чистый дизайн с тёмной/светлой темой для всех устройств.",
-            "<strong>Удобство использования</strong>: Управление с клавиатуры и корректная работа модальных окон для эффективной работы.",
           ],
         },
       },
@@ -1146,25 +1108,23 @@ I focus on clarity, predictable behavior and tools that actually help engineers 
         en: {
           title: "editor_json",
           description:
-            "<strong>editor_json</strong> is a Progressive Web App (PWA) for managing CNC post-processor JSON files, built for seamless integration with Telegram bots such as @postprocessors_bot.",
+            "<strong>editor_json</strong> is a Progressive Web App (PWA) for managing CNC post-processor JSON files (@postprocessors_bot)",
           features: [
             "<strong>Edit post processor parameters</strong>",
             "<strong>Save/load JSON files</strong>",
             "<strong>Search by name and description</strong>",
             "<strong>Responsive interface</strong>",
-            "<strong>Offline mode</strong>",
           ],
         },
         ru: {
           title: "editor_json",
           description:
-            "<strong>editor_json</strong> — это прогрессивное веб-приложение (PWA) для управления JSON-файлами постпроцессоров ЧПУ, созданное для удобной интеграции с Telegram-ботами, такими как @postprocessors_bot.",
+            "<strong>editor_json</strong> — это веб-приложение (PWA) для управления JSON-файлами постпроцессоров ЧПУ (@postprocessors_bot)",
           features: [
             "<strong>Редактировать параметры постпроцессора</strong>",
             "<strong>Сохранять и загружать JSON-файлы конфигурации</strong>",
             "<strong>Поиск по названию и описанию</strong>",
             "<strong>Адаптивный интерфейс</strong>",
-            "<strong>Офлайн-режим</strong>",
           ],
         },
       },
@@ -1202,41 +1162,64 @@ I focus on clarity, predictable behavior and tools that actually help engineers 
       },
     ],
   };
-var lr = P(
+var cr = P(
   '<div class="content-block contact-info contact-grid"><p><img src="assets/gmail_icon.svg" width="20" alt="Gmail"/> <strong>Email:</strong> <a href="mailto:maestrofusion360@gmail.com">maestrofusion360@gmail.com</a></p> <p><img src="assets/telegram_icon.svg" width="20" alt="Telegram"/> <strong>Telegram:</strong> <a href="https://t.me/MaestroFusion360">@MaestroFusion360</a></p> <p><img src="assets/github_icon.svg" width="20" alt="GitHub"/> <strong>GitHub:</strong> <a href="https://github.com/MaestroFusion360">github.com/MaestroFusion360</a></p> <p><img src="assets/youtube_icon.svg" width="20" alt="YouTube"/> <strong>YouTube:</strong> <a href="https://www.youtube.com/@MaestroFusion360">youtube.com/@MaestroFusion360</a></p></div>',
 );
-function cr(t) {
-  var e = lr();
+function ur(t) {
+  var e = cr();
   E(t, e);
 }
-var ur = P('<footer class="svelte-kcvnik"><p> </p></footer>');
-function gr(t, e) {
-  V(e, !1);
+var gr = P('<footer class="svelte-kcvnik"><p> </p></footer>');
+function dr(t, e) {
+  R(e, !1);
   const r = new Date().getFullYear();
-  Ye();
-  var o = ur(),
-    n = y(o),
-    a = y(n);
-  (b(n),
+  Je();
+  var o = gr(),
+    s = y(o),
+    n = y(s);
+  (b(s),
     b(o),
-    G(() => H(a, `© ${r ?? ""} MaestroFusion360. All rights reserved.`)),
+    G(() => B(n, `© ${r ?? ""} MaestroFusion360. All rights reserved.`)),
     E(t, o),
     U());
 }
-var dr = P(
+var fr = P(
   `<header class="svelte-1yz1i5m"><h1 data-lang="title" class="svelte-1yz1i5m">Hi there, I'm MaestroFusion360</h1> <nav class="navbar svelte-1yz1i5m"><a href="#about" data-lang="about-title" class="svelte-1yz1i5m">About</a> <a href="#technologies" data-lang="tech-title" class="svelte-1yz1i5m">Technologies</a> <a href="#projects" data-lang="projects-title" class="svelte-1yz1i5m">Projects</a> <a href="#upcoming" data-lang="upcoming-title" class="svelte-1yz1i5m">Future Projects</a> <a href="#contact" data-lang="contact-title" class="svelte-1yz1i5m">Contact</a></nav> <div class="social-links svelte-1yz1i5m"><a href="https://www.youtube.com/@MaestroFusion360?sub_confirmation=1"><img src="https://img.shields.io/badge/Subscribe-YouTube-red?logo=youtube" alt="YouTube" class="svelte-1yz1i5m"/></a> <a href="https://t.me/+v0HwgVBIg8AyNTcy"><img src="https://img.shields.io/badge/Join-Telegram-blue?logo=telegram" alt="Telegram" class="svelte-1yz1i5m"/></a></div></header>`,
 );
-function fr(t) {
-  var e = dr();
+function vr(t) {
+  var e = fr();
   E(t, e);
 }
-var vr = P("<button><!></button>");
+function K(...t) {
+  const e = [],
+    r = (o) => {
+      if (!(o == null || o === !1)) {
+        if (typeof o == "string") {
+          e.push(...o.split(/\s+/).filter(Boolean));
+          return;
+        }
+        if (typeof o == "number" || typeof o == "bigint") {
+          e.push(String(o));
+          return;
+        }
+        if (Array.isArray(o)) {
+          for (const s of o) r(s);
+          return;
+        }
+        if (typeof o == "object")
+          for (const [s, n] of Object.entries(o)) n && e.push(s);
+      }
+    };
+  for (const o of t) r(o);
+  return e.join(" ");
+}
+var hr = P("<button><!></button>");
 function Rt(t, e) {
-  V(e, !0);
+  R(e, !0);
   let r = x(e, "variant", 3, "primary"),
     o = x(e, "class", 3, ""),
-    n = x(e, "type", 3, "button"),
-    a = lt(e, [
+    s = x(e, "type", 3, "button"),
+    n = ct(e, [
       "$$slots",
       "$$events",
       "$$legacy",
@@ -1255,20 +1238,20 @@ function Rt(t, e) {
           ? "pointer-events-auto grid h-11 w-11 place-items-center rounded-full border border-[var(--surface-border)] bg-[var(--surface-strong)] text-[var(--text-color)] shadow-[var(--shadow-sm)] backdrop-blur-sm transition-[var(--transition)] hover:scale-110 hover:bg-[var(--primary-color)] hover:text-[var(--white)]"
           : "inline-flex items-center justify-center rounded-[var(--border-radius)] px-3 py-2 text-sm text-[var(--text-color)] transition-[var(--transition)] hover:bg-[var(--surface-strong)]",
     );
-  var s = vr();
-  ct(s, (i) => ({ ...a, type: n(), class: i, onclick: e.onclick }), [
-    () => [l, A(f), o()].filter(Boolean).join(" "),
+  var i = hr();
+  ut(i, (a) => ({ ...n, type: s(), class: a, onclick: e.onclick }), [
+    () => K(l, A(f), o()),
   ]);
-  var c = y(s);
-  (Tt(c, () => e.children), b(s), E(t, s), U());
+  var c = y(i);
+  (Ft(c, () => e.children), b(i), E(t, i), U());
 }
-var pr = P("<div><!></div>");
-function re(t, e) {
-  V(e, !0);
+var mr = P("<div><!></div>");
+function oe(t, e) {
+  R(e, !0);
   const r = x(e, "variant", 3, "default"),
     o = x(e, "active", 3, !1),
-    n = x(e, "class", 3, ""),
-    a = lt(e, [
+    s = x(e, "class", 3, ""),
+    n = ct(e, [
       "$$slots",
       "$$events",
       "$$legacy",
@@ -1285,41 +1268,41 @@ function re(t, e) {
           : "container",
     ),
     f = J(() => (r() === "project" && o() ? "active" : ""));
-  var s = pr();
-  ct(
-    s,
-    (i) => ({ ...a, class: i }),
-    [() => [A(l), A(f), n()].filter(Boolean).join(" ")],
+  var i = mr();
+  ut(
+    i,
+    (a) => ({ ...n, class: a }),
+    [() => K(A(l), A(f), s())],
     void 0,
     void 0,
     "svelte-2gevwt",
   );
-  var c = y(s);
-  (Tt(c, () => e.children), b(s), E(t, s), U());
+  var c = y(i);
+  (Ft(c, () => e.children), b(i), E(t, i), U());
 }
-var mr = Xt(
+var pr = Ut(
     '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 12L6 8L10 4"></path></svg>',
   ),
-  hr = Xt(
+  br = Ut(
     '<svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 4L10 8L6 12"></path></svg>',
   ),
-  br = P(
+  _r = P(
     '<div class="carousel-nav svelte-er9umx" role="group" aria-label="Carousel navigation"><!> <!></div>',
   ),
-  _r = P('<button type="button"></button>'),
-  yr = P("<div></div>"),
-  wr = P(
+  yr = P('<button type="button"></button>'),
+  wr = P("<div></div>"),
+  Cr = P(
     '<div class="projects-carousel-wrapper svelte-er9umx"><div></div> <!></div> <!>',
     1,
   );
-function oe(t, e) {
-  V(e, !0);
+function se(t, e) {
+  R(e, !0);
   const r = x(e, "class", 3, ""),
     o = x(e, "dotsClass", 3, ""),
-    n = x(e, "ariaLabel", 3, "Carousel"),
-    a = x(e, "showDots", 3, !0),
+    s = x(e, "ariaLabel", 3, "Carousel"),
+    n = x(e, "showDots", 3, !0),
     l = x(e, "showArrows", 3, !0),
-    f = lt(e, [
+    f = ct(e, [
       "$$slots",
       "$$events",
       "$$legacy",
@@ -1331,86 +1314,86 @@ function oe(t, e) {
       "showDots",
       "showArrows",
     ]);
-  let s = null,
-    c = ft(0),
-    i = null;
-  function h() {
-    return s
-      ? Array.from(s.querySelectorAll(".project-card")).filter(
-          (p) => p.parentElement === s,
+  let i = null,
+    c = vt(0),
+    a = null;
+  function p() {
+    return i
+      ? Array.from(i.querySelectorAll(".project-card")).filter(
+          (h) => h.parentElement === i,
         )
       : [];
   }
   function v() {
-    if (!s) return 0;
-    const d = h();
+    if (!i) return 0;
+    const d = p();
     if (d.length === 0) return 0;
-    const p = s.scrollLeft + s.clientWidth / 2;
+    const h = i.scrollLeft + i.clientWidth / 2;
     let _ = 0,
       I = Number.MAX_VALUE;
     return (
       d.forEach((g, k) => {
         const F = g.offsetLeft + g.offsetWidth / 2,
-          B = Math.abs(F - p);
-        B < I && ((I = B), (_ = k));
+          H = Math.abs(F - h);
+        H < I && ((I = H), (_ = k));
       }),
       _
     );
   }
   function w(d) {
-    if (!s) return;
-    const _ = h()[d];
+    if (!i) return;
+    const _ = p()[d];
     if (!_) return;
-    const I = _.offsetLeft - (s.clientWidth - _.offsetWidth) / 2;
-    (s.scrollTo({ left: I, behavior: "smooth" }), q(c, d, !0));
+    const I = _.offsetLeft - (i.clientWidth - _.offsetWidth) / 2;
+    (i.scrollTo({ left: I, behavior: "smooth" }), Q(c, d, !0));
   }
-  function S() {
-    i === null &&
-      (i = requestAnimationFrame(() => {
-        (q(c, v(), !0), (i = null));
+  function C() {
+    a === null &&
+      (a = requestAnimationFrame(() => {
+        (Q(c, v(), !0), (a = null));
       }));
   }
-  pt(() => {
-    if (!(typeof window > "u") && s)
+  mt(() => {
+    if (!(typeof window > "u") && i)
       return (
         requestAnimationFrame(() => {
-          q(c, v(), !0);
+          Q(c, v(), !0);
         }),
         () => {
-          (i !== null && cancelAnimationFrame(i), (i = null));
+          (a !== null && cancelAnimationFrame(a), (a = null));
         }
       );
   });
-  var T = wr(),
-    u = et(T),
+  var T = Cr(),
+    u = rt(T),
     m = y(u);
-  (ct(
+  (ut(
     m,
     (d) => ({
       ...f,
       class: d,
       role: "region",
-      "aria-label": n(),
+      "aria-label": s(),
       "aria-live": "polite",
-      onscroll: S,
+      onscroll: C,
     }),
-    [() => ["projects-carousel", r()].filter(Boolean).join(" ")],
+    [() => K("projects-carousel", r())],
     void 0,
     void 0,
     "svelte-er9umx",
   ),
-    vt(
+    ht(
       m,
       21,
       () => e.items,
-      Nt,
-      (d, p, _) => {
-        var I = Ue(),
-          g = et(I);
-        (Tt(
+      jt,
+      (d, h, _) => {
+        var I = ce(),
+          g = rt(I);
+        (Ft(
           g,
           () => e.children,
-          () => A(p),
+          () => A(h),
           () => _,
           () => _ === A(c),
         ),
@@ -1418,22 +1401,22 @@ function oe(t, e) {
       },
     ),
     b(m),
-    Je(
+    Ke(
       m,
-      (d) => (s = d),
-      () => s,
+      (d) => (i = d),
+      () => i,
     ));
   var L = M(m, 2);
   {
     var j = (d) => {
-      var p = br(),
-        _ = y(p);
+      var h = _r(),
+        _ = y(h);
       Rt(_, {
         "aria-label": "Previous slide",
         variant: "icon",
         onclick: () => w(Math.max(0, A(c) - 1)),
         children: (g, k) => {
-          var F = mr();
+          var F = pr();
           E(g, F);
         },
         $$slots: { default: !0 },
@@ -1444,66 +1427,66 @@ function oe(t, e) {
         variant: "icon",
         onclick: () => w(Math.min(e.items.length - 1, A(c) + 1)),
         children: (g, k) => {
-          var F = hr();
+          var F = br();
           E(g, F);
         },
         $$slots: { default: !0 },
       }),
-        b(p),
-        E(d, p));
+        b(h),
+        E(d, h));
     };
-    tt(L, (d) => {
+    et(L, (d) => {
       l() && e.items.length > 1 && d(j);
     });
   }
   b(u);
-  var C = M(u, 2);
+  var S = M(u, 2);
   {
     var N = (d) => {
-      var p = yr();
-      (vt(
-        p,
+      var h = wr();
+      (ht(
+        h,
         21,
         () => e.items,
-        Nt,
+        jt,
         (_, I, g) => {
-          var k = _r();
+          var k = yr();
           let F;
           (O(k, "aria-label", `Go to slide ${g + 1}`),
             (k.__click = () => w(g)),
             G(
               () =>
-                (F = at(k, 1, "dot svelte-er9umx", null, F, {
+                (F = lt(k, 1, "dot svelte-er9umx", null, F, {
                   active: g === A(c),
                 })),
             ),
             E(_, k));
         },
       ),
-        b(p),
+        b(h),
         G(
-          (_) => at(p, 1, _, "svelte-er9umx"),
-          [() => ht(["carousel-dots", o()].filter(Boolean).join(" "))],
+          (_) => lt(h, 1, _, "svelte-er9umx"),
+          [() => bt(K("carousel-dots", o()))],
         ),
-        E(d, p));
+        E(d, h));
     };
-    tt(C, (d) => {
-      a() && e.items.length > 1 && d(N);
+    et(S, (d) => {
+      n() && e.items.length > 1 && d(N);
     });
   }
   (E(t, T), U());
 }
-mt(["click"]);
+pt(["click"]);
 var Sr = P(
   '<div><div class="w-full"><h2 class="md:text-left"> </h2> <div class="content-block md:mx-0"><p class="md:text-left"> </p></div></div> <div class="flex items-center justify-center md:justify-end h-full"><img width="180" height="180" loading="eager"/></div></div>',
 );
-function Cr(t, e) {
-  V(e, !0);
-  let r = x(e, "imageSrc", 3, "assets/icon-512.png"),
+function kr(t, e) {
+  R(e, !0);
+  let r = x(e, "imageSrc", 3, "assets/icon.svg"),
     o = x(e, "imageAlt", 3, "Hero image"),
-    n = x(e, "imgClass", 3, ""),
-    a = x(e, "class", 3, ""),
-    l = lt(e, [
+    s = x(e, "imgClass", 3, ""),
+    n = x(e, "class", 3, ""),
+    l = ct(e, [
       "$$slots",
       "$$events",
       "$$legacy",
@@ -1517,238 +1500,233 @@ function Cr(t, e) {
       "class",
     ]);
   var f = Sr();
-  ct(f, (u) => ({ ...l, class: u }), [
-    () =>
-      ["grid gap-6 md:grid-cols-[1fr_auto] md:items-stretch", a()]
-        .filter(Boolean)
-        .join(" "),
+  ut(f, (u) => ({ ...l, class: u }), [
+    () => K("grid gap-6 md:grid-cols-[1fr_auto] md:items-stretch", n()),
   ]);
-  var s = y(f),
-    c = y(s),
-    i = y(c, !0);
+  var i = y(f),
+    c = y(i),
+    a = y(c, !0);
   b(c);
-  var h = M(c, 2),
-    v = y(h),
+  var p = M(c, 2),
+    v = y(p),
     w = y(v, !0);
-  (b(v), b(h), b(s));
-  var S = M(s, 2),
-    T = y(S);
-  (b(S),
+  (b(v), b(p), b(i));
+  var C = M(i, 2),
+    T = y(C);
+  (b(C),
     b(f),
     G(
       (u) => {
         (O(c, "data-lang", e.titleKey),
-          H(i, e.title),
+          B(a, e.title),
           O(v, "data-lang", e.descriptionKey),
-          H(w, e.description),
+          B(w, e.description),
           O(T, "src", r()),
           O(T, "alt", o()),
-          at(T, 1, u));
+          lt(T, 1, u));
       },
       [
         () =>
-          ht(
-            [
+          bt(
+            K(
               "h-64 w-64 rounded-2xl border border-slate-900/10 bg-white/60 p-3 shadow-sm backdrop-blur",
               "dark:border-slate-100/10 dark:bg-slate-900/40",
-              n(),
-            ]
-              .filter(Boolean)
-              .join(" "),
+              s(),
+            ),
           ),
       ],
     ),
     E(t, f),
     U());
 }
-var kr = P(
+var Ar = P(
   '<div class="lang-switch svelte-f01c5n" role="group" aria-label="Language"><button type="button" class="lang-switch__btn svelte-f01c5n" aria-label="English" title="English"><img class="lang-switch__img svelte-f01c5n" src="assets/gb_icon.svg" alt="English"/></button> <button type="button" class="lang-switch__btn svelte-f01c5n" aria-label="Русский" title="Русский"><img class="lang-switch__img svelte-f01c5n" src="assets/ru_icon.svg" alt="Русский"/></button></div>',
 );
-function Ar(t, e) {
-  V(e, !0);
+function Mr(t, e) {
+  R(e, !0);
   let r = x(e, "value", 15, "en"),
     o = x(e, "persist", 3, !0),
-    n = x(e, "storageKey", 3, "lang"),
-    a = x(e, "size", 3, 32),
-    l = ft(!1);
-  pt(() => {
+    s = x(e, "storageKey", 3, "lang"),
+    n = x(e, "size", 3, 32),
+    l = vt(!1);
+  mt(() => {
     if (!(typeof window > "u" || typeof document > "u")) {
       if (!A(l)) {
-        q(l, !0);
-        const h = localStorage.getItem(n());
-        (h === "en" || h === "ru") && r(h);
+        Q(l, !0);
+        const p = localStorage.getItem(s());
+        (p === "en" || p === "ru") && r(p);
       }
       ((document.documentElement.lang = r()),
-        o() && localStorage.setItem(n(), r()));
+        o() && localStorage.setItem(s(), r()));
     }
   });
-  function f(h) {
-    r(h);
+  function f(p) {
+    r(p);
   }
-  var s = kr(),
-    c = y(s);
+  var i = Ar(),
+    c = y(i);
   c.__click = () => f("en");
-  var i = M(c, 2);
-  ((i.__click = () => f("ru")),
-    b(s),
+  var a = M(c, 2);
+  ((a.__click = () => f("ru")),
+    b(i),
     G(() => {
-      (Qt(s, `--lang-icon-size: ${a()}px`),
+      (Zt(i, `--lang-icon-size: ${n()}px`),
         O(c, "aria-pressed", r() === "en"),
-        O(i, "aria-pressed", r() === "ru"));
+        O(a, "aria-pressed", r() === "ru"));
     }),
-    E(t, s),
+    E(t, i),
     U());
 }
-mt(["click"]);
-var Mr =
+pt(["click"]);
+var Ir =
   P(`<button type="button" class="theme-toggle svelte-lu0t34"><svg class="theme-icon theme-icon-sun svelte-lu0t34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="currentColor"></circle><line x1="12" y1="1" x2="12" y2="4"></line><line x1="12" y1="20" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="6.34" y2="6.34"></line><line x1="17.66" y1="17.66" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="4" y2="12"></line><line x1="20" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="6.34" y2="17.66"></line><line x1="17.66" y1="6.34" x2="19.78" y2="4.22"></line></svg> <svg class="theme-icon theme-icon-moon svelte-lu0t34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2
          A9 9 0 1 0 21 12
          A7.5 7.5 0 1 1 12 2 Z" fill="currentColor"></path></svg></button>`);
-function Ir(t, e) {
-  V(e, !0);
+function Tr(t, e) {
+  R(e, !0);
   const r = "theme";
-  let o = ft(!1),
-    n = ft("light");
-  pt(() => {
+  let o = vt(!1),
+    s = vt("light");
+  mt(() => {
     if (typeof window > "u" || typeof document > "u") return;
     if (!A(o)) {
-      q(o, !0);
+      Q(o, !0);
       const c = localStorage.getItem(r);
-      q(n, c === "dark" || c === "light" ? c : "light", !0);
+      Q(s, c === "dark" || c === "light" ? c : "light", !0);
     }
-    const f = A(n) === "dark";
+    const f = A(s) === "dark";
     (document.documentElement.classList.toggle("dark", f),
-      localStorage.setItem(r, A(n)),
+      localStorage.setItem(r, A(s)),
       document
         .querySelector('meta[name="theme-color"]')
         ?.setAttribute("content", f ? "#0b1220" : "#ffffff"));
   });
-  function a() {
-    q(n, A(n) === "dark" ? "light" : "dark", !0);
+  function n() {
+    Q(s, A(s) === "dark" ? "light" : "dark", !0);
   }
-  var l = Mr();
-  ((l.__click = a),
+  var l = Ir();
+  ((l.__click = n),
     G(() => {
       (O(
         l,
         "aria-label",
-        A(n) === "dark" ? "Switch to light theme" : "Switch to dark theme",
+        A(s) === "dark" ? "Switch to light theme" : "Switch to dark theme",
       ),
         O(
           l,
           "title",
-          A(n) === "dark" ? "Switch to light theme" : "Switch to dark theme",
+          A(s) === "dark" ? "Switch to light theme" : "Switch to dark theme",
         ));
     }),
     E(t, l),
     U());
 }
-mt(["click"]);
-var Tr = P('<iframe allowfullscreen="" loading="lazy" tabindex="-1"></iframe>'),
-  Fr = P('<div class="video-placeholder"> </div>'),
-  Er = P(
+pt(["click"]);
+var Fr = P('<iframe allowfullscreen="" loading="lazy" tabindex="-1"></iframe>'),
+  Er = P('<div class="video-placeholder"> </div>'),
+  xr = P(
     '<a target="_blank" class="project-link" style="position: relative; z-index: 10;" tabindex="-1"> </a>',
   ),
-  xr = P("<li><!></li>"),
-  Lr = P('<ul class="features-list"></ul>'),
-  Pr = P(
+  Lr = P("<li><!></li>"),
+  Pr = P('<ul class="features-list"></ul>'),
+  Nr = P(
     '<div class="video-container"><!></div> <h3><!></h3> <p><!></p> <!>',
     1,
   );
-function Nr(t, e) {
+function jr(t, e) {
   let r = x(e, "ariaLabel", 3, "Active projects carousel");
-  function o(n) {
-    return n[e.locale] ?? n.en ?? {};
+  function o(s) {
+    return s[e.locale] ?? s.en ?? {};
   }
-  oe(t, {
+  se(t, {
     get items() {
       return e.items;
     },
     get ariaLabel() {
       return r();
     },
-    children: (a, l = $, f = $, s = $) => {
+    children: (n, l = tt, f = tt, i = tt) => {
       const c = J(l),
-        i = J(() => o(A(c)));
-      re(a, {
+        a = J(() => o(A(c)));
+      oe(n, {
         variant: "project",
         get active() {
-          return s();
+          return i();
         },
-        children: (h, v) => {
-          var w = Pr(),
-            S = et(w),
-            T = y(S);
+        children: (p, v) => {
+          var w = Nr(),
+            C = rt(w),
+            T = y(C);
           {
             var u = (g) => {
-                var k = Tr();
+                var k = Fr();
                 (G(() => {
                   (O(
                     k,
                     "src",
                     `https://www.youtube.com/embed/${A(c).youtubeId}`,
                   ),
-                    O(k, "title", A(i).title ?? ""));
+                    O(k, "title", A(a).title ?? ""));
                 }),
                   E(g, k));
               },
               m = (g) => {
-                var k = Fr(),
+                var k = Er(),
                   F = y(k, !0);
-                (b(k), G(() => H(F, e.videoMissing)), E(g, k));
+                (b(k), G(() => B(F, e.videoMissing)), E(g, k));
               };
-            tt(T, (g) => {
+            et(T, (g) => {
               A(c).youtubeId ? g(u) : g(m, !1);
             });
           }
-          b(S);
-          var L = M(S, 2),
+          b(C);
+          var L = M(C, 2),
             j = y(L);
           {
-            var C = (g) => {
-                var k = Er(),
+            var S = (g) => {
+                var k = xr(),
                   F = y(k, !0);
                 (b(k),
                   G(() => {
-                    (O(k, "href", A(c).link), H(F, A(i).title ?? ""));
+                    (O(k, "href", A(c).link), B(F, A(a).title ?? ""));
                   }),
                   E(g, k));
               },
               N = (g) => {
-                var k = We();
-                (G(() => H(k, A(i).title ?? "")), E(g, k));
+                var k = ue();
+                (G(() => B(k, A(a).title ?? "")), E(g, k));
               };
-            tt(j, (g) => {
-              A(c).link ? g(C) : g(N, !1);
+            et(j, (g) => {
+              A(c).link ? g(S) : g(N, !1);
             });
           }
           b(L);
           var d = M(L, 2),
-            p = y(d);
-          (rt(p, () => A(i).description ?? ""), b(d));
+            h = y(d);
+          (ot(h, () => A(a).description ?? ""), b(d));
           var _ = M(d, 2);
           {
             var I = (g) => {
-              var k = Lr();
-              (vt(
+              var k = Pr();
+              (ht(
                 k,
                 20,
-                () => A(i).features,
+                () => A(a).features,
                 (F) => F,
-                (F, B) => {
-                  var W = xr(),
-                    ie = y(W);
-                  (rt(ie, () => B), b(W), E(F, W));
+                (F, H) => {
+                  var W = Lr(),
+                    ae = y(W);
+                  (ot(ae, () => H), b(W), E(F, W));
                 },
               ),
                 b(k),
                 E(g, k));
             };
-            tt(_, (g) => {
-              A(i).features?.length && g(I);
+            et(_, (g) => {
+              A(a).features?.length && g(I);
             });
           }
-          E(h, w);
+          E(p, w);
         },
         $$slots: { default: !0 },
       });
@@ -1756,15 +1734,15 @@ function Nr(t, e) {
     $$slots: { default: !0 },
   });
 }
-var jr = P("<span><img/></span>");
+var Dr = P("<span><img/></span>");
 function z(t, e) {
-  V(e, !0);
+  R(e, !0);
   let r = x(e, "class", 3, ""),
     o = x(e, "imgClass", 3, ""),
-    n = x(e, "width", 3, 40),
-    a = x(e, "height", 3, 40),
+    s = x(e, "width", 3, 40),
+    n = x(e, "height", 3, 40),
     l = x(e, "loading", 3, "lazy"),
-    f = lt(e, [
+    f = ct(e, [
       "$$slots",
       "$$events",
       "$$legacy",
@@ -1774,57 +1752,51 @@ function z(t, e) {
       "height",
       "loading",
     ]);
-  var s = jr(),
-    c = y(s);
-  (ct(c, (i) => ({ ...f, width: n(), height: a(), loading: l(), class: i }), [
-    () =>
-      ["transition-transform duration-200 ease-out hover:scale-110", o()]
-        .filter(Boolean)
-        .join(" "),
+  var i = Dr(),
+    c = y(i);
+  (ut(c, (a) => ({ ...f, width: s(), height: n(), loading: l(), class: a }), [
+    () => K("transition-transform duration-200 ease-out hover:scale-110", o()),
   ]),
-    b(s),
-    G(
-      (i) => at(s, 1, i),
-      [() => ht(["inline-flex items-center", r()].filter(Boolean).join(" "))],
-    ),
-    Re(c),
-    E(t, s),
+    b(i),
+    G((a) => lt(i, 1, a), [() => bt(K("inline-flex items-center", r()))]),
+    Ye(c),
+    E(t, i),
     U());
 }
-var Dr = P(
+var Or = P(
   '<section id="technologies"><h2 data-lang="tech-title">Technologies</h2> <div class="content-block"><h3 data-lang="tech-stack">Main Stack:</h3> <ul class="my-6 flex list-none flex-wrap justify-center gap-5 p-0"><li><!></li> <li><!></li> <li><!></li> <li><!></li> <li><!></li> <li><!></li> <li><!></li> <li><!></li> <li><!></li> <li><!></li> <li><!></li> <li><!></li> <li><!></li></ul> <h3 data-lang="tech-other">Other Tools & Skills:</h3> <ul class="skills-list svelte-oevu4l"><li data-lang="skill-post" class="svelte-oevu4l"></li> <li data-lang="skill-workflows" class="svelte-oevu4l"></li> <li data-lang="skill-ui" class="svelte-oevu4l"></li> <li data-lang="skill-vba" class="svelte-oevu4l"></li> <li data-lang="skill-macros" class="svelte-oevu4l"></li> <li data-lang="skill-telegram" class="svelte-oevu4l"></li> <li data-lang="skill-web" class="svelte-oevu4l"></li></ul></div></section>',
 );
-function Or(t) {
-  var e = Dr(),
+function Gr(t) {
+  var e = Or(),
     r = M(y(e), 2),
     o = M(y(r), 2),
-    n = y(o),
-    a = y(n);
-  (z(a, {
+    s = y(o),
+    n = y(s);
+  (z(n, {
     src: "assets/fusion_icon.svg",
     alt: "Fusion 360 API",
     title: "Fusion 360 API",
   }),
-    b(n));
-  var l = M(n, 2),
+    b(s));
+  var l = M(s, 2),
     f = y(l);
   (z(f, { src: "assets/python_icon.svg", alt: "Python", title: "Python" }),
     b(l));
-  var s = M(l, 2),
-    c = y(s);
+  var i = M(l, 2),
+    c = y(i);
   (z(c, { src: "assets/svelte_icon.svg", alt: "Svelte5", title: "Svelte5" }),
-    b(s));
-  var i = M(s, 2),
-    h = y(i);
-  (z(h, { src: "assets/c_sharp_icon.svg", alt: "C#", title: "C#" }), b(i));
-  var v = M(i, 2),
+    b(i));
+  var a = M(i, 2),
+    p = y(a);
+  (z(p, { src: "assets/c_sharp_icon.svg", alt: "C#", title: "C#" }), b(a));
+  var v = M(a, 2),
     w = y(v);
   (z(w, { src: "assets/nx_icon.png", alt: "Siemens NX", title: "Siemens NX" }),
     b(v));
-  var S = M(v, 2),
-    T = y(S);
-  (z(T, { src: "assets/html_icon.svg", alt: "HTML5", title: "HTML5" }), b(S));
-  var u = M(S, 2),
+  var C = M(v, 2),
+    T = y(C);
+  (z(T, { src: "assets/html_icon.svg", alt: "HTML5", title: "HTML5" }), b(C));
+  var u = M(C, 2),
     m = y(u);
   (z(m, { src: "assets/css_icon.svg", alt: "CSS3", title: "CSS3" }), b(u));
   var L = M(u, 2),
@@ -1835,17 +1807,17 @@ function Or(t) {
     title: "Tailwind4",
   }),
     b(L));
-  var C = M(L, 2),
-    N = y(C);
+  var S = M(L, 2),
+    N = y(S);
   (z(N, {
     src: "assets/javascript_icon.svg",
     alt: "JavaScript",
     title: "JavaScript",
   }),
-    b(C));
-  var d = M(C, 2),
-    p = y(d);
-  (z(p, {
+    b(S));
+  var d = M(S, 2),
+    h = y(d);
+  (z(h, {
     src: "assets/typescript_icon.svg",
     alt: "TypeScript",
     title: "TypeScript",
@@ -1860,24 +1832,24 @@ function Or(t) {
   (z(k, { src: "assets/excel_icon.svg", alt: "Excel VBA", title: "Excel VBA" }),
     b(g));
   var F = M(g, 2),
-    B = y(F);
-  (z(B, { src: "assets/vscode_icon.svg", alt: "VS Code", title: "VS Code" }),
+    H = y(F);
+  (z(H, { src: "assets/vscode_icon.svg", alt: "VS Code", title: "VS Code" }),
     b(F),
     b(o),
-    Ne(4),
+    Ge(4),
     b(r),
     b(e),
     E(t, e));
 }
-var Gr = P("<li><!></li>"),
-  zr = P('<ul class="features-list"></ul>'),
+var zr = P("<li><!></li>"),
+  Hr = P('<ul class="features-list"></ul>'),
   Br = P("<h3> </h3> <p><!></p> <!>", 1);
-function Hr(t, e) {
+function Vr(t, e) {
   let r = x(e, "ariaLabel", 3, "Future projects carousel");
-  function o(n) {
-    return n[e.locale] ?? n.en ?? {};
+  function o(s) {
+    return s[e.locale] ?? s.en ?? {};
   }
-  oe(t, {
+  se(t, {
     get items() {
       return e.items;
     },
@@ -1886,45 +1858,45 @@ function Hr(t, e) {
     get ariaLabel() {
       return r();
     },
-    children: (a, l = $, f = $, s = $) => {
+    children: (n, l = tt, f = tt, i = tt) => {
       const c = J(l),
-        i = J(() => o(A(c)));
-      re(a, {
+        a = J(() => o(A(c)));
+      oe(n, {
         variant: "project",
         get active() {
-          return s();
+          return i();
         },
-        children: (h, v) => {
+        children: (p, v) => {
           var w = Br(),
-            S = et(w),
-            T = y(S, !0);
-          b(S);
-          var u = M(S, 2),
+            C = rt(w),
+            T = y(C, !0);
+          b(C);
+          var u = M(C, 2),
             m = y(u);
-          (rt(m, () => A(i).description ?? ""), b(u));
+          (ot(m, () => A(a).description ?? ""), b(u));
           var L = M(u, 2);
           {
-            var j = (C) => {
-              var N = zr();
-              (vt(
+            var j = (S) => {
+              var N = Hr();
+              (ht(
                 N,
                 20,
-                () => A(i).features,
+                () => A(a).features,
                 (d) => d,
-                (d, p) => {
-                  var _ = Gr(),
+                (d, h) => {
+                  var _ = zr(),
                     I = y(_);
-                  (rt(I, () => p), b(_), E(d, _));
+                  (ot(I, () => h), b(_), E(d, _));
                 },
               ),
                 b(N),
-                E(C, N));
+                E(S, N));
             };
-            tt(L, (C) => {
-              A(i).features?.length && C(j);
+            et(L, (S) => {
+              A(a).features?.length && S(j);
             });
           }
-          (G(() => H(T, A(i).title ?? "")), E(h, w));
+          (G(() => B(T, A(a).title ?? "")), E(p, w));
         },
         $$slots: { default: !0 },
       });
@@ -1945,7 +1917,7 @@ const Rr = {
     description: "Fusion 360 Developer specializing in G-code automation.",
     image: "https://maestrofusion360.github.io/website/assets/icon-192.png",
   },
-  Vr = {
+  Ur = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: "MaestroFusion360 Projects",
@@ -1996,58 +1968,58 @@ const Rr = {
       },
     ],
   },
-  Ur = JSON.stringify(Rr),
-  Wr = JSON.stringify(Vr),
-  se = '<script type="application/ld+json">',
+  Wr = JSON.stringify(Rr),
+  Yr = JSON.stringify(Ur),
+  ie = '<script type="application/ld+json">',
   ne = "<\/script>",
-  Yr = se + Ur + ne,
-  Jr = se + Wr + ne;
-var Kr = P(
+  Jr = ie + Wr + ne,
+  Kr = ie + Yr + ne;
+var Xr = P(
     '<meta charset="UTF-8"/> <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <meta name="google-site-verification" content="NvQSU1__FPJtmLW9aYweYggiV0xnDR4tYLht6rhOFHg"/> <meta name="robots" content="index, follow, max-image-preview:large"/> <meta name="googlebot" content="index, follow"/> <link rel="canonical" href="https://maestrofusion360.github.io/website/"/>  <meta name="description" content="CNC Software Engineer and Fusion 360 Developer specializing in G-code automation and CNC programming optimization. Check out my projects and tools."/> <meta name="keywords" content="Fusion 360, CNC, G-code, Python, JavaScript, CAD, CAM, automation"/> <meta property="og:title" content="MaestroFusion360 | CNC &amp; Fusion 360 Developer"/> <meta property="og:description" content="CNC Software Engineer and Fusion 360 Developer specializing in automation."/> <meta property="og:type" content="website"/> <meta property="og:url" content="https://maestrofusion360.github.io/website/"/> <meta property="og:image" content="https://maestrofusion360.github.io/website/assets/icon-192.png"/> <meta property="og:locale" content="en_US"/> <link rel="icon" href="favicon.ico" type="image/x-icon"/> <link rel="manifest" href="manifest.webmanifest"/> <link rel="apple-touch-icon" href="assets/icon-192.png"/> <meta name="theme-color" content="#ffffff"/>  <!> <!>',
     1,
   ),
-  Xr = P(
+  qr = P(
     '<!> <!> <main><section id="about"><!></section> <!> <section id="projects"><h2 data-lang="projects-title"> </h2> <!></section> <section id="upcoming"><h2 data-lang="upcoming-title"> </h2> <!></section> <section id="contact"><h2 data-lang="contact-title"> </h2> <!></section> <!></main> <!>',
     1,
   );
-function so(t, e) {
-  V(e, !0);
-  const r = je({ value: "en" });
-  De("lang", r);
+function oo(t, e) {
+  R(e, !0);
+  const r = ze({ value: "en" });
+  He("lang", r);
   const o = J(() => Bt[r.value]),
-    n = Ht.active,
-    a = Ht.upcoming;
-  pt(() => {
+    s = Vt.active,
+    n = Vt.upcoming;
+  mt(() => {
     if (typeof window > "u" || typeof document > "u") return;
     const k = Bt[r.value];
     ((document.documentElement.lang = r.value),
       document.querySelectorAll("[data-lang]").forEach((F) => {
-        const B = F.getAttribute("data-lang");
-        if (!B) return;
-        const W = k[B];
+        const H = F.getAttribute("data-lang");
+        if (!H) return;
+        const W = k[H];
         W && (F.innerHTML = W);
       }));
   });
-  var l = Xr();
-  $e("1uha8ag", (k) => {
-    var F = Kr(),
-      B = M(et(F), 36);
-    rt(B, () => Yr);
-    var W = M(B, 2);
-    (rt(W, () => Jr),
-      It(() => {
-        Oe.title = "MaestroFusion360";
+  var l = qr();
+  tr("1uha8ag", (k) => {
+    var F = Xr(),
+      H = M(rt(F), 36);
+    ot(H, () => Jr);
+    var W = M(H, 2);
+    (ot(W, () => Kr),
+      Tt(() => {
+        Be.title = "MaestroFusion360";
       }),
       E(k, F));
   });
-  var f = et(l);
-  Ir(f, {});
-  var s = M(f, 2);
-  fr(s);
-  var c = M(s, 2),
-    i = y(c),
-    h = y(i);
-  (Cr(h, {
+  var f = rt(l);
+  Tr(f, {});
+  var i = M(f, 2);
+  vr(i);
+  var c = M(i, 2),
+    a = y(c),
+    p = y(a);
+  (kr(p, {
     get title() {
       return A(o)["about-title"];
     },
@@ -2058,17 +2030,17 @@ function so(t, e) {
     descriptionKey: "about-desc",
     imageAlt: "MaestroFusion360",
   }),
-    b(i));
-  var v = M(i, 2);
-  Or(v);
+    b(a));
+  var v = M(a, 2);
+  Gr(v);
   var w = M(v, 2),
-    S = y(w),
-    T = y(S, !0);
-  b(S);
-  var u = M(S, 2);
-  (Nr(u, {
+    C = y(w),
+    T = y(C, !0);
+  b(C);
+  var u = M(C, 2);
+  (jr(u, {
     get items() {
-      return n;
+      return s;
     },
     get locale() {
       return r.value;
@@ -2082,10 +2054,10 @@ function so(t, e) {
     L = y(m),
     j = y(L, !0);
   b(L);
-  var C = M(L, 2);
-  (Hr(C, {
+  var S = M(L, 2);
+  (Vr(S, {
     get items() {
-      return a;
+      return n;
     },
     get locale() {
       return r.value;
@@ -2094,12 +2066,12 @@ function so(t, e) {
     b(m));
   var N = M(m, 2),
     d = y(N),
-    p = y(d, !0);
+    h = y(d, !0);
   b(d);
   var _ = M(d, 2);
-  (cr(_), b(N));
+  (ur(_), b(N));
   var I = M(N, 2);
-  (Ar(I, {
+  (Mr(I, {
     get value() {
       return r.value;
     },
@@ -2109,13 +2081,13 @@ function so(t, e) {
   }),
     b(c));
   var g = M(c, 2);
-  (gr(g, {}),
+  (dr(g, {}),
     G(() => {
-      (H(T, A(o)["projects-title"]),
-        H(j, A(o)["upcoming-title"]),
-        H(p, A(o)["contact-title"]));
+      (B(T, A(o)["projects-title"]),
+        B(j, A(o)["upcoming-title"]),
+        B(h, A(o)["contact-title"]));
     }),
     E(t, l),
     U());
 }
-export { so as component };
+export { oo as component };
