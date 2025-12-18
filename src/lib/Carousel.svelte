@@ -147,12 +147,13 @@
 
 {#if showDots && items.length > 1}
   <div class={cx('carousel-dots', dotsClass)}>
-    {#each items as _, index (index)}
+    {#each items as item, index (index)}
       <button
         type="button"
         class="dot"
         class:active={index === activeIndex}
         aria-label={`Go to slide ${index + 1}`}
+        data-has-item={item != null}
         onclick={() => scrollToIndex(index)}
       ></button>
     {/each}

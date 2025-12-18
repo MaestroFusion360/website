@@ -30,21 +30,26 @@
   }
 </script>
 
-<Carousel items={items} class="upcoming-carousel" dotsClass="upcoming-dots" {ariaLabel}>
+<Carousel {items} class="upcoming-carousel" dotsClass="upcoming-dots" {ariaLabel}>
   {#snippet children(item: unknown, _index: number, active: boolean)}
     {@const project = item as ProjectCard}
     {@const projectLocale = getProjectLocale(project)}
-    <Card variant="project" {active}>
+    <Card variant="project" {active} data-index={_index}>
       <h3>{projectLocale.title ?? ''}</h3>
-      <p>{@html projectLocale.description ?? ''}</p>
+      <p>
+        <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+        {@html projectLocale.description ?? ''}
+      </p>
       {#if projectLocale.features?.length}
         <ul class="features-list">
           {#each projectLocale.features as feature (feature)}
-            <li>{@html feature}</li>
+            <li>
+              <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+              {@html feature}
+            </li>
           {/each}
         </ul>
       {/if}
     </Card>
   {/snippet}
 </Carousel>
-

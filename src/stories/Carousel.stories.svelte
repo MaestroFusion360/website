@@ -48,7 +48,7 @@
         <Carousel {...args}>
           {#snippet children(item: unknown, _index: number, active: boolean)}
             {@const slide = item as Slide}
-            <Card variant="project" {active}>
+            <Card variant="project" {active} data-index={_index}>
               <div class="video-container">
                 <div class="video-placeholder">Preview</div>
               </div>

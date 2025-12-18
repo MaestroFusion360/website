@@ -1,3 +1,5 @@
 {
-    "python.defaultInterpreterPath": "py"
+  "python.defaultInterpreterPath": "py",
+  "python-envs.defaultEnvManager": "ms-python.python:system",
+  "python-envs.pythonProjects": []
 }

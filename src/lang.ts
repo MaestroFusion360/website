@@ -43,3 +43,5 @@ I focus on clarity, predictable behavior and tools that actually help engineers 
     'video-missing': 'Видео недоступно'
   }
 } as const;
+
+export type Locale = keyof typeof TEXTS;

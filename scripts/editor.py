@@ -10,7 +10,8 @@ from tkinter import ttk, filedialog, scrolledtext, messagebox, simpledialog
 from typing import Dict, List, Optional
 from pathlib import Path
 
-__version__ = "0.1.3"
+__version__ = "0.1.4"
+
 
 def find_repo_root(start_dir: Path) -> Path:
     """Best-effort locate repo root (folder containing `src/` and `package.json`)."""
@@ -27,9 +28,7 @@ _TS_IDENTIFIER_RE = re.compile(r"^[A-Za-z_$][A-Za-z0-9_$]*$")
 def _ts_quote_string(value: str) -> str:
     if "'" in value and '"' not in value:
         escaped = value.replace("\\", "\\\\").replace('"', '\\"')
-        escaped = (
-            escaped.replace("\r", "\\r").replace("\n", "\\n").replace("\t", "\\t")
-        )
+        escaped = escaped.replace("\r", "\\r").replace("\n", "\\n").replace("\t", "\\t")
         return f'"{escaped}"'
 
     escaped = value.replace("\\", "\\\\").replace("'", "\\'")

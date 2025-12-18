@@ -1,6 +1,6 @@
 <!-- src/lib/LangSwitch.svelte -->
 <script lang="ts">
-  type Locale = 'en' | 'ru';
+  import type { Locale } from '../lang';
 
   type Props = {
     value?: Locale;
@@ -36,12 +36,7 @@
   }
 </script>
 
-<div
-  class="lang-switch"
-  role="group"
-  aria-label="Language"
-  style={`--lang-icon-size: ${size}px`}
->
+<div class="lang-switch" role="group" aria-label="Language" style={`--lang-icon-size: ${size}px`}>
   <button
     type="button"
     class="lang-switch__btn"

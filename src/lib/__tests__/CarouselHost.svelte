@@ -24,14 +24,7 @@
   }: Props = $props();
 </script>
 
-<Carousel
-  {items}
-  {showDots}
-  {showArrows}
-  {ariaLabel}
-  class={externalClass}
-  {dotsClass}
->
+<Carousel {items} {showDots} {showArrows} {ariaLabel} class={externalClass} {dotsClass}>
   {#snippet children(item: unknown, index: number, active: boolean)}
     {@const it = item as Item}
     <Card variant="project" {active} data-index={index}>
@@ -39,4 +32,3 @@
     </Card>
   {/snippet}
 </Carousel>
-

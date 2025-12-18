@@ -9,16 +9,30 @@
   $effect(() => {
     if (typeof window === 'undefined' || typeof document === 'undefined') return;
 
-    if (!hydrated) {
-      hydrated = true;
+    if (hydrated) return;
+    hydrated = true;
+
+    try {
       const stored = localStorage.getItem(STORAGE_KEY);
       theme = stored === 'dark' || stored === 'light' ? stored : 'light';
+    } catch {
+      // ignore storage errors (e.g. privacy mode)
     }
+  });
+
+  $effect(() => {
+    if (typeof window === 'undefined' || typeof document === 'undefined') return;
+    if (!hydrated) return;
 
     const isDark = theme === 'dark';
 
     document.documentElement.classList.toggle('dark', isDark);
-    localStorage.setItem(STORAGE_KEY, theme);
+
+    try {
+      localStorage.setItem(STORAGE_KEY, theme);
+    } catch {
+      // ignore storage errors (e.g. privacy mode)
+    }
 
     const themeMeta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
     themeMeta?.setAttribute('content', isDark ? '#0b1220' : '#ffffff');

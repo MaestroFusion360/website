@@ -111,7 +111,7 @@ export default defineConfig(({ command }) => {
             exclude: ['src/lib/__tests__/**', 'src/**/*.svelte.{test,spec}.{js,ts}']
           }
         }
-      ],
+      ]
     }
   };
 });

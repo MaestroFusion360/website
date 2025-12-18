@@ -7,16 +7,8 @@ type ClassPrimitive = string | number | bigint;
 interface ClassDictionary {
   [key: string]: boolean | null | undefined;
 }
-type ClassArray = Array<
-  ClassPrimitive | ClassDictionary | ClassArray | null | boolean | undefined
->;
-type ClassValue =
-  | ClassPrimitive
-  | ClassDictionary
-  | ClassArray
-  | null
-  | boolean
-  | undefined;
+type ClassArray = Array<ClassPrimitive | ClassDictionary | ClassArray | null | boolean | undefined>;
+type ClassValue = ClassPrimitive | ClassDictionary | ClassArray | null | boolean | undefined;
 
 export function cx(...classes: ClassValue[]): string {
   const result: string[] = [];
@@ -26,12 +18,12 @@ export function cx(...classes: ClassValue[]): string {
       return;
     }
 
-    if (typeof value === "string") {
+    if (typeof value === 'string') {
       result.push(...value.split(/\s+/).filter(Boolean));
       return;
     }
 
-    if (typeof value === "number" || typeof value === "bigint") {
+    if (typeof value === 'number' || typeof value === 'bigint') {
       result.push(String(value));
       return;
     }
@@ -43,7 +35,7 @@ export function cx(...classes: ClassValue[]): string {
       return;
     }
 
-    if (typeof value === "object") {
+    if (typeof value === 'object') {
       for (const [key, condition] of Object.entries(value as ClassDictionary)) {
         if (condition) {
           result.push(key);
@@ -56,7 +48,7 @@ export function cx(...classes: ClassValue[]): string {
     append(cls);
   }
 
-  return result.join(" ");
+  return result.join(' ');
 }
 
 // -------------------------------------------------------------------------------

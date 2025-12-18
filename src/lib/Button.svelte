@@ -31,11 +31,6 @@
   );
 </script>
 
-<button
-  {...rest}
-  {type}
-  class={cx(baseClass, variantClass, externalClass)}
-  {onclick}
->
+<button {...rest} {type} class={cx(baseClass, variantClass, externalClass)} {onclick}>
   {@render children()}
 </button>

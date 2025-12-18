@@ -1,6 +1,6 @@
 ﻿<script lang="ts">
   import { setContext } from 'svelte';
-  import { TEXTS } from '../lang';
+  import { TEXTS, type Locale } from '../lang';
   import { projectsData } from './projects/project';
   import {
     Contacts,
@@ -15,28 +15,13 @@
 
   import { ThemeToggle, LangSwitch, Hero } from '$lib';
 
-  type Locale = keyof typeof TEXTS;
   const lang = $state<{ value: Locale }>({ value: 'en' });
   setContext('lang', lang);
 
   const t = $derived(TEXTS[lang.value]);
 
-  const activeProjects = projectsData.active as unknown as ProjectCardType[];
-  const upcomingProjects = projectsData.upcoming as unknown as ProjectCardType[];
-
-  $effect(() => {
-    if (typeof window === 'undefined' || typeof document === 'undefined') return;
-
-    const dict = TEXTS[lang.value];
-    document.documentElement.lang = lang.value;
-
-    document.querySelectorAll<HTMLElement>('[data-lang]').forEach((element) => {
-      const key = element.getAttribute('data-lang') as keyof typeof dict | null;
-      if (!key) return;
-      const value = dict[key];
-      if (value) element.innerHTML = value;
-    });
-  });
+  const activeProjects: ProjectCardType[] = projectsData.active;
+  const upcomingProjects: ProjectCardType[] = projectsData.upcoming;
 </script>
 
 <svelte:head>
@@ -95,7 +80,7 @@
 <Header />
 
 <main>
-  <section id="about">
+  <section id="about" class="px-6 md:px-12">
     <Hero
       title={t['about-title']}
       description={t['about-desc']}

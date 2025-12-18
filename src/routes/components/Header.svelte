@@ -1,12 +1,20 @@
 <!-- src/routes/Header.svelte -->
+<script lang="ts">
+  import { getContext } from 'svelte';
+  import { TEXTS, type Locale } from '../../lang';
+
+  const lang = getContext<{ value: Locale }>('lang');
+  const t = $derived(TEXTS[lang.value]);
+</script>
+
 <header>
-  <h1 data-lang="title">Hi there, I'm MaestroFusion360</h1>
+  <h1 data-lang="title">{t.title}</h1>
   <nav class="navbar">
-    <a href="#about" data-lang="about-title">About</a>
-    <a href="#technologies" data-lang="tech-title">Technologies</a>
-    <a href="#projects" data-lang="projects-title">Projects</a>
-    <a href="#upcoming" data-lang="upcoming-title">Future Projects</a>
-    <a href="#contact" data-lang="contact-title">Contact</a>
+    <a href="#about" data-lang="about-title">{t['about-title']}</a>
+    <a href="#technologies" data-lang="tech-title">{t['tech-title']}</a>
+    <a href="#projects" data-lang="projects-title">{t['projects-title']}</a>
+    <a href="#upcoming" data-lang="upcoming-title">{t['upcoming-title']}</a>
+    <a href="#contact" data-lang="contact-title">{t['contact-title']}</a>
   </nav>
 
   <div class="social-links">
