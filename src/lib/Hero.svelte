@@ -13,7 +13,7 @@
   };
 
   let {
-    imageSrc = '../assets/icon-512.png',
+    imageSrc = 'assets/icon-512.png',
     imageAlt = 'Hero image',
     title,
     description,
