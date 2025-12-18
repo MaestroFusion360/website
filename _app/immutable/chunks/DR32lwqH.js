@@ -1,1 +1,164 @@
-import{b as L,h as g,A as D,E as N,L as w,M as B,N as Y,C as M,O as A,P as U,Q as C,a as I,R as $,S as O,U as q,V as F,W as K,o as b,t as Z,X as m,Y as z,Z as G,x as H,_ as Q,$ as V,a0 as W,a1 as X,a2 as j,a3 as J,a4 as k}from"./V-JyIKZ2.js";import{B as rr}from"./DUQfWCK4.js";import{l as er}from"./DIeogL5L.js";function ur(r,e,s=!1){g&&D();var u=new rr(r),i=s?N:0;function a(f,t){if(g){const o=w(r)===B;if(f===o){var _=Y();M(_),u.anchor=_,A(!1),u.ensure(f,t),A(!0);return}}u.ensure(f,t)}L(()=>{var f=!1;e((t,_=!0)=>{f=!0,a(_,t)}),f||a(!1,null)},i)}function T(r,e){return r===e||r?.[O]===e}function fr(r={},e,s,u){return U(()=>{var i,a;return C(()=>{i=a,a=[],I(()=>{r!==s(...a)&&(e(r,...a),i&&T(s(...i),r)&&e(null,...i))})}),()=>{$(()=>{a&&T(s(...a),r)&&e(null,...a)})}}),r}let h=!1;function ar(r){var e=h;try{return h=!1,[r(),h]}finally{h=e}}const nr={get(r,e){if(!r.exclude.includes(e))return r.props[e]},set(r,e){return!1},getOwnPropertyDescriptor(r,e){if(!r.exclude.includes(e)&&e in r.props)return{enumerable:!0,configurable:!0,value:r.props[e]}},has(r,e){return r.exclude.includes(e)?!1:e in r.props},ownKeys(r){return Reflect.ownKeys(r.props).filter(e=>!r.exclude.includes(e))}};function _r(r,e,s){return new Proxy({props:r,exclude:e},nr)}function dr(r,e,s,u){var i=!er||(s&W)!==0,a=(s&V)!==0,f=(s&j)!==0,t=u,_=!0,o=()=>(_&&(_=!1,t=f?I(u):u),t),l;if(a){var p=O in r||k in r;l=q(r,e)?.set??(p&&e in r?n=>r[e]=n:void 0)}var c,E=!1;a?[c,E]=ar(()=>r[e]):c=r[e],c===void 0&&u!==void 0&&(c=o(),l&&(i&&F(),l(c)));var d;if(i?d=()=>{var n=r[e];return n===void 0?o():(_=!0,n)}:d=()=>{var n=r[e];return n!==void 0&&(t=void 0),n===void 0?t:n},i&&(s&K)===0)return d;if(l){var x=r.$$legacy;return(function(n,S){return arguments.length>0?((!i||!S||x||E)&&l(S?d():n),n):d()})}var P=!1,v=((s&X)!==0?Z:m)(()=>(P=!1,d()));a&&b(v);var y=H;return(function(n,S){if(arguments.length>0){const R=S?b(v):i&&a?z(n):n;return G(v,R),P=!0,t!==void 0&&(t=R),n}return J&&P||(y.f&Q)!==0?v.v:b(v)})}export{fr as b,ur as i,dr as p,_r as r};
+import {
+  b as L,
+  h as g,
+  A as D,
+  E as N,
+  L as w,
+  M as B,
+  N as Y,
+  C as M,
+  O as A,
+  P as U,
+  Q as C,
+  a as I,
+  R as $,
+  S as O,
+  U as q,
+  V as F,
+  W as K,
+  o as b,
+  t as Z,
+  X as m,
+  Y as z,
+  Z as G,
+  x as H,
+  _ as Q,
+  $ as V,
+  a0 as W,
+  a1 as X,
+  a2 as j,
+  a3 as J,
+  a4 as k,
+} from "./V-JyIKZ2.js";
+import { B as rr } from "./DUQfWCK4.js";
+import { l as er } from "./DIeogL5L.js";
+function ur(r, e, s = !1) {
+  g && D();
+  var u = new rr(r),
+    i = s ? N : 0;
+  function a(f, t) {
+    if (g) {
+      const o = w(r) === B;
+      if (f === o) {
+        var _ = Y();
+        (M(_), (u.anchor = _), A(!1), u.ensure(f, t), A(!0));
+        return;
+      }
+    }
+    u.ensure(f, t);
+  }
+  L(() => {
+    var f = !1;
+    (e((t, _ = !0) => {
+      ((f = !0), a(_, t));
+    }),
+      f || a(!1, null));
+  }, i);
+}
+function T(r, e) {
+  return r === e || r?.[O] === e;
+}
+function fr(r = {}, e, s, u) {
+  return (
+    U(() => {
+      var i, a;
+      return (
+        C(() => {
+          ((i = a),
+            (a = []),
+            I(() => {
+              r !== s(...a) &&
+                (e(r, ...a), i && T(s(...i), r) && e(null, ...i));
+            }));
+        }),
+        () => {
+          $(() => {
+            a && T(s(...a), r) && e(null, ...a);
+          });
+        }
+      );
+    }),
+    r
+  );
+}
+let h = !1;
+function ar(r) {
+  var e = h;
+  try {
+    return ((h = !1), [r(), h]);
+  } finally {
+    h = e;
+  }
+}
+const nr = {
+  get(r, e) {
+    if (!r.exclude.includes(e)) return r.props[e];
+  },
+  set(r, e) {
+    return !1;
+  },
+  getOwnPropertyDescriptor(r, e) {
+    if (!r.exclude.includes(e) && e in r.props)
+      return { enumerable: !0, configurable: !0, value: r.props[e] };
+  },
+  has(r, e) {
+    return r.exclude.includes(e) ? !1 : e in r.props;
+  },
+  ownKeys(r) {
+    return Reflect.ownKeys(r.props).filter((e) => !r.exclude.includes(e));
+  },
+};
+function _r(r, e, s) {
+  return new Proxy({ props: r, exclude: e }, nr);
+}
+function dr(r, e, s, u) {
+  var i = !er || (s & W) !== 0,
+    a = (s & V) !== 0,
+    f = (s & j) !== 0,
+    t = u,
+    _ = !0,
+    o = () => (_ && ((_ = !1), (t = f ? I(u) : u)), t),
+    l;
+  if (a) {
+    var p = O in r || k in r;
+    l = q(r, e)?.set ?? (p && e in r ? (n) => (r[e] = n) : void 0);
+  }
+  var c,
+    E = !1;
+  (a ? ([c, E] = ar(() => r[e])) : (c = r[e]),
+    c === void 0 && u !== void 0 && ((c = o()), l && (i && F(), l(c))));
+  var d;
+  if (
+    (i
+      ? (d = () => {
+          var n = r[e];
+          return n === void 0 ? o() : ((_ = !0), n);
+        })
+      : (d = () => {
+          var n = r[e];
+          return (n !== void 0 && (t = void 0), n === void 0 ? t : n);
+        }),
+    i && (s & K) === 0)
+  )
+    return d;
+  if (l) {
+    var x = r.$$legacy;
+    return function (n, S) {
+      return arguments.length > 0
+        ? ((!i || !S || x || E) && l(S ? d() : n), n)
+        : d();
+    };
+  }
+  var P = !1,
+    v = ((s & X) !== 0 ? Z : m)(() => ((P = !1), d()));
+  a && b(v);
+  var y = H;
+  return function (n, S) {
+    if (arguments.length > 0) {
+      const R = S ? b(v) : i && a ? z(n) : n;
+      return (G(v, R), (P = !0), t !== void 0 && (t = R), n);
+    }
+    return (J && P) || (y.f & Q) !== 0 ? v.v : b(v);
+  };
+}
+export { fr as b, ur as i, dr as p, _r as r };
