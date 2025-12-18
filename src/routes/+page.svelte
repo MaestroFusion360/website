@@ -9,9 +9,9 @@
   import Header from './Header.svelte';
   import Footer from './Footer.svelte';
   import Technologies from './Technologies.svelte';
-  import { personSchemaTag, projectsSchemaTag } from './schema'
+  import { personSchemaTag, projectsSchemaTag } from './schema';
 
-  import { ThemeToggle, LangSwitch } from '$lib';
+  import { ThemeToggle, LangSwitch, Hero } from '$lib';
 
   type Locale = keyof typeof TEXTS;
   const lang = $state<{ value: Locale }>({ value: 'en' });
@@ -94,10 +94,13 @@
 
 <main>
   <section id="about">
-    <h2 data-lang="about-title">{t['about-title']}</h2>
-    <div class="content-block">
-      <p data-lang="about-desc">{t['about-desc']}</p>
-    </div>
+    <Hero
+      title={t['about-title']}
+      description={t['about-desc']}
+      titleKey="about-title"
+      descriptionKey="about-desc"
+      imageAlt="MaestroFusion360"
+    />
   </section>
 
   <Technologies />
