@@ -107,9 +107,8 @@
   {#if showArrows && items.length > 1}
     <div class="carousel-nav" role="group" aria-label="Carousel navigation">
       <Button
-        class="carousel-prev"
         aria-label="Previous slide"
-        type="button"
+        variant="icon"
         onclick={() => scrollToIndex(Math.max(0, activeIndex - 1))}
       >
         <svg
@@ -125,9 +124,8 @@
         </svg>
       </Button>
       <Button
-        class="carousel-next"
         aria-label="Next slide"
-        type="button"
+        variant="icon"
         onclick={() => scrollToIndex(Math.min(items.length - 1, activeIndex + 1))}
       >
         <svg
@@ -195,39 +193,6 @@
     display: flex;
     justify-content: space-between;
     pointer-events: none;
-  }
-
-  .carousel-nav :global(button) {
-    pointer-events: all;
-    background: var(--surface-strong);
-    border: 1px solid var(--surface-border);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--text-color);
-    box-shadow: var(--shadow-sm);
-    transition:
-      transform var(--transition),
-      background-color var(--transition),
-      color var(--transition);
-  }
-
-  .carousel-nav :global(button:hover) {
-    background: var(--primary-color);
-    color: white;
-    transform: scale(1.08);
-  }
-
-  .carousel-nav :global(button:focus-visible) {
-    outline: var(--focus-outline);
-    outline-offset: 3px;
   }
 
   .carousel-dots {

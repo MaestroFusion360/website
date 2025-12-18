@@ -52,12 +52,6 @@ html {
   font-size: clamp(15px, 1.25vw + 12px, 17px);
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
   font-family:
     system-ui,

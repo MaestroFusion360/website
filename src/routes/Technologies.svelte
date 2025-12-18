@@ -1,140 +1,53 @@
 <!-- src/routes/Technologies.svelte -->
+<script lang="ts">
+  import Badge from '$lib/Badge.svelte';
+</script>
+
 <section id="technologies">
   <h2 data-lang="tech-title">Technologies</h2>
   <div class="content-block">
     <h3 data-lang="tech-stack">Main Stack:</h3>
-    <ul class="badges-list">
+    <ul class="my-6 flex list-none flex-wrap justify-center gap-5 p-0">
       <li>
-        <img
-          src="assets/fusion_icon.svg"
-          width="40"
-          height="40"
-          alt="Fusion 360 API"
-          title="Fusion 360 API"
-          loading="lazy"
-        />
+        <Badge src="assets/fusion_icon.svg" alt="Fusion 360 API" title="Fusion 360 API" />
       </li>
       <li>
-        <img
-          src="assets/python_icon.svg"
-          width="40"
-          height="40"
-          alt="Python"
-          title="Python"
-          loading="lazy"
-        />
+        <Badge src="assets/python_icon.svg" alt="Python" title="Python" />
       </li>
       <li>
-        <img
-          src="assets/svelte_icon.svg"
-          width="40"
-          height="40"
-          alt="Svelte5"
-          title="Svelte5"
-          loading="lazy"
-        />
+        <Badge src="assets/svelte_icon.svg" alt="Svelte5" title="Svelte5" />
       </li>
       <li>
-        <img
-          src="assets/c_sharp_icon.svg"
-          width="40"
-          height="40"
-          alt="C#"
-          title="C#"
-          loading="lazy"
-        />
+        <Badge src="assets/c_sharp_icon.svg" alt="C#" title="C#" />
       </li>
       <li>
-        <img
-          src="assets/nx_icon.png"
-          width="40"
-          height="40"
-          alt="Siemens NX"
-          title="Siemens NX"
-          loading="lazy"
-        />
+        <Badge src="assets/nx_icon.png" alt="Siemens NX" title="Siemens NX" />
       </li>
 
       <li>
-        <img
-          src="assets/html_icon.svg"
-          width="40"
-          height="40"
-          alt="HTML5"
-          title="HTML5"
-          loading="lazy"
-        />
+        <Badge src="assets/html_icon.svg" alt="HTML5" title="HTML5" />
       </li>
       <li>
-        <img
-          src="assets/css_icon.svg"
-          width="40"
-          height="40"
-          alt="CSS3"
-          title="CSS3"
-          loading="lazy"
-        />
+        <Badge src="assets/css_icon.svg" alt="CSS3" title="CSS3" />
       </li>
       <li>
-        <img
-          src="assets/tailwind_icon.svg"
-          width="40"
-          height="40"
-          alt="Tailwind4"
-          title="Tailwind4"
-          loading="lazy"
-        />
+        <Badge src="assets/tailwind_icon.svg" alt="Tailwind4" title="Tailwind4" />
       </li>
       <li>
-        <img
-          src="assets/javascript_icon.svg"
-          width="40"
-          height="40"
-          alt="JavaScript"
-          title="JavaScript"
-          loading="lazy"
-        />
+        <Badge src="assets/javascript_icon.svg" alt="JavaScript" title="JavaScript" />
       </li>
       <li>
-        <img
-          src="assets/typescript_icon.svg"
-          width="40"
-          height="40"
-          alt="TypeScript"
-          title="TypeScript"
-          loading="lazy"
-        />
+        <Badge src="assets/typescript_icon.svg" alt="TypeScript" title="TypeScript" />
       </li>
       <li>
-        <img
-          src="assets/telegram_icon.svg"
-          width="40"
-          height="40"
-          alt="aiogram"
-          title="Aiogram"
-          loading="lazy"
-        />
+        <Badge src="assets/telegram_icon.svg" alt="aiogram" title="Aiogram" />
       </li>
 
       <li>
-        <img
-          src="assets/excel_icon.svg"
-          width="40"
-          height="40"
-          alt="Excel VBA"
-          title="Excel VBA"
-          loading="lazy"
-        />
+        <Badge src="assets/excel_icon.svg" alt="Excel VBA" title="Excel VBA" />
       </li>
       <li>
-        <img
-          src="assets/vscode_icon.svg"
-          width="40"
-          height="40"
-          alt="VS Code"
-          title="VS Code"
-          loading="lazy"
-        />
+        <Badge src="assets/vscode_icon.svg" alt="VS Code" title="VS Code" />
       </li>
     </ul>
     <h3 data-lang="tech-other">Other Tools & Skills:</h3>
@@ -151,29 +64,6 @@
 </section>
 
 <style>
-  .badges-list {
-    display: flex;
-    justify-content: center;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-    list-style: none;
-    padding: 0;
-    margin: 1.5rem 0;
-  }
-
-  .badges-list li {
-    display: inline-flex;
-    align-items: center;
-  }
-
-  .badges-list img {
-    transition: transform var(--transition);
-  }
-
-  .badges-list img:hover {
-    transform: scale(1.1);
-  }
-
   .skills-list {
     padding-left: 0;
     margin-bottom: 1.5rem;
