@@ -2,13 +2,15 @@
   import { setContext } from 'svelte';
   import { TEXTS } from '../lang';
   import { projectsData } from './projects/project';
-  import ProjectsCarousel from './ProjectsCarousel.svelte';
-  import UpcomingCarousel from './UpcomingCarousel.svelte';
-  import type { ProjectCard as ProjectCardType } from './ProjectsCarousel.svelte';
-  import Contacts from './Contacts.svelte';
-  import Header from './Header.svelte';
-  import Footer from './Footer.svelte';
-  import Technologies from './Technologies.svelte';
+  import {
+    Contacts,
+    Header,
+    Footer,
+    ProjectsCarousel,
+    Technologies,
+    UpcomingCarousel
+  } from './components';
+  import type { ProjectCard as ProjectCardType } from './components';
   import { personSchemaTag, projectsSchemaTag } from './schema';
 
   import { ThemeToggle, LangSwitch, Hero } from '$lib';
