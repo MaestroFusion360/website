@@ -27,9 +27,13 @@
   });
 </script>
 
+<script lang="ts">
+  import { cx } from '$lib/utils';
+</script>
+
 <Story name="Default" args={{ variant: 'primary' }}>
   {#snippet template(args: ButtonArgs)}
-    <div class="grid min-h-[100dvh] place-items-center p-6">
+    <div class={cx('grid min-h-[100dvh] place-items-center p-6')}>
       <Button {...args}>Primary</Button>
     </div>
   {/snippet}
@@ -37,7 +41,7 @@
 
 <Story name="Ghost" args={{ variant: 'ghost' }}>
   {#snippet template(args: ButtonArgs)}
-    <div class="grid min-h-[100dvh] place-items-center p-6">
+    <div class={cx('grid min-h-[100dvh] place-items-center p-6')}>
       <Button {...args}>Ghost</Button>
     </div>
   {/snippet}
@@ -45,7 +49,7 @@
 
 <Story name="Icon" args={{ variant: 'icon', 'aria-label': 'Next slide' }}>
   {#snippet template(args: ButtonArgs)}
-    <div class="grid min-h-[100dvh] place-items-center p-6">
+    <div class={cx('grid min-h-[100dvh] place-items-center p-6')}>
       <Button {...args}>
         <svg
           width="16"
@@ -65,7 +69,7 @@
 
 <Story name="Disabled" args={{ disabled: true }}>
   {#snippet template(args: ButtonArgs)}
-    <div class="grid min-h-[100dvh] place-items-center p-6">
+    <div class={cx('grid min-h-[100dvh] place-items-center p-6')}>
       <Button {...args}>Disabled</Button>
     </div>
   {/snippet}

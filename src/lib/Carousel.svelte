@@ -2,6 +2,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import Button from './Button.svelte';
+  import { cx } from '$lib/utils';
 
   type Props = {
     items: readonly unknown[];
@@ -93,7 +94,7 @@
   <div
     {...rest}
     bind:this={carouselEl}
-    class={['projects-carousel', externalClass].filter(Boolean).join(' ')}
+    class={cx('projects-carousel', externalClass)}
     role="region"
     aria-label={ariaLabel}
     aria-live="polite"
@@ -145,7 +146,7 @@
 </div>
 
 {#if showDots && items.length > 1}
-  <div class={['carousel-dots', dotsClass].filter(Boolean).join(' ')}>
+  <div class={cx('carousel-dots', dotsClass)}>
     {#each items as _, index (index)}
       <button
         type="button"

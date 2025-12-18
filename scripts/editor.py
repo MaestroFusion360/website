@@ -12,6 +12,71 @@ from pathlib import Path
 
 __version__ = "0.1.3"
 
+def find_repo_root(start_dir: Path) -> Path:
+    """Best-effort locate repo root (folder containing `src/` and `package.json`)."""
+    start_dir = start_dir.resolve()
+    for candidate in (start_dir, *start_dir.parents):
+        if (candidate / "src").is_dir() and (candidate / "package.json").is_file():
+            return candidate
+    return start_dir
+
+
+_TS_IDENTIFIER_RE = re.compile(r"^[A-Za-z_$][A-Za-z0-9_$]*$")
+
+
+def _ts_quote_string(value: str) -> str:
+    if "'" in value and '"' not in value:
+        escaped = value.replace("\\", "\\\\").replace('"', '\\"')
+        escaped = (
+            escaped.replace("\r", "\\r").replace("\n", "\\n").replace("\t", "\\t")
+        )
+        return f'"{escaped}"'
+
+    escaped = value.replace("\\", "\\\\").replace("'", "\\'")
+    escaped = escaped.replace("\r", "\\r").replace("\n", "\\n").replace("\t", "\\t")
+    return f"'{escaped}'"
+
+
+def to_ts_literal(value, indent_level: int = 0, indent: str = "  ") -> str:
+    """Render a Python value as a TS/JS literal (object/array/string/number)."""
+    if value is None:
+        return "null"
+    if value is True:
+        return "true"
+    if value is False:
+        return "false"
+    if isinstance(value, (int, float)):
+        return str(value)
+    if isinstance(value, str):
+        return _ts_quote_string(value)
+    if isinstance(value, list):
+        if not value:
+            return "[]"
+        inner_indent = indent * (indent_level + 1)
+        parts = [to_ts_literal(item, indent_level + 1, indent) for item in value]
+        joined = ",\n".join(f"{inner_indent}{p}" for p in parts)
+        return "[\n" + joined + "\n" + (indent * indent_level) + "]"
+    if isinstance(value, dict):
+        if not value:
+            return "{}"
+        inner_indent = indent * (indent_level + 1)
+        lines: List[str] = []
+        for key, item in value.items():
+            if _TS_IDENTIFIER_RE.match(str(key)):
+                rendered_key = str(key)
+            else:
+                rendered_key = _ts_quote_string(str(key))
+            rendered_value = to_ts_literal(item, indent_level + 1, indent)
+            lines.append(f"{inner_indent}{rendered_key}: {rendered_value}")
+        return "{\n" + ",\n".join(lines) + "\n" + (indent * indent_level) + "}"
+
+    return json.dumps(value, ensure_ascii=False)
+
+
+def build_project_ts_content(projects: Dict[str, List[dict]]) -> str:
+    literal = to_ts_literal(projects, indent_level=0, indent="  ")
+    return "export const projectsData = " + literal + ";\n"
+
 
 class ProjectEditor:
     """Initialize the ProjectEditor application with the given root window."""
@@ -62,8 +127,14 @@ class ProjectEditor:
         # Initializing data
         self.projects: Dict[str, List[dict]] = {"active": [], "upcoming": []}
         self.current_project_index: Optional[int] = None
-        BASE_DIR = Path(__file__).resolve().parent
-        self.current_file_path = BASE_DIR / "src" / "routes" / "projects" / "project.json"
+        script_dir = Path(__file__).resolve().parent
+        self.repo_root = find_repo_root(script_dir)
+        projects_dir = self.repo_root / "src" / "routes" / "projects"
+        default_json = projects_dir / "projects.json"
+        if not default_json.exists():
+            default_json = projects_dir / "project.json"
+        self.current_file_path: Path = default_json
+        self.ts_file_path: Path = projects_dir / "project.ts"
         self.unsaved_changes = False
 
         self.setup_ui()
@@ -98,7 +169,7 @@ class ProjectEditor:
 
         self.editor_frame = ttk.LabelFrame(self.right_paned, text="Projects Editor")
         self.preview_frame = ttk.LabelFrame(
-            self.right_paned, text="Preview (project.js)"
+            self.right_paned, text="Preview (project.ts)"
         )
 
         # Editor frame
@@ -278,7 +349,7 @@ class ProjectEditor:
 
         ttk.Button(
             self.preview_frame,
-            text="💾 Save All to JS",
+            text="💾 Save All to TS",
             style="Emoji.TButton",
             command=self.save_all,
         ).pack(pady=5)
@@ -342,8 +413,9 @@ class ProjectEditor:
         )
         if path:
             try:
-                self.load_data(path)
-                self.current_file_path = path
+                path_obj = Path(path)
+                self.load_data(path_obj)
+                self.current_file_path = path_obj
                 self.set_unsaved_changes(False)
                 messagebox.showinfo("Success", f"File loaded: {path}")
             except Exception as e:
@@ -357,7 +429,7 @@ class ProjectEditor:
             initialfile="project.json",
         )
         if path:
-            self.current_file_path = path
+            self.current_file_path = Path(path)
             if self.save_data():
                 self.set_unsaved_changes(False)
                 messagebox.showinfo("Success", f"File saved as: {path}")
@@ -372,7 +444,8 @@ class ProjectEditor:
     def load_data(self, path):
         """Load project data from a JSON file."""
         try:
-            with open(path, "r", encoding="utf-8") as f:
+            path_obj = Path(path)
+            with path_obj.open("r", encoding="utf-8") as f:
                 data = json.load(f)
                 if not isinstance(data, dict) or not all(
                     k in data for k in ("active", "upcoming")
@@ -394,7 +467,8 @@ class ProjectEditor:
     def save_data(self):
         """Save project data to the current file."""
         try:
-            with open(self.current_file_path, "w", encoding="utf-8") as f:
+            self.current_file_path.parent.mkdir(parents=True, exist_ok=True)
+            with self.current_file_path.open("w", encoding="utf-8") as f:
                 json.dump(self.projects, f, indent=4, ensure_ascii=False)
             return True
         except PermissionError:
@@ -404,7 +478,7 @@ class ProjectEditor:
         return False
 
     def save_all(self):
-        """Save data to both the JSON file and project.js."""
+        """Save data to both the JSON file and project.ts."""
         errors = self.collect_validation_errors(self.projects)
         if errors:
             preview = "\n".join(errors[:30])
@@ -421,21 +495,19 @@ class ProjectEditor:
             return
 
         try:
-            with open("project.js", "w", encoding="utf-8") as f:
-                js_content = (
-                    "window.projectsData = "
-                    f"{json.dumps(self.projects, indent=4, ensure_ascii=False)};"
-                )
-                f.write(js_content)
+            self.ts_file_path.parent.mkdir(parents=True, exist_ok=True)
+            self.ts_file_path.write_text(
+                build_project_ts_content(self.projects), encoding="utf-8"
+            )
 
             self.update_preview()
             self.set_unsaved_changes(False)
             messagebox.showinfo(
                 "Success",
-                f"Projects saved to:\n{self.current_file_path}\nand project.js",
+                f"Projects saved to:\n{self.current_file_path}\nand {self.ts_file_path}",
             )
         except Exception as e:
-            messagebox.showerror("Error", f"Failed to save project.js:\n{e}")
+            messagebox.showerror("Error", f"Failed to save project.ts:\n{e}")
 
     def update_preview(self):
         """Update the preview pane with current project data."""
@@ -443,7 +515,7 @@ class ProjectEditor:
         self.preview_text.delete("1.0", tk.END)
         self.preview_text.insert(
             "1.0",
-            f"window.projectsData = {json.dumps(self.projects, indent=4, ensure_ascii=False)};",
+            build_project_ts_content(self.projects),
         )
         self.preview_text.config(state="disabled")
 

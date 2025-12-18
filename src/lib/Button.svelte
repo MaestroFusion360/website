@@ -2,6 +2,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import type { HTMLButtonAttributes } from 'svelte/elements';
+  import { cx } from '$lib/utils';
 
   type Variant = 'primary' | 'icon' | 'ghost';
 
@@ -33,7 +34,7 @@
 <button
   {...rest}
   {type}
-  class={[baseClass, variantClass, externalClass].filter(Boolean).join(' ')}
+  class={cx(baseClass, variantClass, externalClass)}
   {onclick}
 >
   {@render children()}

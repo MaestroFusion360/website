@@ -20,10 +20,14 @@
   });
 </script>
 
+<script lang="ts">
+  import { cx } from '$lib/utils';
+</script>
+
 <Story name="Default">
   {#snippet template(args: CardArgs)}
-    <div class="grid min-h-[100dvh] place-items-center p-6">
-      <div class="w-full max-w-lg">
+    <div class={cx('grid min-h-[100dvh] place-items-center p-6')}>
+      <div class={cx('w-full max-w-lg')}>
         <Card {...args}>
           <div class="space-y-2 leading-relaxed">
             <h3 class="text-lg font-semibold tracking-tight">Default card</h3>
@@ -37,8 +41,8 @@
 
 <Story name="Container Variant" args={{ variant: 'container' }}>
   {#snippet template(args: CardArgs)}
-    <div class="grid min-h-[100dvh] place-items-center p-6">
-      <div class="w-full max-w-lg">
+    <div class={cx('grid min-h-[100dvh] place-items-center p-6')}>
+      <div class={cx('w-full max-w-lg')}>
         <Card {...args}>
           <div class="space-y-2 leading-relaxed">
             <h3 class="text-lg font-semibold tracking-tight">Container</h3>
@@ -52,8 +56,8 @@
 
 <Story name="Project Active" args={{ variant: 'project', active: true }}>
   {#snippet template(args: CardArgs)}
-    <div class="grid min-h-[100dvh] place-items-center p-6">
-      <div class="w-full max-w-lg">
+    <div class={cx('grid min-h-[100dvh] place-items-center p-6')}>
+      <div class={cx('w-full max-w-lg')}>
         <Card {...args}>
           <div class="video-container">
             <div class="video-placeholder">Video not available</div>

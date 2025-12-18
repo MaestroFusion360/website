@@ -2,6 +2,7 @@
 <script lang="ts">
   import type { Snippet } from 'svelte';
   import type { HTMLAttributes } from 'svelte/elements';
+  import { cx } from '$lib/utils';
 
   type Variant = 'default' | 'container' | 'project';
 
@@ -26,7 +27,7 @@
   const activeClass = $derived(variant === 'project' && active ? 'active' : '');
 </script>
 
-<div {...rest} class={[variantClass, activeClass, externalClass].filter(Boolean).join(' ')}>
+<div {...rest} class={cx(variantClass, activeClass, externalClass)}>
   {@render children()}
 </div>
 
@@ -46,12 +47,13 @@
     font-size: 0.8rem;
     display: flex;
     flex-direction: column;
-    max-height: 600px;
+    height: 700px;
+    max-height: 700px;
     flex: 0 0 var(--card-width);
     max-width: var(--card-width);
     scroll-snap-align: center;
     background: var(--surface-strong);
-    padding: 1.75rem;
+    padding: 1.4rem;
     border-radius: var(--border-radius);
     border: 1px solid var(--surface-border);
     backdrop-filter: blur(8px);
@@ -70,6 +72,13 @@
   .project-card :global(h3),
   .project-card :global(.title) {
     text-align: center;
+  }
+
+  .project-card :global(h3) {
+    font-size: 0.9rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0.35rem 0 0.5rem;
   }
 
   .project-card.active {
@@ -104,7 +113,7 @@
   .project-card :global(.features-list),
   .project-card :global(.upcoming-features) {
     padding-left: 0;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.1rem;
     list-style-type: none;
   }
 
@@ -125,12 +134,13 @@
   }
 
   .project-card :global(.video-container) {
-    aspect-ratio: 4 / 3;
-    max-height: 50%;
+    aspect-ratio: 16 / 9;
+    flex: 0 0 auto;
     width: 100%;
     margin-bottom: 0.8rem;
     border-radius: 8px;
     overflow: hidden;
+    background: var(--placeholder-bg);
   }
 
   .project-card :global(.video-container iframe) {
@@ -162,7 +172,9 @@
 
   @media (max-width: 640px) {
     .project-card {
-      padding: 1.3rem;
+      height: auto;
+      max-height: none;
+      padding: 1.1rem;
     }
 
     .project-card :global(.video-container) {
@@ -178,7 +190,7 @@
 
   @media (max-width: 480px) {
     .project-card {
-      padding: 1.15rem;
+      padding: 1rem;
     }
   }
 </style>

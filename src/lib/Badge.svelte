@@ -1,6 +1,7 @@
 <!-- src/lib/Badge.svelte -->
 <script lang="ts">
   import type { HTMLImgAttributes } from 'svelte/elements';
+  import { cx } from '$lib/utils';
 
   type Props = Omit<HTMLImgAttributes, 'class'> & {
     class?: string;
@@ -17,14 +18,12 @@
   }: Props = $props();
 </script>
 
-<span class={['inline-flex items-center', wrapperClass].filter(Boolean).join(' ')}>
+<span class={cx('inline-flex items-center', wrapperClass)}>
   <img
     {...rest}
     {width}
     {height}
     {loading}
-    class={['transition-transform duration-200 ease-out hover:scale-110', imgClass]
-      .filter(Boolean)
-      .join(' ')}
+    class={cx('transition-transform duration-200 ease-out hover:scale-110', imgClass)}
   />
 </span>

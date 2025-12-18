@@ -21,9 +21,13 @@
   });
 </script>
 
+<script lang="ts">
+  import { cx } from '$lib/utils';
+</script>
+
 <Story name="Default">
   {#snippet template(args)}
-    <div class="grid min-h-[100dvh] place-items-center p-6">
+    <div class={cx('grid min-h-[100dvh] place-items-center p-6')}>
       <div class="text-center text-sm text-slate-600">
         LangSwitch is fixed-positioned in the corner.
       </div>
