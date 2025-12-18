@@ -33,6 +33,18 @@ Live: `https://maestrofusion360.github.io/website/`
 
 ## Projects data + editor
 
+<!-- markdownlint-disable MD033 -->
+<details>
+  <summary>Screenshot</summary>
+
+<p align="center">
+  <div style="text-align: center;">
+    <img src="static/assets/editor_main.png" alt="Image 1">
+  </div>
+</p>
+
+</details>
+
 Projects live in two formats:
 
 - `src/routes/projects/project.json` — source of truth for the editor.
@@ -44,7 +56,7 @@ To manage projects data, use the GUI editor:
 python scripts/editor.py
 ```
 
-See `scripts/EDITOR_README.md` for details and screenshots.
+See [EDITOR_README.md](scripts/EDITOR_README.md) for details and screenshots.
 
 ## Quick start
 
@@ -76,7 +88,7 @@ If you deploy under a subpath like `/repo`, ensure SvelteKit `paths.base` is set
 
 ## License
 
-MIT, see `LICENSE.md`.
+MIT, see [LICENSE.md](LICENSE.md).
 
 ## Contact
 
